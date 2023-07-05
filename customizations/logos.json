@@ -1,0 +1,10 @@
+{
+  "graphicalLogo": {
+    "src": "images/characterlogo.svg",
+    "alt": "Character logo of Promptly Technologies, LLC — a friendly robot waving hello"
+  },
+  "textLogo": {
+    "src": "images/textlogo.svg",
+    "alt": "Text logo of Promptly Technologies, LLC — the word 'Promptly' in a friendly font"
+  }
+}

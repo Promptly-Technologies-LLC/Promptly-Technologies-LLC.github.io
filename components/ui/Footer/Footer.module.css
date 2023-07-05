@@ -1,0 +1,19 @@
+.footer {@apply sticky bg-light-background dark:bg-dark-background}
+
+.footercontents {@apply mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8}
+
+.footertoprow {@apply md:flex md:justify-between}
+
+.footerleftside {@apply mb-6 md:mb-0 inline-flex items-end space-x-3}
+
+.footerrightside {@apply grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3}
+
+.horizontaldivider {@apply mt-2 mb-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:mt-4 lg:mb-8}
+
+.footerbottomrow {@apply sm:flex sm:items-center sm:justify-between}
+
+.copyrighttext {@apply text-sm sm:text-center}
+
+.copyrighttext a {@apply hover:underline hover:text-light-nav-hover}
+
+.socialicons {@apply flex mt-4 space-x-6 sm:justify-center sm:mt-0}

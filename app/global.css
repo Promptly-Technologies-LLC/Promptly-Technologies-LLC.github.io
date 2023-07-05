@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  @apply outline-none ring-2 ring-light-accent dark:ring-dark-accent ring-opacity-50;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 0;
+}
+
+html,
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
+    'Helvetica', sans-serif;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-light-text bg-white dark:bg-black dark:text-dark-text antialiased;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+}
+
+ body.loading * {
+  transition: none !important;
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a.nav-link img {
+  @apply text-light-nav-text dark:text-dark-nav-text hover:text-light-nav-hover dark:hover:text-dark-nav-hover;
+}
+
+a.nav-link {
+  @apply text-light-nav-text dark:text-dark-nav-text hover:text-light-nav-hover dark:hover:text-dark-nav-hover font-medium hover:underline;
+}
+
+h1 {
+  @apply mb-4 text-4xl font-bold;
+}
+
+h2 {
+  @apply font-light sm:text-xl;
+}
+
+h3 {
+  @apply mb-1 text-2xl font-bold
+}
+
+h2.nav-header {
+  @apply mb-6 text-sm font-semibold uppercase;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.height-screen-helper {
+  height: calc(100vh - 80px);
+}

@@ -1,12 +1,15 @@
 {
-  "name": "promptly-multipage",
-  "private": true,
-  "version": "0.0.0",
+  "name": "promptly-technologies-website",
+  "version": "0.0.1",
+  "author": "Christopher C. Smith",
+  "homepage": "https://promptly-technologies-llc.github.io",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@types/classnames": "^2.3.1",

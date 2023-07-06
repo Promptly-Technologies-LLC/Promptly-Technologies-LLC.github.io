@@ -1,46 +1,35 @@
 {
-  "name": "promptly-technologies-website",
-  "version": "0.0.1",
-  "author": "Christopher C. Smith",
-  "homepage": "https://promptly-technologies-llc.github.io",
+  "name": "promptly-multipage",
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "touch dist/.nojekyll && gh-pages -d dist"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@types/classnames": "^2.3.1",
     "classnames": "^2.3.2",
     "flowbite": "^1.7.0",
     "gh-pages": "^5.0.0",
-    "next": "^13.4.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-merge-refs": "^2.0.2",
-    "tailwindcss": "^3.3.2"
+    "react-router-dom": "^6.14.1"
   },
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
-    "@types/classnames": "^2.3.1",
-    "@types/node": "^20.2.3",
     "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-react": "^4.0.1",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.41.0",
-    "eslint-config-next": "13.4.3",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-tailwindcss": "^3.12.0",
-    "postcss": "^8.4.23",
-    "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.3.0",
-    "typescript": "^5.0.4"
-  },
-  "prettier": {
-    "arrowParens": "always",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "none"
+    "eslint": "^8.44.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "postcss": "^8.4.25",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
   }
 }

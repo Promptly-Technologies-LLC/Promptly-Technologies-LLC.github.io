@@ -1,12 +1,10 @@
-interface Listings {
+export interface Listings {
     title: string;
     description: string;
 }
 
-interface CareersData {
+export interface CareersData {
     heading: string;
     subheading: string;
     listings: Listings[];
   }
-  
-export default CareersData;

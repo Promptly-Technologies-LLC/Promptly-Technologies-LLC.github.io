@@ -33,10 +33,10 @@ const Footer: React.FC = () => {
                       <h2 className="nav-header">About Us</h2>
                       <ul>
                           <li className="mb-0 md:mb-4">
-                              <a href="/#/AboutUs#team" className="nav-link">Team</a>
+                              <a href="/#/AboutUs" className="nav-link">Team</a>
                           </li>
                           <li>
-                              <a href="/#/AboutUs#careers" className="nav-link">Careers</a>
+                              <a href="/#/AboutUs" className="nav-link">Careers</a>
                           </li>
                       </ul>
                   </div>
@@ -44,10 +44,10 @@ const Footer: React.FC = () => {
                       <h2 className="nav-header">Legal</h2>
                       <ul>
                           <li className="mb-0 md:mb-4">
-                              <a href="/PrivacyPolicy" className="nav-link">Privacy Policy</a>
+                              <a href="/#/Legal" className="nav-link">Privacy Policy</a>
                           </li>
                           <li>
-                              <a href="/TermsandConditions" className="nav-link">Terms &amp; Conditions</a>
+                              <a href="/#/Legal" className="nav-link">Terms &amp; Conditions</a>
                           </li>
                       </ul>
                   </div>

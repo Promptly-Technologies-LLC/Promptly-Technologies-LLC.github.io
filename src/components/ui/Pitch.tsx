@@ -18,14 +18,14 @@ const Pitch: React.FC = () => {
             </div>
             <div className="contentcontainer items-end">
                 <div className="grid grid-cols-3 md:grid-cols-6">
-                    <div className="flex items-end col-span-1 mb-2 md:mb-0">
+                    <div className="flex items-end col-span-3 mb-2 md:mb-0 md:mr-4">
+                        <span className="text-xl">{properties.longDescription}</span>
+                    </div>
+                    <div className="flex items-end col-span-1 mt-2 md:mt-0 md:ml-4">
                         <Logo/>
                     </div>
-                    <div className="flex items-end col-span-2 mb-2 md:mb-0 md:mr-4">
+                    <div className="flex items-end col-span-2 mt-2 md:mt-0">
                         <TextLogo />
-                    </div>
-                    <div className="flex items-end col-span-3 mt-2 md:mt-0 md:ml-4">
-                        <span className="text-xl">{properties.longDescription}</span>
                     </div>
                 </div>
             </div>

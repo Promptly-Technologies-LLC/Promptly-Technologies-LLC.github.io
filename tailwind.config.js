@@ -29,7 +29,6 @@ export default {
         'bonus-color': '#8BFCAB' // green
       }
     }
-  },
-  plugins: [require("tw-elements/dist/plugin.cjs")]
+  }
 }
 

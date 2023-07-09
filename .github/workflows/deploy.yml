@@ -39,5 +39,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.PA_TOKEN }}
-          branch: gh-pages
+          branch: heads/gh-pages
           force_with_lease: true

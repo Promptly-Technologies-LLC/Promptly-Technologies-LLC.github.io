@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -10,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          persist-credentials: false
-          fetch-depth: 0
+          repository: Promptly-Technologies-LLC/promptlytechnologies.com
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -27,10 +29,8 @@ jobs:
       - name: Add CNAME to dist
         run: echo promptlytechnologies.com > ./dist/CNAME
 
-      - name: Commit files
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add -f dist/*
-          git commit -m "Add changes"
-          git push
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages

@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
               <div className="socialicons">
                 {Object.entries(properties.socialProfiles).map(([key, value]) => {
                     return (
-                        <SocialIcon iconName={key} url={value} className="nav-link"/>
+                        <SocialIcon iconName={key} url={value} className="nav-link" key={key}/>
                     );
                 })}
               </div>

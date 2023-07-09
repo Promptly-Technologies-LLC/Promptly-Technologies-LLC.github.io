@@ -18,8 +18,10 @@
     "flowbite-react": "^0.4.10",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
+    "react-calendly": "^4.1.1",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.1"
+    "react-router-dom": "^6.14.1",
+    "tw-elements": "^1.0.0-beta2"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

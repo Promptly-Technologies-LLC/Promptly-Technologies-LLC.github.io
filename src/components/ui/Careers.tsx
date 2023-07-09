@@ -10,12 +10,12 @@ const Careers: React.FC = () => {
     return(
         <section>
             <a href="#careers"></a>
-            <div className="careerssectioncontainer">
-                <div className="careersheader">
+            <div className="sectioncontainer">
+                <div className="headercontainer">
                     <h1>{careers.heading}</h1>
                     <h2>{careers.subheading}</h2>
                 </div>
-                <div className="flex justify-center">
+                <div className="contentcontainer border border-gray-500">
                     <CareersAccordion listings={careers.listings} />
                 </div>
             </div>

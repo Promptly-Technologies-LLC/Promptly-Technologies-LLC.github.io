@@ -1,7 +1,8 @@
-interface Services {
+interface ServicesData {
+    heading: string;
+    subheading: string;
     description: string;
     services: string[];
-    detailOrQuote: string;
   }
   
-export default Services;
+export default ServicesData;

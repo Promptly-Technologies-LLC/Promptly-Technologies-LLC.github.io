@@ -14,12 +14,14 @@ interface SiteProperties {
     url: string;
     title: string;
     author: string;
-    description: string;
+    shortDescription: string;
+    longDescription: string;
     keywords: string[];
     socialCards: string[];
     favicon: string;
     robots: Robots;
-    calendlyUrl?: string;
+    calendlyUrl: string;
+    callToAction: string;
     socialProfiles: SocialProfiles;
     offsiteResources: SiteLink[];
 }

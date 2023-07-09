@@ -78,3 +78,19 @@ h2.nav-header {
 .height-screen-helper {
   height: calc(100vh - 80px);
 }
+
+.headercontainer {
+  @apply mx-auto mb-8 max-w-screen-sm lg:mb-16 text-center;
+}
+
+section {
+  @apply py-6 px-4 lg:py-8 lg:px-6 mx-auto max-w-screen-xl text-center;
+}
+
+.sectioncontainer {
+  @apply mx-auto max-w-screen-xl text-center py-8 px-4 lg:py-16 lg:px-6;
+}
+
+.contentcontainer {
+  @apply flex justify-center rounded-xl mb-6 lg:mb-8
+}

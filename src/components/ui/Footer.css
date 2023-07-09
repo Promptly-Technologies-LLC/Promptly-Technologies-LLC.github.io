@@ -1,4 +1,4 @@
-.footer {@apply sticky bg-light-background dark:bg-dark-background}
+.footer {@apply bg-light-background dark:bg-dark-background bottom-0 border-t border-gray-500 w-full z-50 shadow-center}
 
 .footercontents {@apply mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8}
 

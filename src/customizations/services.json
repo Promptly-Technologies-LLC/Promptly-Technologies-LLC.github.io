@@ -1,14 +1,13 @@
 {
+  "heading": "Services",
+  "subheading": "Boutique software for small businesses, by commission",
   "description": "Aligning artificial intelligence tools with human thriving and small-business goals",
   "services": [
-    "AI business applications consulting",
-    "Prompt engineering services",
-    "Developer education",
-    "Adaptive data scraping",
-    "AI-powered web applications",
-    "AI-powered graphic design",
     "Autonomous agent development",
-    "Embedding and semantic search"
-  ],
-  "detailOrQuote": "<a href='#book'>Book</a> a free ten-minute meeting today to discuss how Promptly can help your business grapple with disruption by AI."
+    "AI-powered web applications",
+    "Social media automation",
+    "Custom chat bots",
+    "Adaptive data scraping",
+    "Data embedding for semantic search"
+  ]
 }

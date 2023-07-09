@@ -1,4 +1,4 @@
-.navbar {@apply bg-light-background dark:bg-dark-background h-24 top-0}
+.navbar {@apply sticky bg-light-background dark:bg-dark-background h-24 top-0 border-b border-gray-500 w-full z-50 shadow-center}
 
 .navbarcontainer {@apply container mx-auto w-full max-w-screen-xl h-full px-4 relative flex flex-row justify-between py-4 md:py-6 space-x-6}
 

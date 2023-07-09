@@ -12,7 +12,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-          token: ${{ secrets.PA_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -30,8 +29,8 @@ jobs:
 
       - name: Commit files
         run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add -f dist/*
           git commit -m "Add changes"
-          git push origin HEAD:main
+          git push

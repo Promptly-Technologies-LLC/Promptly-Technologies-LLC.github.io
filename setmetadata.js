@@ -9,6 +9,13 @@ const data = JSON.parse(fs.readFileSync('src/customizations/siteproperties.json'
 // Read HTML file
 const $ = cheerio.load(fs.readFileSync('index.html', 'utf8'));
 
+// Prefix URL with https:// if necessary
+let urlString = data.url;
+if (!/^http(s)?:\/\//.test(urlString)) {
+    urlString = 'https://' + urlString;
+}
+let url = new URL(urlString);
+
 // Empty head and add boilerplate
 $('head').empty();
 $('head').append('<meta charset="utf-8">');
@@ -25,13 +32,13 @@ let robotsContent = data["robots"]["index"] ? "index" : "noindex";
 robotsContent += data["robots"]["follow"] ? ",follow" : ",nofollow";
 $('head').append(`<meta name="robots" content="${robotsContent}">`);
 
-$('head').append(`<meta property="og:url" content="${data['url']}">`);
+$('head').append(`<meta property="og:url" content="${urlString}">`);
 $('head').append('<meta property="og:type" content="website">');
 $('head').append(`<meta property="og:title" content="${data['title']}">`);
 $('head').append(`<meta property="og:description" content="${data['shortDescription']}">`);
 
 for (let card of data["socialCards"]) {
-    $('head').append(`<meta property="og:image" content="${data['url'] + card}">`);
+    $('head').append(`<meta property="og:image" content="${urlString + card}">`);
 }
 
 // Save updated HTML file
@@ -43,12 +50,24 @@ const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 // Update fields as required
 packageJson.name = data.title.toLowerCase().replace(/[^a-z0-9-]/g, '');
 packageJson.author = data.author;
-packageJson.homepage = data.url;
+packageJson.homepage = urlString;
 
 // Parse URL and remove protocol for deploy command
-let url = new URL(data.url);
 packageJson.scripts = packageJson.scripts || {};
-packageJson.scripts.deploy = `echo ${url.hostname} > ./dist/CNAME`;
+
+// Update deploy command while keeping anything that comes after it
+if (packageJson.scripts && packageJson.scripts.deploy) {
+    packageJson.scripts.deploy = packageJson.scripts.deploy.replace(/(echo\s)[^>]+(\s> \.\/dist\/CNAME)(.*)/, `$1${url.hostname}$2$3`);
+}
 
 // Save package.json
 fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
+
+// Load .github/workflows/deploy.yml file
+let deployYml = fs.readFileSync('.github/workflows/deploy.yml', 'utf8');
+
+// Replace "run: echo promptlytechnologies.com > ./dist/CNAME" with new URL
+deployYml = deployYml.replace(/run: echo .* > \.\/dist\/CNAME/g, `run: echo ${url.hostname} > ./dist/CNAME`);
+
+// Save .github/workflows/deploy.yml file
+fs.writeFileSync('.github/workflows/deploy.yml', deployYml);

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
 const beautify = require('js-beautify').html;
+const URL = require('url').URL;
 
 // Read JSON file
 const data = JSON.parse(fs.readFileSync('src/customizations/siteproperties.json', 'utf8'));
@@ -35,3 +36,19 @@ for (let card of data["socialCards"]) {
 
 // Save updated HTML file
 fs.writeFileSync('index.html', beautify($.html(), { indent_size: 2 }));
+
+// Load package.json
+const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+
+// Update fields as required
+packageJson.name = data.title.toLowerCase().replace(/[^a-z0-9-]/g, '');
+packageJson.author = data.author;
+packageJson.homepage = data.url;
+
+// Parse URL and remove protocol for deploy command
+let url = new URL(data.url);
+packageJson.scripts = packageJson.scripts || {};
+packageJson.scripts.deploy = `echo ${url.hostname} > ./dist/CNAME`;
+
+// Save package.json
+fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));

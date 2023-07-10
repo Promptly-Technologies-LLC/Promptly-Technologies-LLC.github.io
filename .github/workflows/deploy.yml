@@ -26,7 +26,7 @@ jobs:
         run: npm run build
 
       - name: Set the domain
-        run: echo "DOMAIN=$(node -e 'console.log(new URL(require("./customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
+        run: echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
 
       - name: Add CNAME to dist
         run: |

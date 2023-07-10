@@ -25,8 +25,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Set the domain
+        run: echo "DOMAIN=$(node -e 'console.log(new URL(require("./customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
+
       - name: Add CNAME to dist
-        run: echo promptlytechnologies.com > ./dist/CNAME
+        run: |
+          if [[ "${{ env.DOMAIN }}" != *.github.io ]]; then
+            echo ${{ env.DOMAIN }} > ./dist/CNAME
+          fi
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

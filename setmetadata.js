@@ -55,19 +55,12 @@ packageJson.homepage = urlString;
 // Parse URL and remove protocol for deploy command
 packageJson.scripts = packageJson.scripts || {};
 
-// Update deploy command while keeping anything that comes after it
-if (packageJson.scripts && packageJson.scripts.deploy) {
-    packageJson.scripts.deploy = packageJson.scripts.deploy.replace(/(echo\s)[^>]+(\s> \.\/dist\/CNAME)(.*)/, `$1${url.hostname}$2$3`);
+// Update deploy command, excluding CNAME if using Github default domain
+if (url.hostname.endsWith('.github.io')) {
+    packageJson.scripts.deploy = 'gh-pages -d dist';
+} else {
+    packageJson.scripts.deploy = `echo ${url.hostname} > ./dist/CNAME && gh-pages -d dist`;
 }
 
 // Save package.json
 fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
-
-// Load .github/workflows/deploy.yml file
-let deployYml = fs.readFileSync('.github/workflows/deploy.yml', 'utf8');
-
-// Replace "run: echo promptlytechnologies.com > ./dist/CNAME" with new URL
-deployYml = deployYml.replace(/run: echo .* > \.\/dist\/CNAME/g, `run: echo ${url.hostname} > ./dist/CNAME`);
-
-// Save .github/workflows/deploy.yml file
-fs.writeFileSync('.github/workflows/deploy.yml', deployYml);

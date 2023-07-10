@@ -51,5 +51,7 @@ The following features are planned for future releases:
 - Automatically remove CNAME copying from the build workflow if you aren't using a custom domain
 - Add Privacy Policy and Terms of Conditions text
 - See if I can get anchor links working using HashRouter
+- Automated blog syndication with Github Actions cron job
+- Image gallery component
 - Improve site design, 'cause right now it kinda sucks
-- Finish adding support for Dark Mode
+- Finish adding support for a Dark Mode color scheme

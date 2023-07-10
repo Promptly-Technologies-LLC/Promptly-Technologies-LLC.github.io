@@ -1,4 +1,4 @@
-# A highly customizable React.js business website template
+# A highly customizable business website template built with React + Typescript + Tailwind
 
 This business website template — created by Promptly Technologies, LLC for our own use in-house — is designed for dead-easy customization and free hosting on Github Pages. It is built with Typescript, React, and TailwindCSS, and it uses Github Actions in combination with some custom Node.js scripting to automatically build and deploy the site every time you push a new change.
 

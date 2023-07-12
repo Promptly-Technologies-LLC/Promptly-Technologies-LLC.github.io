@@ -1,0 +1,39 @@
+.blogtext h1 {
+    @apply text-left my-4 text-3xl font-medium
+}
+
+.blogtext h2 {
+    @apply text-left my-4 text-lg font-medium
+}
+
+.blogtext > h1 {
+    @apply text-center my-4 text-3xl font-medium
+}
+
+.blogtext > h2 {
+    @apply text-center my-4 text-lg font-light
+}
+
+.blogtext h3 {
+    @apply text-left my-4 text-sm font-medium
+}
+
+.blogtext img {
+    @apply md:mx-auto md:w-1/2;
+}
+
+.blogtext p {
+    @apply text-left;
+}
+
+.image-caption {
+    @apply text-sm text-gray-500 mb-4
+}
+
+div.subscription-widget-wrap {
+    @apply h-0 overflow-hidden
+}
+
+.captioned-image-container {
+    @apply my-8
+}

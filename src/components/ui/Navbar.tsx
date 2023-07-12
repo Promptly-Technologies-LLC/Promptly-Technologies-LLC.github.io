@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Logo from '../../components/logos/Logo';
 import TextLogo from '../../components/logos/TextLogo';
 import './Navbar.css';
-import { NavHashLink } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setScrolled] = useState(false);
@@ -32,20 +32,23 @@ const Navbar: React.FC = () => {
       </a>
       <div className="navbarcontainer">
         <div className="navbarleftside">
-          <NavHashLink to="/" className="nav-link h-full" aria-label="Logo">
+          <HashLink to="/" className="nav-link h-full">
             <Logo className="h-full" />
-          </NavHashLink>
-          <NavHashLink to="/" className="nav-link h-3/4" aria-label="Logo">
+          </HashLink>
+          <HashLink to="/" className="nav-link h-3/4">
             <TextLogo className="h-full" />
-          </NavHashLink>  
+          </HashLink>  
         </div>
         <div className="navbarrightside">
-              <NavHashLink to="/" className="nav-link focusable">
+              <HashLink to="/" className="nav-link focusable">
                 Home
-              </NavHashLink>
-              <NavHashLink to="/AboutUs" className="nav-link focusable">
+              </HashLink>
+              <HashLink to="/Blog" className="nav-link focusable">
+                Blog
+              </HashLink>
+              <HashLink to="/AboutUs" className="nav-link focusable">
                 About
-              </NavHashLink>
+              </HashLink>
         </div>
       </div>
     </nav>

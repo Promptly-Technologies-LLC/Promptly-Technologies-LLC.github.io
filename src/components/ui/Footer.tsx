@@ -6,7 +6,6 @@ import propertiesJSON from '../../customizations/siteproperties.json';
 import SiteProperties from '../../types/siteproperties';
 import SocialIcon from '../../components/logos/SocialIcon';
 import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
 
 
 const Footer: React.FC = () => {
@@ -22,13 +21,14 @@ const Footer: React.FC = () => {
               </div>
               <div className="footerrightside">
                   <div>
-                      <h2 className="nav-header">Resources</h2>
+                      <h2 className="nav-header">Navigation</h2>
                       <ul>     
-                        {properties.offsiteResources.map((resource, index) => (
-                        <li key={index} className="mb-0 md:mb-4">
-                            <Link to={resource.src} className="nav-link">{resource.name}</Link>
+                        <li className="mb-0 md:mb-4">
+                            <HashLink to="/#" className="nav-link">Home</HashLink>
                         </li>
-                        ))}
+                        <li>
+                            <HashLink to="/Blog#" className="nav-link">Blog</HashLink>
+                        </li>
                       </ul>
                   </div>
                   <div>
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
           <hr className="horizontaldivider" />
           <div className="footerbottomrow">
               <span className="copyrighttext">
-                © 2023 <HashLink to="/" >{properties.title}</HashLink>. All Rights Reserved.
+                © 2023 <HashLink to="/#" className="nav-link text-sm font-normal" >{properties.title}</HashLink>. All Rights Reserved.
               </span>
               <div className="socialicons">
                 {Object.entries(properties.socialProfiles).map(([key, value]) => {

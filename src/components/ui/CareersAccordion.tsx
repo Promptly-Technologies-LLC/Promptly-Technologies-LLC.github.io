@@ -13,7 +13,7 @@ const CareersAccordion: React.FC<CareersAccordionProps> = ({listings}) => {
     <Accordion className="w-full mb-0 border-none">
       {listings.map((listing, index) => (
         <Accordion.Panel key={index}>
-          <Accordion.Title id={`accordion-title-${index}`} className='w-full p-4 bg-gray-100 rounded-xl focus:ring-0'>
+          <Accordion.Title id={`accordion-title-${index}`} className='w-full p-4 rounded-xl focus:ring-0'>
             {listing.title}
           </Accordion.Title>
           <Accordion.Content className="p-4">

@@ -4,11 +4,6 @@ interface Robots {
     index: boolean;
     follow: boolean;
 }
-  
-interface SiteLink {
-    name: string;
-    src: string;
-}
 
 interface SiteProperties {
     url: string;
@@ -23,7 +18,6 @@ interface SiteProperties {
     calendlyUrl: string;
     callToAction: string;
     socialProfiles: SocialProfiles;
-    offsiteResources: SiteLink[];
 }
 
 export default SiteProperties;

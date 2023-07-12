@@ -14,16 +14,6 @@
     "GitHub": "https://github.com/Promptly-Technologies-LLC",
     "Twitter": "https://twitter.com/PromptlyTech",
     "Mastodon": "https://fosstodon.org/@promptlytechnologies"
-  },
-  "offsiteResources": [
-    {
-      "name": "Substack",
-      "src": "https://knowledgeworkersguide.substack.com/"
-    },
-    {
-      "name": "GitHub",
-      "src": "https://github.com/Promptly-Technologies-LLC"
-    }
-  ]
+  }
 }
 

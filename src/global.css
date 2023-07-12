@@ -97,7 +97,3 @@ section {
 .textcontainer {
   @apply w-full text-center;
 }
-
-button {
-  @apply inline-flex items-center justify-center px-4 py-2 border border-gray-500 text-sm font-medium rounded-md shadow-sm text-dark-text bg-light-accent hover:bg-light-accent-hover dark:bg-dark-accent dark:text-light-text dark:hover:bg-dark-accent-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-light-accent;
-}

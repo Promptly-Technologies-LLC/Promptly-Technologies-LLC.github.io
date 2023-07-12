@@ -1,21 +1,21 @@
 .blogtext h1 {
-    @apply text-left my-4 text-3xl font-medium
+    @apply text-left my-4 text-3xl font-medium;
 }
 
 .blogtext h2 {
-    @apply text-left my-4 text-lg font-medium
+    @apply text-left my-4 text-lg font-medium;
 }
 
 .blogtext > h1 {
-    @apply text-center my-4 text-3xl font-medium
+    @apply text-center my-4 text-3xl font-medium;
 }
 
 .blogtext > h2 {
-    @apply text-center my-4 text-lg font-light
+    @apply text-center my-4 text-lg font-light;
 }
 
 .blogtext h3 {
-    @apply text-left my-4 text-sm font-medium
+    @apply text-left my-4 text-sm font-medium;
 }
 
 .blogtext img {
@@ -27,13 +27,17 @@
 }
 
 .image-caption {
-    @apply text-sm text-gray-500 mb-4
+    @apply text-sm text-gray-500 mb-4;
 }
 
 div.subscription-widget-wrap {
-    @apply h-0 overflow-hidden
+    @apply h-0 overflow-hidden;
 }
 
 .captioned-image-container {
-    @apply my-8
+    @apply my-8;
+}
+
+.readmorebutton {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-gray-500 text-sm font-medium rounded-md shadow-sm text-dark-text bg-light-accent hover:bg-light-accent-hover dark:bg-dark-accent dark:text-light-text dark:hover:bg-dark-accent-hover focus:outline-none focus:ring-2 focus:ring-offset-2;
 }

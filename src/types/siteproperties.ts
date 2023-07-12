@@ -16,6 +16,7 @@ interface SiteProperties {
     favicon: string;
     robots: Robots;
     calendlyUrl: string;
+    substackUrl: string;
     callToAction: string;
     socialProfiles: SocialProfiles;
 }

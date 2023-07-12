@@ -2,7 +2,11 @@ import React from 'react';
 import RssObject from '../../types/rssfeed';
 import { Link } from 'react-router-dom';
 import useFetchContent from '../../hooks/useFetchContent';
+import propertiesJSON from '../../customizations/siteproperties.json';
+import SiteProperties from '../../types/siteproperties';
 import './BlogFeed.css';
+
+const properties = propertiesJSON as SiteProperties;
 
 // Default RssObject
 const defaultRssObject: RssObject = {
@@ -56,7 +60,11 @@ const BlogFeed: React.FC = () => {
               <div dangerouslySetInnerHTML={{ __html: item['content:encoded'] }} />
             </div>
           ))}
-          <button>Read more from this blog on {feedData?.rss?.channel?.generator}</button>
+          <a href={properties.substackUrl} target="_blank" rel="noopener noreferrer">
+            <button className="readmorebutton">
+              Read more from this blog on {feedData?.rss?.channel?.generator}
+            </button>
+          </a>
           </div>
         </div>
       </div>

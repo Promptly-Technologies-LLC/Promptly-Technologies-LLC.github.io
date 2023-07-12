@@ -51,3 +51,4 @@ The following features are planned for future releases:
 - Image gallery component
 - Improve site design, 'cause right now it kinda sucks
 - Finish adding support for a Dark Mode color scheme, maybe improve theming system in general
+- Set blog scraping url dynamically

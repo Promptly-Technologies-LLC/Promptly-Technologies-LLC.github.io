@@ -2,9 +2,13 @@ const fetch = require('isomorphic-fetch');
 const fs = require('fs');
 const { parseStringPromise } = require('xml2js');
 
+// Read JSON file
+const sitedata = JSON.parse(fs.readFileSync('src/customizations/siteproperties.json', 'utf8'));
+const feedUrl = sitedata.substackUrl + '/feed';
+
 async function fetchRssFeed() {
   try {
-    const response = await fetch('https://knowledgeworkersguide.substack.com/feed');
+    const response = await fetch(feedUrl);
     if (!response.ok) {
       throw new Error(`Failed to fetch RSS feed (${response.status} ${response.statusText})`);
     }

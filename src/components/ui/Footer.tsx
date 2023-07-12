@@ -16,8 +16,8 @@ const Footer: React.FC = () => {
         <div className="footercontents">
             <div className="footertoprow">
               <div className="footerleftside">
-                  <HashLink to="/"><Logo className="h-24 mb-4" /></HashLink>
-                  <HashLink to="/"><TextLogo className="h-16 mb-4" /></HashLink>
+                  <HashLink to="/#"><Logo className="h-24 mb-4" /></HashLink>
+                  <HashLink to="/#"><TextLogo className="h-16 mb-4" /></HashLink>
               </div>
               <div className="footerrightside">
                   <div>

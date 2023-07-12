@@ -32,21 +32,21 @@ const Navbar: React.FC = () => {
       </a>
       <div className="navbarcontainer">
         <div className="navbarleftside">
-          <HashLink to="/" className="nav-link h-full">
+          <HashLink to="/#" className="nav-link h-full">
             <Logo className="h-full" />
           </HashLink>
-          <HashLink to="/" className="nav-link h-3/4">
+          <HashLink to="/#" className="nav-link h-3/4">
             <TextLogo className="h-full" />
           </HashLink>  
         </div>
         <div className="navbarrightside">
-              <HashLink to="/" className="nav-link focusable">
+              <HashLink to="/#" className="nav-link focusable">
                 Home
               </HashLink>
-              <HashLink to="/Blog" className="nav-link focusable">
+              <HashLink to="/Blog#" className="nav-link focusable">
                 Blog
               </HashLink>
-              <HashLink to="/AboutUs" className="nav-link focusable">
+              <HashLink to="/AboutUs#" className="nav-link focusable">
                 About
               </HashLink>
         </div>

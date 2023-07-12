@@ -2,13 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-*:focus {
+.focusable:focus {
   @apply outline-none ring-2 ring-light-accent dark:ring-dark-accent ring-opacity-50;
 }
 
@@ -42,12 +36,16 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-a.nav-link img {
+.nav-link svg {
   @apply text-light-nav-text dark:text-dark-nav-text hover:text-light-nav-hover dark:hover:text-dark-nav-hover;
 }
 
-a.nav-link {
+.nav-link {
   @apply text-light-nav-text dark:text-dark-nav-text hover:text-light-nav-hover dark:hover:text-dark-nav-hover font-medium hover:underline;
+}
+
+p {
+  @apply mb-4 text-base lg:text-lg;
 }
 
 h1 {
@@ -55,11 +53,11 @@ h1 {
 }
 
 h2 {
-  @apply font-light sm:text-xl;
+  @apply mb-4 text-xl font-light;
 }
 
 h3 {
-  @apply mb-1 text-2xl font-bold
+  @apply my-4 text-2xl font-bold
 }
 
 h2.nav-header {
@@ -80,7 +78,7 @@ h2.nav-header {
 }
 
 .headercontainer {
-  @apply mx-auto mb-8 max-w-screen-sm lg:mb-16 text-center;
+  @apply mx-auto max-w-screen-sm text-center mb-4 lg:mb-12;
 }
 
 section {
@@ -92,5 +90,9 @@ section {
 }
 
 .contentcontainer {
-  @apply flex justify-center rounded-xl mb-6 lg:mb-8
+  @apply flex justify-center rounded-xl mb-6 lg:mb-8;
+}
+
+.textcontainer {
+  @apply w-full text-center;
 }

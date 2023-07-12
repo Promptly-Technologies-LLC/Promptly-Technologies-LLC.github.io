@@ -6,11 +6,11 @@ import Book from '../components/ui/Book';
 
 const Home: React.FC = () => {
   return (
-    <>
+    <main id="skip">
         <Pitch />
         <Services />
         <Book />
-    </>
+    </main>
   )
 }
 

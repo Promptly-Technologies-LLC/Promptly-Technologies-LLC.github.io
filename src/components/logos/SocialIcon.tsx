@@ -1,6 +1,7 @@
 import React from 'react';
 import iconsJSON from '../../customizations/socialicons.json';
 import SocialIcons from '../../types/socialicons';
+import { Link } from 'react-router-dom';
 
 interface SocialIconProps {
     iconName?: string;
@@ -22,12 +23,12 @@ const getIconPath = (iconName: string = '') => {
 
 const SocialIcon: React.FC<SocialIconProps> = ({ iconName = '', url = '', className = '' }) => {
     return (
-        <a href={url} className={className} target="_blank" rel="noopener noreferrer">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <Link to={url} className={className} target="_blank" rel="noopener noreferrer">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d={getIconPath(iconName)} fillRule="evenodd" clipRule="evenodd" />
             </svg>
             <span className="sr-only">{iconName}</span>
-        </a>
+        </Link>
     )
 }
 

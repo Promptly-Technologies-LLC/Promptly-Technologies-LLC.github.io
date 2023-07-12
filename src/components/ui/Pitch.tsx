@@ -9,8 +9,7 @@ const properties: SiteProperties = propertiesJSON;
 
 const Pitch: React.FC = () => {
     return(
-    <section>
-        <a href="#careers"></a>
+    <section id="pitch">
         <div className="sectioncontainer">
             <div className="headercontainer">
                 <h1>{properties.title}</h1>

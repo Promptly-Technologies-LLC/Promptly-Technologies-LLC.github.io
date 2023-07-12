@@ -5,18 +5,20 @@ import './Footer.css';
 import propertiesJSON from '../../customizations/siteproperties.json';
 import SiteProperties from '../../types/siteproperties';
 import SocialIcon from '../../components/logos/SocialIcon';
+import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 
 const Footer: React.FC = () => {
     const properties: SiteProperties = propertiesJSON;
   
     return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
         <div className="footercontents">
             <div className="footertoprow">
               <div className="footerleftside">
-                  <a href="/"><Logo className="h-24 mb-4" /></a>
-                  <a href="/"><TextLogo className="h-16 mb-4" /></a>
+                  <HashLink to="/"><Logo className="h-24 mb-4" /></HashLink>
+                  <HashLink to="/"><TextLogo className="h-16 mb-4" /></HashLink>
               </div>
               <div className="footerrightside">
                   <div>
@@ -24,7 +26,7 @@ const Footer: React.FC = () => {
                       <ul>     
                         {properties.offsiteResources.map((resource, index) => (
                         <li key={index} className="mb-0 md:mb-4">
-                            <a href={resource.src} className="nav-link">{resource.name}</a>
+                            <Link to={resource.src} className="nav-link">{resource.name}</Link>
                         </li>
                         ))}
                       </ul>
@@ -33,10 +35,10 @@ const Footer: React.FC = () => {
                       <h2 className="nav-header">About Us</h2>
                       <ul>
                           <li className="mb-0 md:mb-4">
-                              <a href="/#/AboutUs" className="nav-link">Team</a>
+                              <HashLink to="/AboutUs#team" className="nav-link">Team</HashLink>
                           </li>
                           <li>
-                              <a href="/#/AboutUs" className="nav-link">Careers</a>
+                              <HashLink to="/AboutUs#careers" className="nav-link">Careers</HashLink>
                           </li>
                       </ul>
                   </div>
@@ -44,10 +46,7 @@ const Footer: React.FC = () => {
                       <h2 className="nav-header">Legal</h2>
                       <ul>
                           <li className="mb-0 md:mb-4">
-                              <a href="/#/Legal" className="nav-link">Privacy Policy</a>
-                          </li>
-                          <li>
-                              <a href="/#/Legal" className="nav-link">Terms &amp; Conditions</a>
+                              <HashLink to="/Legal#privacy" className="nav-link">Privacy Policy</HashLink>
                           </li>
                       </ul>
                   </div>
@@ -56,7 +55,7 @@ const Footer: React.FC = () => {
           <hr className="horizontaldivider" />
           <div className="footerbottomrow">
               <span className="copyrighttext">
-                © 2023 <a href="/" >{properties.title}</a>. All Rights Reserved.
+                © 2023 <HashLink to="/" >{properties.title}</HashLink>. All Rights Reserved.
               </span>
               <div className="socialicons">
                 {Object.entries(properties.socialProfiles).map(([key, value]) => {

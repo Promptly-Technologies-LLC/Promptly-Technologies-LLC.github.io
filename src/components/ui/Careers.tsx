@@ -8,8 +8,7 @@ const Careers: React.FC = () => {
     const careers: CareersData = careersJSON
     
     return(
-        <section>
-            <a href="#careers"></a>
+        <section id="careers">
             <div className="sectioncontainer">
                 <div className="headercontainer">
                     <h1>{careers.heading}</h1>

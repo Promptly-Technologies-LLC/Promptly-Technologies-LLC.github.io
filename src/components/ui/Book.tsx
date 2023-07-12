@@ -33,7 +33,7 @@ const Book: React.FC = () => {
   }, []);
 
   return (
-    <section>
+    <section id="book">
       <div className="sectioncontainer">
         <div className="headercontainer">
           <h1>Book a consultation</h1>

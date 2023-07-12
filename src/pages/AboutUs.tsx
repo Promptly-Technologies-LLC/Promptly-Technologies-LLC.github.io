@@ -5,10 +5,10 @@ import './AboutUs.css';
 
 const AboutUs: React.FC = () =>{
   return (
-    <>
-      <Team />
+    <main id="skip">
+      <Team/>
       <Careers />
-    </>
+    </main>
   )
 }
 

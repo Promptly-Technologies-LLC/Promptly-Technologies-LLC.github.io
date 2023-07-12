@@ -11,16 +11,16 @@ import './global.css'
 const App: React.FC = () => {
   return (
     <>
-    <Navbar />
     <Router basename='/'>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/Legal" element={<Legal />} />
-        <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/Legal" element={<Legal />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
+      <Footer />
     </Router>
-    <Footer />
     </>
   );
 };

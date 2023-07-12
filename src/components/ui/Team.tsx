@@ -8,8 +8,7 @@ const ourTeam: React.FC = () => {
     const team: Team = teamJSON
 
     return(
-        <section>
-            <a href="#team"></a>
+        <section id="team">
             <div className="sectioncontainer">
                 <div className="headercontainer">
                     <h1>{team.header}</h1>

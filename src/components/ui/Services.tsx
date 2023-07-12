@@ -7,8 +7,7 @@ const services: ServicesData = servicesJSON;
 
 const Services: React.FC = () => {
     return(
-    <section>
-        <a href="#services"></a>
+    <section id="services">
         <div className="sectioncontainer">
             <div className="headercontainer">
                 <h1>{services.heading}</h1>

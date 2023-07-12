@@ -48,7 +48,6 @@ If you find a bug or have a feature request, please open an issue on Github. If 
 
 The following features are planned for future releases:
 
-- Automated blog syndication with Github Actions cron job
 - Image gallery component
 - Improve site design, 'cause right now it kinda sucks
 - Finish adding support for a Dark Mode color scheme, maybe improve theming system in general

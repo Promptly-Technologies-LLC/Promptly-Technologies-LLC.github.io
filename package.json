@@ -26,7 +26,6 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.1",
     "react-router-hash-link": "^2.4.3",
-    "rss-parser": "^3.13.0",
     "xml2js": "^0.6.0"
   },
   "devDependencies": {

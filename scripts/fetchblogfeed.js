@@ -26,8 +26,7 @@ async function fetchRssFeed() {
     // Convert the parsed data into the desired JSON format
     const jsonFeedData = JSON.stringify(parsedData, null, 2);
 
-    fs.writeFileSync('public/data/RssFeed.json', jsonFeedData);
-    fs.writeFileSync('dist/data/RssFeed.json', jsonFeedData);
+    fs.writeFileSync('src/components/ui/RssFeed.json', jsonFeedData);
 
     console.log('RSS feed saved successfully!');
   } catch (error) {

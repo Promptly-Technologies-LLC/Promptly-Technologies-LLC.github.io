@@ -1,48 +1,15 @@
 import React from 'react';
 import RssObject from '../../types/rssfeed';
 import { Link } from 'react-router-dom';
-import useFetchContent from '../../hooks/useFetchContent';
+import rssFeedJSON from './RssFeed.json';
 import propertiesJSON from '../../customizations/siteproperties.json';
 import SiteProperties from '../../types/siteproperties';
 import './BlogFeed.css';
 
 const properties = propertiesJSON as SiteProperties;
-
-// Default RssObject
-const defaultRssObject: RssObject = {
-  rss: {
-    $: {
-      'xmlns:dc': '',
-      'xmlns:content': '',
-      'xmlns:atom': '',
-      version: '',
-      'xmlns:itunes': '',
-      'xmlns:googleplay': '',
-    },
-    channel: {
-      title: '',
-      description: '',
-      link: '',
-      image: { url: '', title: '', link: '' },
-      generator: '',
-      lastBuildDate: '',
-      'atom:link': { $: { href: '', rel: '', type: '' } },
-      copyright: '',
-      language: '',
-      webMaster: '',
-      'itunes:owner': { 'itunes:email': '', 'itunes:name': '' },
-      'itunes:author': '',
-      'googleplay:owner': '',
-      'googleplay:email': '',
-      'googleplay:author': '',
-      item: [],
-    },
-  },
-};
+const feedData: RssObject = rssFeedJSON as RssObject;
 
 const BlogFeed: React.FC = () => {
-  const feedData: RssObject = useFetchContent('data/RssFeed.json') || defaultRssObject;
-
   return (
     <section id="blog">
         <div className="sectioncontainer">

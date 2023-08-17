@@ -40,7 +40,7 @@ If you want to use a custom domain instead of the default 'https://{YOUR-GITHUB-
 6. At first, you'll probably see a message that verification of your domain failed. You'll need to wait at least a couple of ours for your DNS changes to propagate, maybe even a full day. Then refresh this page, and you should see "DNS check successful" under the custom domain field.
 7. Click the check box to "Enforce HTTPS". (If the DNS check passed but the box isn't clickable,  Github may not have issued your site an SSL certificate yet. Take and break for a few hours and then come back and try again. If it still doesn't work, try removing and re-adding your domain.)
 
-Additionally, to use a custom domain, you will need to update the "url" field in `siteproperties.json` to your prefixed custom domain (e.g., "https://example.com"). (The automatic build process will propagate this to other files as needed, so you shouldn't need to manually change this anywhere else.)
+Additionally, to use a custom domain, you will need to update the "url" field in `siteproperties.json` to your http/https-prefixed custom domain (e.g., "https://example.com"). (The automatic build process will propagate this to other files as needed, so you shouldn't need to manually change this anywhere else.)
 
 ## Contributing
 
@@ -48,6 +48,7 @@ If you find a bug or have a feature request, please open an issue on Github. If 
 
 The following features are planned for future releases:
 
+- Improve handling of blog section
 - Image gallery component
 - Improve site design, 'cause right now it kinda sucks
 - Finish adding support for a Dark Mode color scheme, maybe improve theming system in general

@@ -1,13 +1,13 @@
 {
   "name": "promptlytechnologiesllc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Christopher C. Smith",
   "homepage": "https://promptlytechnologies.com",
   "scripts": {
     "dev": "vite",
     "setmetadata": "node scripts/setmetadata.js",
     "fetchblogfeed": "node scripts/fetchblogfeed.js",
-    "build": "npm run setmetadata && npm run fetchblogfeed && tsc && vite build",
+    "build": "npm run setmetadata && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",

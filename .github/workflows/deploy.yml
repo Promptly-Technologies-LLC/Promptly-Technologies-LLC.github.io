@@ -47,12 +47,15 @@ jobs:
           commit_message: 'Automated build/blog feed update'
 
       - name: Set the domain
-        run: echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
+        id: set-domain
+        run: |
+          echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
+          echo "::set-output name=domain::$DOMAIN"
 
       - name: Add CNAME to dist
         run: |
-          if [[ "${{ env.DOMAIN }}" != *.github.io ]]; then
-            echo ${{ env.DOMAIN }} > ./dist/CNAME
+          if [[ "${{ steps.set-domain.outputs.domain }}" != *.github.io ]]; then
+            echo ${{ steps.set-domain.outputs.domain }} > ./dist/CNAME
           fi
 
       - name: Deploy 🚀

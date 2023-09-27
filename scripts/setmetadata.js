@@ -42,7 +42,7 @@ for (let card of data["socialCards"]) {
 }
 
 // Save updated HTML file
-fs.writeFileSync('index.html', beautify($.html(), { indent_size: 2 }));
+fs.writeFileSync('index.html', beautify($.html(), { indent_size: 2, preserve_newlines: false }));
 
 // Load package.json
 const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));

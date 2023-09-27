@@ -33,7 +33,7 @@ jobs:
       - name: Fetch RSS Feed
         uses: Promptly-Technologies-LLC/rss-fetch-action@v1
         with:
-          feed_url: '$feedUrl'
+          feed_url: ${{ env.feedUrl }}
           file_path: 'src/components/ui/RssFeed.json'
           remove_last_build_date: true
 
@@ -48,12 +48,12 @@ jobs:
       - name: Set the domain
         id: set-domain
         run: |
-          echo "Domain=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
+          echo "DOMAIN=$(node -e 'console.log(new URL(require(\"./src/customizations/siteproperties.json\").url).hostname)')" >> $GITHUB_ENV
 
       - name: Add CNAME to dist
         run: |
-          if [[ "$Domain" != *.github.io ]]; then
-            echo $Domain > ./dist/CNAME
+          if [[ "${{ env.DOMAIN }}" != *.github.io ]]; then
+            echo ${{ env.DOMAIN }} > ./dist/CNAME
           fi
 
       - name: Deploy 🚀

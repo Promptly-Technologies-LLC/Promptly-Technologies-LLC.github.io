@@ -33,7 +33,7 @@ jobs:
       - name: Fetch RSS Feed
         uses: Promptly-Technologies-LLC/rss-fetch-action@v2
         with:
-          feed_url: https://knowledgeworkersguide.substack.com/feed
+          feed_url: ${{ env.feedUrl }}
           file_path: ./src/components/ui/RssFeed.json
           parser_options: "{\"useISODateFormat\": false, \"getExtraEntryFields\": \"(feedEntry) => { return { 'content:encoded': feedEntry['content:encoded'] || '' }; }\"}"
 

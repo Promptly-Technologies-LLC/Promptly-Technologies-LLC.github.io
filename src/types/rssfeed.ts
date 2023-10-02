@@ -13,7 +13,6 @@ interface RssObject {
   description: string;
   language: string;
   generator: string;
-  published: string;
   entries: Entry[];
 }
   

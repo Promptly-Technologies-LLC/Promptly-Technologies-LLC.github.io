@@ -20,6 +20,9 @@ async function fetchRssFeed() {
     if (!feedData || typeof feedData !== 'object') {
       throw new Error('Invalid RSS feed data');
     }
+
+    // Remove the top-level published field
+    delete feedData.published;
     
     // Convert the Javascript object to JSON and save as a UI component
     fs.writeFileSync('src/components/ui/RssFeed.json', JSON.stringify(feedData, null, 2));

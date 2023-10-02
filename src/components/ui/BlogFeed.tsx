@@ -22,8 +22,8 @@ const BlogFeed: React.FC = () => {
           {feedData?.entries.slice(0, 2).map((entry, index) => (
             <div key={index} className="blogtext mb-16 lg:md-24">
               <Link to={entry.link} className="text-xl font-bold">Read this post on {feedData.generator}</Link>
-              <h1>{entry.title}</h1>
-              <h2>{entry.description}</h2>
+              <h1 dangerouslySetInnerHTML={{ __html: entry.title}} />
+              <h2 dangerouslySetInnerHTML={{ __html: entry.description}} />
               <div dangerouslySetInnerHTML={{ __html: entry['content:encoded'] }} />
             </div>
           ))}

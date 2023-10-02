@@ -14,22 +14,22 @@ const BlogFeed: React.FC = () => {
     <section id="blog">
         <div className="sectioncontainer">
         <div className="headercontainer">
-          <h1>{feedData?.rss?.channel?.title}</h1>
+          <h1>{feedData?.title}</h1>
           <h2>Recent Posts</h2>
         </div>
         <div className="contentcontainer">
           <div className="textcontainer">
-          {feedData?.rss?.channel?.item.slice(0, 2).map((item, index) => (
+          {feedData?.entries.slice(0, 2).map((entry, index) => (
             <div key={index} className="blogtext mb-16 lg:md-24">
-              <Link to={item.link} className="text-xl font-bold">Read this post on {feedData.rss.channel.generator}</Link>
-              <h1>{item.title}</h1>
-              <h2>{item.description}</h2>
-              <div dangerouslySetInnerHTML={{ __html: item['content:encoded'] }} />
+              <Link to={entry.link} className="text-xl font-bold">Read this post on {feedData.generator}</Link>
+              <h1>{entry.title}</h1>
+              <h2>{entry.description}</h2>
+              <div dangerouslySetInnerHTML={{ __html: entry['content:encoded'] }} />
             </div>
           ))}
           <a href={properties.substackUrl} target="_blank" rel="noopener noreferrer">
             <button className="readmorebutton">
-              Read more from this blog on {feedData?.rss?.channel?.generator}
+              Read more from this blog on {feedData?.generator}
             </button>
           </a>
           </div>

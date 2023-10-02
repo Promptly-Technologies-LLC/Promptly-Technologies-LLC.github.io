@@ -1,12 +1,12 @@
 {
   "name": "promptlytechnologiesllc",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Christopher C. Smith",
   "homepage": "https://promptlytechnologies.com",
   "scripts": {
     "dev": "vite",
-    "setmetadata": "node scripts/setmetadata.js",
-    "fetchblogfeed": "node scripts/fetchblogfeed.js",
+    "setmetadata": "node scripts/setmetadata.mjs",
+    "fetchblogfeed": "node scripts/fetchblogfeed.mjs",
     "build": "npm run setmetadata && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -20,15 +20,14 @@
     "flowbite-react": "^0.4.10",
     "fs": "^0.0.1-security",
     "gh-pages": "^5.0.0",
-    "isomorphic-fetch": "^3.0.0",
     "react": "^18.2.0",
     "react-calendly": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.1",
-    "react-router-hash-link": "^2.4.3",
-    "xml2js": "^0.6.0"
+    "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
+    "@extractus/feed-extractor": "^7.0.6",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@typescript-eslint/eslint-plugin": "^5.61.0",

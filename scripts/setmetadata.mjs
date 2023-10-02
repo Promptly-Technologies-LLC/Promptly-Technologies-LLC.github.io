@@ -1,7 +1,7 @@
-const fs = require('fs');
-const cheerio = require('cheerio');
-const beautify = require('js-beautify').html;
-const URL = require('url').URL;
+import fs from 'fs';
+import * as cheerio from 'cheerio';
+import { URL } from 'url';
+import * as beautify from 'js-beautify';
 
 // Read JSON file
 const data = JSON.parse(fs.readFileSync('src/customizations/siteproperties.json', 'utf8'));
@@ -42,7 +42,7 @@ for (let card of data["socialCards"]) {
 }
 
 // Save updated HTML file
-fs.writeFileSync('index.html', beautify($.html(), { indent_size: 2, preserve_newlines: false }));
+fs.writeFileSync('index.html', beautify.default.html($.html(), { indent_size: 2, preserve_newlines: false }));
 
 // Load package.json
 const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));

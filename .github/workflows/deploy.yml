@@ -31,11 +31,11 @@ jobs:
           echo "feedUrl=$feedUrl" >> $GITHUB_ENV
 
       - name: Fetch RSS Feed
-        uses: Promptly-Technologies-LLC/rss-fetch-action@v1
+        uses: Promptly-Technologies-LLC/rss-fetch-action@v2
         with:
-          feed_url: ${{ env.feedUrl }}
-          file_path: 'src/components/ui/RssFeed.json'
-          remove_last_build_date: true
+          feed_url: https://knowledgeworkersguide.substack.com/feed
+          file_path: ./src/components/ui/RssFeed.json
+          parser_options: "{\"useISODateFormat\": false, \"getExtraEntryFields\": \"(feedEntry) => { return { 'content:encoded': feedEntry['content:encoded'] || '' }; }\"}"
 
       - name: Build
         run: npm run build

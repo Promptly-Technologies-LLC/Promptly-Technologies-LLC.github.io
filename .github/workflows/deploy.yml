@@ -32,13 +32,10 @@ jobs:
         with:
           commit_message: 'Automated build/blog feed update'
 
-      - name: Get domain
-        id: get-domain
-        uses: notiz-dev/github-action-json-property@release
-        with: 
-          path: 'src/customizations/siteproperties.json'
-          prop_path: 'url'
-      - run: echo "DOMAIN=${{ steps.get-domain.outputs.value }}" >> $GITHUB_ENV
+      - name: Set the domain
+        id: set-domain
+        run: |
+          echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
 
       - name: Debug DOMAIN
         run: echo "Debug DOMAIN=${{ env.DOMAIN }}"

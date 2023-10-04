@@ -32,18 +32,20 @@ jobs:
         with:
           commit_message: 'Automated build/blog feed update'
 
-      - name: Set the domain
-        id: set-domain
-        run: |
-          echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
+      - name: Get domain
+        id: get-domain
+        uses: notiz-dev/github-action-json-property@release
+        with: 
+          path: 'src/customizations/siteproperties.json'
+          prop_path: 'url'
 
       - name: Debug DOMAIN
-        run: echo "Debug DOMAIN=${{ env.DOMAIN }}"
+        run: echo "Debug DOMAIN=${{ steps.get-domain.outputs.value }}"
 
       - name: Add CNAME to dist
         run: |
-          if [[ "${{ env.DOMAIN }}" != *.github.io ]]; then
-            echo ${{ env.DOMAIN }} > ./dist/CNAME
+          if [[ "${{ steps.get-domain.outputs.value }}" != *.github.io ]]; then
+            echo ${{ steps.get-domain.outputs.value }} > ./dist/CNAME
           fi
 
       - name: Debug CNAME

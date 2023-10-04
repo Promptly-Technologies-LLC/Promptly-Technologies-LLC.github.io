@@ -37,17 +37,11 @@ jobs:
         run: |
           echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_OUTPUT
 
-      - name: Debug DOMAIN
-        run: echo "Debug DOMAIN=${{ steps.set-domain.outputs.DOMAIN }}"
-
       - name: Add CNAME to dist
         run: |
           if [[ "${{ steps.set-domain.outputs.DOMAIN }}" != *.github.io ]]; then
             echo ${{ steps.set-domain.outputs.DOMAIN }} > ./dist/CNAME
           fi
-
-      - name: Debug CNAME
-        run: cat ./dist/CNAME
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

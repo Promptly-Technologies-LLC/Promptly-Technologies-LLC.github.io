@@ -38,14 +38,15 @@ jobs:
         with: 
           path: 'src/customizations/siteproperties.json'
           prop_path: 'url'
+      - run: echo "DOMAIN=${{ steps.get-domain.outputs.value }}" >> $GITHUB_ENV
 
       - name: Debug DOMAIN
-        run: echo "Debug DOMAIN=${{ steps.get-domain.outputs.value }}"
+        run: echo "Debug DOMAIN=${{ env.DOMAIN }}"
 
       - name: Add CNAME to dist
         run: |
-          if [[ "${{ steps.get-domain.outputs.value }}" != *.github.io ]]; then
-            echo ${{ steps.get-domain.outputs.value }} > ./dist/CNAME
+          if [[ "${{ env.DOMAIN }}" != *.github.io ]]; then
+            echo ${{ env.DOMAIN }} > ./dist/CNAME
           fi
 
       - name: Debug CNAME

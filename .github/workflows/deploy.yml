@@ -35,15 +35,15 @@ jobs:
       - name: Set the domain
         id: set-domain
         run: |
-          echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
+          echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_OUTPUT
 
       - name: Debug DOMAIN
-        run: echo "Debug DOMAIN=${{ env.DOMAIN }}"
+        run: echo "Debug DOMAIN=${{ steps.set-domain.outputs.DOMAIN }}"
 
       - name: Add CNAME to dist
         run: |
-          if [[ "${{ env.DOMAIN }}" != *.github.io ]]; then
-            echo ${{ env.DOMAIN }} > ./dist/CNAME
+          if [[ "${{ steps.set-domain.outputs.DOMAIN }}" != *.github.io ]]; then
+            echo ${{ steps.set-domain.outputs.DOMAIN }} > ./dist/CNAME
           fi
 
       - name: Debug CNAME

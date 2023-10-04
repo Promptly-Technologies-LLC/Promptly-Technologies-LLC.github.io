@@ -35,7 +35,7 @@ jobs:
       - name: Set the domain
         id: set-domain
         run: |
-          echo "DOMAIN=$(node -e 'console.log(new URL(require(\"./src/customizations/siteproperties.json\").url).hostname)')" >> $GITHUB_ENV
+          echo "DOMAIN=$(node -e 'console.log(new URL(require("./src/customizations/siteproperties.json").url).hostname)')" >> $GITHUB_ENV
 
       - name: Debug DOMAIN
         run: echo "Debug DOMAIN=${{ env.DOMAIN }}"

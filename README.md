@@ -1,6 +1,6 @@
 # A comic book-style business website built with React + Typescript + Tailwind
 
-[](public/images/card.jpg)
+![Website social card preview image](https://github.com/Promptly-Technologies-LLC/Promptly-Technologies-LLC.github.io/blob/main/public/images/card.jpg?raw=true)
 
 The business website of Promptly Technologies, LLC is designed in the style of a comic book. In building this website, we greatly leveraged the incredible power of MidJourneyAI to develop beautiful, flashy graphics. We combined this with Typescript's strong typing, React's intuitive modularity, Tailwind's powerful styling, Vite's easy build system, and Github Actions scripting to automatically build and deploy the site every time we push a new change. The result is a website that is easy to maintain and update, and that looks great on both desktop and mobile devices.
 

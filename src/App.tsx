@@ -1,7 +1,6 @@
 // For anchor linking, see https://www.npmjs.com/package/react-router-hash-link
 import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import Footer from './components/Footer.tsx'
 import Home from './pages/Home.tsx'
 import Legal from './pages/Legal.tsx'
 import './App.css'

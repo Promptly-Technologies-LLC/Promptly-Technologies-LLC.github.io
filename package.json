@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "setmetadata": "node scripts/setmetadata.mjs",
-    "build": "npm run setmetadata && npm run fetchblogfeed && tsc && vite build",
+    "build": "npm run setmetadata && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "echo promptlytechnologies.com > ./dist/CNAME && gh-pages -d dist"

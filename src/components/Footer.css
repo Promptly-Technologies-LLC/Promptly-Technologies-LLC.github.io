@@ -1,0 +1,7 @@
+.footer {@apply bottom-0 w-full}
+
+.footercontents {@apply justify-center mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8}
+
+.copyrighttext {@apply text-sm text-center font-bangers}
+
+.copyrighttext a {@apply hover:underline}

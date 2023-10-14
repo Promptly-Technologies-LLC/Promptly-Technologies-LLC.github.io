@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: '0 0 * * *'
 permissions:
   contents: write
 
@@ -26,11 +24,6 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Commit and push changes to repository
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: 'Automated build/blog feed update'
 
       - name: Get domain
         id: get-domain

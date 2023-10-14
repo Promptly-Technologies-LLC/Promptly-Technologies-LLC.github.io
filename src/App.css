@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 0;
+}
+
+html,
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
+    'Helvetica', sans-serif;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  @apply bg-white antialiased;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+}
+
+ body.loading * {
+  transition: none !important;
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @apply text-black underline hover:text-gray-600;
+}
+
+.headercontainer {
+  @apply mx-auto max-w-screen-sm text-center;
+}
+
+section {
+  @apply text-center;
+}
+
+h1 {
+  @apply text-4xl font-bold font-bangers;
+}
+
+h2 {
+  @apply text-2xl font-bold font-sans;
+}
+
+h3 {
+  @apply my-4 text-xl font-bold font-sans;
+}
+
+p {
+  @apply my-4 text-lg font-sans;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}

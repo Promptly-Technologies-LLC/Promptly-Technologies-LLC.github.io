@@ -1,0 +1,7 @@
+.creditcontainer {
+    @apply w-auto h-auto md:max-h-screen mx-auto grid gap-4 px-4 pb-4 grid-cols-4 md:grid-cols-10;
+}
+
+.panelcontainer {
+    @apply w-full text-center font-bangers py-6 col-span-2;
+}

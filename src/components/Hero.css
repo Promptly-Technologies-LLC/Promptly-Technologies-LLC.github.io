@@ -1,0 +1,47 @@
+/* hero.css */
+/* Using TailwindCSS with @apply */
+.hero-container {
+  @apply relative flex max-w-full overflow-hidden;
+  height: 100svh; 
+}
+
+.hero-image {
+  @apply w-full h-full object-cover z-0 flex-shrink-0;
+}
+
+.comic-title {
+  @apply flex justify-center items-center;
+}
+
+.top-content-wrapper {
+  @apply absolute top-0 left-0 right-0 flex flex-col justify-center items-center;
+}
+
+.comic-title, .top-content-wrapper {
+  @apply z-10;
+}
+
+.nav-wrapper {
+  @apply inline-flex justify-between;
+}
+
+.bottom-container {
+  @apply absolute bottom-0 left-0 right-0 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5;
+  z-index: 10;
+}
+
+.hero-script {
+  @apply text-center z-10 text-black font-euphoria text-xl sm:text-2xl leading-none;
+}
+
+.social-icons {
+  @apply flex space-x-4 mt-2 justify-center;
+}
+
+.icon-link {
+  @apply text-black;
+}
+
+.bottomwrapper {
+  @apply flex flex-col justify-center items-center col-start-1 md:col-start-3 xl:col-start-4;
+}

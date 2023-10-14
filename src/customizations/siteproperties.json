@@ -4,7 +4,7 @@
   "author": "Christopher C. Smith",
   "shortDescription": "AI-powered software for small businesses and nonprofits, developed out of Albany, New York",
   "longDescription": "With AI, small businesses can afford to build custom software. Early adopters will gain a profound advantage. Hire Promptly today to automate the busywork and find your software edge!",
-  "keywords": ["Artificial intelligence", "AI", "LLMs", "GPT-4", "OpenAI", "Promptly Technologies", "Promptly Technologies, LLC"],
+  "keywords": ["Artificial intelligence", "AI", "LLMs", "LLM wrapper apps", "GPT-4", "OpenAI", "Promptly Technologies", "Promptly Technologies, LLC"],
   "socialCards": ["/images/card.png"],
   "favicon": "/images/favicon.ico",
   "robots": {"index": true, "follow": true},

@@ -1,15 +1,17 @@
 import React from 'react';
 import './Home.css';
-import Pitch from '../components/ui/Pitch';
-import Services from '../components/ui/Services';
-import Book from '../components/ui/Book';
+import Hero from '../components/Hero';
+import Story from '../components/Story';
+import Book from '../components/Bookings';
+import Credits from '../components/Credits';
 
 const Home: React.FC = () => {
   return (
     <main id="skip">
-        <Pitch />
-        <Services />
+        <Hero />
+        <Story />
         <Book />
+        <Credits />
     </main>
   )
 }

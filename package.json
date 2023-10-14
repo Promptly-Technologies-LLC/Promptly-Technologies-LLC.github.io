@@ -1,18 +1,18 @@
 {
   "name": "promptlytechnologiesllc",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "author": "Christopher C. Smith",
   "homepage": "https://promptlytechnologies.com",
   "scripts": {
     "dev": "vite",
     "setmetadata": "node scripts/setmetadata.mjs",
-    "fetchblogfeed": "node scripts/fetchblogfeed.mjs",
     "build": "npm run setmetadata && npm run fetchblogfeed && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "echo promptlytechnologies.com > ./dist/CNAME && gh-pages -d dist"
   },
   "dependencies": {
+    "@react-hook/window-size": "^3.1.1",
     "@types/react-router-hash-link": "^2.4.6",
     "classnames": "^2.3.2",
     "flowbite-react": "^0.4.10",

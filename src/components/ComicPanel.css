@@ -1,0 +1,68 @@
+.comic-panel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.comic-panel-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.narration-container {
+  position: absolute;
+  z-index: 3;
+  padding: 2%;
+  width: 85%;
+}
+
+/* Horizontal Positions */
+.narration-container.h-left {
+  left: 2%;
+  max-width: 50%;
+}
+
+.narration-container.h-right {
+  right: 2%;
+  max-width: 50%;
+}
+
+@media only screen and (max-width: 300px) {
+  .narration-container.h-left,
+  .narration-container.h-right {
+    max-width: none;
+  }
+}
+
+.narration-container.h-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Vertical Positions */
+.narration-container.v-top {
+  top: 2%;
+}
+
+.narration-container.v-bottom {
+  bottom: 2%;
+}
+
+.narration-container.v-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Combined Positions */
+.narration-container.v-center.h-center {
+  transform: translate(-50%, -50%);
+}

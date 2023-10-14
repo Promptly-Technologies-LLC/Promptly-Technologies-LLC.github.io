@@ -1,0 +1,23 @@
+p {
+    @apply mb-4 text-base lg:text-lg;
+  }
+
+.legalheadercontainer {
+    @apply mx-auto max-w-screen-sm text-center mb-4 lg:mb-12;
+  }
+  
+.legalsection {
+    @apply py-6 lg:py-8 mx-auto max-w-screen-xl;
+  }
+
+.sectioncontainer {
+    @apply mx-auto max-w-screen-xl text-center py-8 px-4 lg:py-16 lg:px-6;
+  }
+  
+.contentcontainer {
+    @apply flex justify-center rounded-xl mb-6 lg:mb-8;
+  }
+  
+.textcontainer {
+    @apply w-full text-center;
+  }

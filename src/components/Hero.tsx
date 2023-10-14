@@ -33,19 +33,21 @@ const Hero: React.FC = () => {
             </div>
             <img className="hero-image" src={hero.src} alt={hero.alt} style={isLargeScreen ? { left: hero.adjustment } : {}} />
             <div className="bottom-container">
-                <ScallopedOval className="bottomwrapper px-10 py-10 mb-2 mx-8 sm:mx-12 md:mx-2 xl:mx-0">
-                    <div 
-                        className="hero-script"
-                        dangerouslySetInnerHTML={{ __html: hero.script }}
-                    />
-                    <div className="social-icons">
-                        {Object.entries(properties.socialProfiles).map(([key, value]) => {
-                            return (
-                                <SocialIcon iconName={key} url={value} className="icon-link" key={key}/>
-                            );
-                        })}
-                    </div>
-                </ScallopedOval>
+                <div className="bottomwrapper">
+                    <ScallopedOval className="px-10 py-10">
+                        <div 
+                            className="hero-script"
+                            dangerouslySetInnerHTML={{ __html: hero.script }}
+                        />
+                        <div className="social-icons">
+                            {Object.entries(properties.socialProfiles).map(([key, value]) => {
+                                return (
+                                    <SocialIcon iconName={key} url={value} className="icon-link" key={key}/>
+                                );
+                            })}
+                        </div>
+                    </ScallopedOval>
+                </div>
             </div>
         </section>
     );

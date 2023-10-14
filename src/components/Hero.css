@@ -18,7 +18,7 @@
 }
 
 .comic-title, .top-content-wrapper {
-  @apply z-10;
+  @apply z-20;
 }
 
 .nav-wrapper {
@@ -26,12 +26,12 @@
 }
 
 .bottom-container {
-  @apply absolute bottom-0 left-0 right-0 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5;
+  @apply absolute bottom-0 left-0 right-0 grid grid-cols-1 md:grid-cols-3;
   z-index: 10;
 }
 
 .hero-script {
-  @apply text-center z-10 text-black font-euphoria text-xl sm:text-2xl leading-none;
+  @apply text-center z-10 text-black font-euphoria text-2xl leading-none;
 }
 
 .social-icons {
@@ -43,5 +43,5 @@
 }
 
 .bottomwrapper {
-  @apply flex flex-col justify-center items-center col-start-1 md:col-start-3 xl:col-start-4;
+  @apply flex flex-col mx-auto mb-2 justify-center items-center col-start-1 md:col-start-3 max-w-custom;
 }

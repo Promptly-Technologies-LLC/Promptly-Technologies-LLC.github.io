@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         'bangers': ['Bangers', 'cursive'],
         'euphoria': ['Allura', 'cursive'],
+      },
+      maxWidth: {
+        'custom': '300px',
       }
     }
   }

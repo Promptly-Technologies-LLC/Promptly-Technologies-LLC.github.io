@@ -13,19 +13,19 @@ const Story: React.FC = () => {
       <ThreePanelRow panels={[
         <ComicPanel
           text="Sometimes it seems like technology will eat the world." 
-          backgroundImage="images/mechaboi.png"
+          backgroundImage="images/mechaboi.jpg"
           altText='Mechanical kaiju terrorizing a city'
           verticalPosition="bottom"
         />,
         <ComicPanel 
           text="Megafirms deploy unstoppable algorithms that extract, exploit, and dehumanize for shareholder acclaim." 
-          backgroundImage="images/giantrobot.png"
+          backgroundImage="images/giantrobot.jpg"
           altText='Giant robot with a corporate logo on its chest'
           verticalPosition="center"
         />,
         <ComicPanel 
           text="We watch this race to the bottom unfold on our screens, feeling powerless to stop its course." 
-          backgroundImage="images/phones.png"
+          backgroundImage="images/phones.jpg"
           altText='Crowds of people looking at their phones'
           verticalPosition="top"
         />
@@ -33,21 +33,21 @@ const Story: React.FC = () => {
       <ThreePanelBlock panels={[
         <ComicPanel 
           text="Enter OpenAI. They make AI available for pennies for anyone to use."
-          backgroundImage="images/SamAltman.png"
+          backgroundImage="images/SamAltman.jpg"
           altText = 'OpenAI CEO Sam Altman hanging out with poor people'
           horizontalPosition="left"
           verticalPosition="top"
         />,
         <ComicPanel 
           text="Now we hurtle toward the future at speed. It's terrifying, but it also gives each of us the power to shape the world."
-          backgroundImage="images/future.png"
+          backgroundImage="images/future.jpg"
           altText='A person falling into a wormhole'
           horizontalPosition="left"
           verticalPosition='top'
         />,
         <ComicPanel 
           text="Suddenly, plucky small businesses and pro-human non-profits can compete with corporations. Plug a little software into AI, and anyone automate like a megafirm; and the cost to build software is plummeting.<br/><br/>AI doesn't have to replace us. Instead, it can augment and empower us. It enables us to do more work, to finish more projects, to realize creative visions we never could before."
-          backgroundImage="images/creativity.png"
+          backgroundImage="images/creativity.jpg"
           altText="A collage of abstract art"
           verticalPosition="center"
         />
@@ -55,34 +55,34 @@ const Story: React.FC = () => {
       <FivePanelBlock panels={[
         <ComicPanel 
           text="Or so I hope. I'm <a href='https://christophercarrollsmith.com/'>Christopher Smith</a>, and I founded Promptly to build AI-powered software for human thriving."
-          backgroundImage="images/chris.png"
+          backgroundImage="images/chris.jpg"
           altText="A cartoon of Christopher Smith with an intern and a dog"
           horizontalPosition="left"
           verticalPosition='bottom'
         />,
         <ComicPanel 
           text="We started with <a href='https://github.com/Promptly-Technologies-LLC/dir-diary'>dir-diary</a>, an open-source tool to help freeware developers document their code."
-          backgroundImage="images/opensource.png"
+          backgroundImage="images/opensource.jpg"
           altText="Young open source developers working in a library"
           verticalPosition='bottom'
           horizontalPosition="right"
         />,
         <ComicPanel 
           text="We also put out a free educational newsletter on how to use AI tools, <a href='https://knowledgeworkersguide.substack.com/'>A Knowledge Worker's Guide to the Singularity</a>."
-          backgroundImage="images/AIart.png"
+          backgroundImage="images/AIart.jpg"
           altText=""
           horizontalPosition="right"
           verticalPosition='top'
         />,
         <ComicPanel 
           text="And we're currently building Session Scribe, a hackathon-winning accessibility tool for the in-person classroom."
-          backgroundImage="images/classroom.png"
+          backgroundImage="images/classroom.jpg"
           horizontalPosition="left"
           verticalPosition='top'
         />,
         <ComicPanel 
           text="We also build AI agents, web apps, and chatbots by commission for small businesses and nonprofits. Hire us today to help you green the earth, connect people, or empower creators through AI!"
-          backgroundImage="images/greening.png"
+          backgroundImage="images/greening.jpg"
           horizontalPosition="center"
           verticalPosition='bottom'
         />

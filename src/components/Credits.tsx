@@ -13,7 +13,7 @@ const Credits: React.FC = () => {
         <div className="panelcontainer">
           <span>Christopher C. Smith</span>
           <ComicPanel 
-            backgroundImage="images/team/Chris.png"
+            backgroundImage="images/team/Chris.jpg"
             altText = 'Portrait of Christopher C. Smith, President'
           />
           <span>President</span>
@@ -21,7 +21,7 @@ const Credits: React.FC = () => {
         <div className="panelcontainer">
           <span>Baljinder Singh</span>
           <ComicPanel
-            backgroundImage="images/team/Baljinder.png"
+            backgroundImage="images/team/Baljinder.jpg"
             altText='Portrait of Baljinder Singh, Partner'
           />
           <span>Partner</span>
@@ -29,7 +29,7 @@ const Credits: React.FC = () => {
         <div className="panelcontainer">
           <span>Neil Carlson</span>
           <ComicPanel 
-            backgroundImage="images/team/Neil.png"
+            backgroundImage="images/team/Neil.jpg"
             altText="Portrait of Neil Carlson, Partner"
           />
           <span>Partner</span>
@@ -37,7 +37,7 @@ const Credits: React.FC = () => {
         <div className="panelcontainer">
           <span>Cliff Bentley</span>
           <ComicPanel 
-            backgroundImage="images/team/Cliff.png"
+            backgroundImage="images/team/Cliff.jpg"
             altText = 'Portrait of Cliff Bentley, Partner'
           />
           <span>Partner</span>
@@ -45,7 +45,7 @@ const Credits: React.FC = () => {
         <div className="panelcontainer col-start-2 md:col-start-9">
           <span>MidJourney Bot</span>
           <ComicPanel 
-            backgroundImage="images/team/MidJourneyBot.png"
+            backgroundImage="images/team/MidJourneyBot.jpg"
             altText = 'Portrait of MidJourney Bot, Robot Intern'
           />
           <span>Robot Intern</span>

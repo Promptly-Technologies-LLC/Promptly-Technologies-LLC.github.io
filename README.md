@@ -15,3 +15,9 @@ The `Booking` section is a Calendly iframe displayed from offsite and must be co
 ## Contributing
 
 If you find a bug or have a feature request, please open an issue on Github. If you would like to contribute code, please open a pull request. We welcome contributions!
+
+## To-do
+
+- [ ] Add links to blog.
+- [ ] Create a Promptly Github profile page.
+- [ ] Add more socials.

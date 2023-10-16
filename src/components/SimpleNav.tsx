@@ -10,7 +10,7 @@ const FullNav: React.FC = () => {
                 <HashLink to="/#story" className="simplenavlink">Story</HashLink>
                 <HashLink to="/#book" className="simplenavlink">Bookings</HashLink>
                 <HashLink to="/#credits" className="simplenavlink">Credits</HashLink>
-                <HashLink to="/Legal#privacy" className="simplenavlink">Privacy Policy</HashLink>
+                <HashLink to="/Legal" className="simplenavlink">Privacy Policy</HashLink>
             </div>
         </div>
     );

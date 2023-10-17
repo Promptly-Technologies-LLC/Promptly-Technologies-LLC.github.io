@@ -1,0 +1,37 @@
+{
+  "title": "PromptlyTechnologies: Zazzle.com Store:",
+  "link": "http://feed.zazzle.com/z.2/api/find.aspx?ft=rss&ch=promptlytechnologies&ou=%2Fstore%2Fpromptlytechnologies%2Frss%2Ffeed",
+  "description": "",
+  "language": "en-us",
+  "ttl": 60,
+  "opensearch:totalResults": 1,
+  "opensearch:startIndex": 1,
+  "opensearch:itemsPerPage": 60,
+  "opensearch:Query": {
+    "@_role": "request",
+    "@_searchTerms": ""
+  },
+  "item": {
+    "guid": "https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",
+    "pubDate": "Sun, 07 May 2023 15:11:03 GMT",
+    "title": "Saturn Surfer T-Shirt",
+    "link": "https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",
+    "author": "PromptlyTechnologies",
+    "description": "<div\n\tid=\"page_zWidget0\"\n\tclass=\"ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct\"\n\t\n    data-itemid='256782080270214030'\n>\n\t\n\n\t<div\n        id=\"page_zWidget0-main\"\n        class=\"ZazzleCollectionItemCell-main ZazzleCollectionItemCellProduct-main\"\n    >\n\t\t\n\n\t\t\n\t\t\n\t\t<div  class=\"ZazzleCollectionItemCell-realview ZazzleCollectionItemCellProduct-realview clearfix\">\n\t\t\t\n\t\t\t<a href=\"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030\" id=\"page_zWidget0-imageLink\" class=\"ZazzleCollectionItemCell-realviewLink ZazzleCollectionItemCellProduct-realviewLink\">\n\t\t<div class=\"ZazzleCollectionItemCellProduct-image\">\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-placeholder\"></div>\n\t\t\n\n\n\n\t<img\n\t\tid=\"page_zWidget0-preview\"\n\t\tclass=\"ZazzleCollectionItemCell-realviewImage ZazzleCollectionItemCellProduct-realviewImage\"\n\t\tsrc=\"https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_152.jpg\"\n\t\t alt=\"Saturn Surfer T-Shirt\"\n\t/>\n\n\t\n\n\t\t</div>\n\t\t</a>\n\t\t\t\n\t\t</div>\n\n\t\t\n\n\t\t\n\t\t<div class=\"ZazzleCollectionItemCell-info ZazzleCollectionItemCellProduct-info clearfix \" id=\"page_zWidget0-info\">\n\t\t\n\t\t\t\n\n\t\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-title\" >\n\t\t\t\t<a href=\"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030\" id=\"page_zWidget0-titleLink\" class=\"ZazzleCollectionItemCellProduct-titleLink\">Saturn Surfer T-Shirt</a>\n\t\t\t\t\t\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-price\" id=\"page_zWidget0-price\">$21.20</div>\n\t\t\t<span class=\"ZazzleCollectionItemCellProduct-byLine\">by <a href=\"javascript://\" id=\"page_zWidget0-storeLink\">PromptlyTechnologies</a></span>\n\t\t</div>\n\t\t\n\t</div>\n\n\t\n</div>",
+    "price": "$21.20",
+    "media:title": "Saturn Surfer T-Shirt",
+    "media:description": "An astronaut surfs the golden rings of a planet in outer space—a blue gas giant",
+    "media:price": "$21.20",
+    "media:thumbnail": {
+      "@_url": "https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_152.jpg"
+    },
+    "media:content": {
+      "@_url": "https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_500.jpg"
+    },
+    "media:keywords": "space, astronaut, planet, sci-fi, science fiction, ringed planet, surfing, orange, blue, surfer",
+    "media:rating": {
+      "#text": "g",
+      "@_scheme": "urn:mpaa"
+    }
+  }
+}

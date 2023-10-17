@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "setmetadata": "node scripts/setmetadata.mjs",
-    "build": "npm run setmetadata && tsc && vite build",
+    "fetchproducts": "node scripts/fetchproductfeed.mjs",
+    "build": "npm run setmetadata && npm run fetchproducts && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "echo promptlytechnologies.com > ./dist/CNAME && gh-pages -d dist"
@@ -15,7 +16,6 @@
     "@react-hook/window-size": "^3.1.1",
     "@types/react-router-hash-link": "^2.4.6",
     "classnames": "^2.3.2",
-    "flowbite-react": "^0.4.10",
     "fs": "^0.0.1-security",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",

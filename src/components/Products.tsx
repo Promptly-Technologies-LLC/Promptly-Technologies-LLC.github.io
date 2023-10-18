@@ -18,7 +18,6 @@ const Products: React.FC = () => {
                         <img src={item["media:content"]["@_url"]} alt={item.title} className="product-image"/>
                         <div className="product-hover-banner">
                             <span className="product-title">{item["media:title"]}</span>
-                            <span className="product-description">{item["media:description"]}</span>
                         </div>
                     </div>
                     <div className="product-price">{item["media:price"]}</div>
@@ -28,7 +27,7 @@ const Products: React.FC = () => {
     }
 
     return(
-        <section id="store" className="mx-auto mt-12 sm:w-3/4">
+        <section id="store" className="mx-auto mt-12">
             <div className="headercontainer">
                 <h1>Store</h1>
             </div>

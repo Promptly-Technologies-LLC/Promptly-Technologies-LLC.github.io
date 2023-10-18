@@ -18,6 +18,6 @@ If you find a bug or have a feature request, please open an issue on Github. If 
 
 ## To-do
 
-- [ ] Add links to blog.
 - [ ] Create a Promptly Github profile page.
 - [ ] Add more socials.
+- [ ] Add product descriptions to store with `<span className="product-description">{item["media:description"]}</span>`.

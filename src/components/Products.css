@@ -1,14 +1,17 @@
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     @apply mt-12;
 }
 
 .product-item {
     position: relative;
+    max-width: 250px;
+    margin: 0 auto;
 }
 
+/* The rest of your CSS remains unchanged */
 .product-link {
     text-decoration: none;
     color: inherit;
@@ -44,6 +47,7 @@
 .product-description {
     display: block;
     font-size: 0.9em;
+    line-height: 1.2;
     @apply text-white;
 }
 

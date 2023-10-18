@@ -4,34 +4,105 @@
   "description": "",
   "language": "en-us",
   "ttl": 60,
-  "opensearch:totalResults": 1,
+  "opensearch:totalResults": 4,
   "opensearch:startIndex": 1,
   "opensearch:itemsPerPage": 60,
   "opensearch:Query": {
     "@_role": "request",
     "@_searchTerms": ""
   },
-  "item": {
-    "guid": "https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",
-    "pubDate": "Sun, 07 May 2023 15:11:03 GMT",
-    "title": "Saturn Surfer T-Shirt",
-    "link": "https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",
-    "author": "PromptlyTechnologies",
-    "description": "<div\n\tid=\"page_zWidget0\"\n\tclass=\"ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct\"\n\t\n    data-itemid='256782080270214030'\n>\n\t\n\n\t<div\n        id=\"page_zWidget0-main\"\n        class=\"ZazzleCollectionItemCell-main ZazzleCollectionItemCellProduct-main\"\n    >\n\t\t\n\n\t\t\n\t\t\n\t\t<div  class=\"ZazzleCollectionItemCell-realview ZazzleCollectionItemCellProduct-realview clearfix\">\n\t\t\t\n\t\t\t<a href=\"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030\" id=\"page_zWidget0-imageLink\" class=\"ZazzleCollectionItemCell-realviewLink ZazzleCollectionItemCellProduct-realviewLink\">\n\t\t<div class=\"ZazzleCollectionItemCellProduct-image\">\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-placeholder\"></div>\n\t\t\n\n\n\n\t<img\n\t\tid=\"page_zWidget0-preview\"\n\t\tclass=\"ZazzleCollectionItemCell-realviewImage ZazzleCollectionItemCellProduct-realviewImage\"\n\t\tsrc=\"https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_152.jpg\"\n\t\t alt=\"Saturn Surfer T-Shirt\"\n\t/>\n\n\t\n\n\t\t</div>\n\t\t</a>\n\t\t\t\n\t\t</div>\n\n\t\t\n\n\t\t\n\t\t<div class=\"ZazzleCollectionItemCell-info ZazzleCollectionItemCellProduct-info clearfix \" id=\"page_zWidget0-info\">\n\t\t\n\t\t\t\n\n\t\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-title\" >\n\t\t\t\t<a href=\"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030\" id=\"page_zWidget0-titleLink\" class=\"ZazzleCollectionItemCellProduct-titleLink\">Saturn Surfer T-Shirt</a>\n\t\t\t\t\t\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-price\" id=\"page_zWidget0-price\">$21.20</div>\n\t\t\t<span class=\"ZazzleCollectionItemCellProduct-byLine\">by <a href=\"javascript://\" id=\"page_zWidget0-storeLink\">PromptlyTechnologies</a></span>\n\t\t</div>\n\t\t\n\t</div>\n\n\t\n</div>",
-    "price": "$21.20",
-    "media:title": "Saturn Surfer T-Shirt",
-    "media:description": "An astronaut surfs the golden rings of a planet in outer space—a blue gas giant",
-    "media:price": "$21.20",
-    "media:thumbnail": {
-      "@_url": "https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_152.jpg"
+  "item": [
+    {
+      "guid": "https://www.zazzle.com/artificial_emotional_intelligence_t_shirt-256591972449338616",
+      "pubDate": "Tue, 17 Oct 2023 20:52:05 GMT",
+      "title": "Artificial Emotional Intelligence T-Shirt",
+      "link": "https://www.zazzle.com/artificial_emotional_intelligence_t_shirt-256591972449338616",
+      "author": "PromptlyTechnologies",
+      "description": "<div\n\tid=\"page_zWidget0\"\n\tclass=\"ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct\"\n\t\n    data-itemid='256591972449338616'\n>\n\t\n\n\t<div\n        id=\"page_zWidget0-main\"\n        class=\"ZazzleCollectionItemCell-main ZazzleCollectionItemCellProduct-main\"\n    >\n\t\t\n\n\t\t\n\t\t\n\t\t<div  class=\"ZazzleCollectionItemCell-realview ZazzleCollectionItemCellProduct-realview clearfix\">\n\t\t\t\n\t\t\t<a href=\"https://www.zazzle.com/artificial_emotional_intelligence_t_shirt-256591972449338616\" id=\"page_zWidget0-imageLink\" class=\"ZazzleCollectionItemCell-realviewLink ZazzleCollectionItemCellProduct-realviewLink\">\n\t\t<div class=\"ZazzleCollectionItemCellProduct-image\">\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-placeholder\"></div>\n\t\t\n\n\n\n\t<img\n\t\tid=\"page_zWidget0-preview\"\n\t\tclass=\"ZazzleCollectionItemCell-realviewImage ZazzleCollectionItemCellProduct-realviewImage\"\n\t\tsrc=\"https://rlv.zcache.com/artificial_emotional_intelligence_t_shirt-r353d26620dc04647909b0627bc3093c2_k2gr0_152.jpg\"\n\t\t alt=\"Artificial Emotional Intelligence T-Shirt\"\n\t/>\n\n\t\n\n\t\t</div>\n\t\t</a>\n\t\t\t\n\t\t</div>\n\n\t\t\n\n\t\t\n\t\t<div class=\"ZazzleCollectionItemCell-info ZazzleCollectionItemCellProduct-info clearfix \" id=\"page_zWidget0-info\">\n\t\t\n\t\t\t\n\n\t\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-title\" >\n\t\t\t\t<a href=\"https://www.zazzle.com/artificial_emotional_intelligence_t_shirt-256591972449338616\" id=\"page_zWidget0-titleLink\" class=\"ZazzleCollectionItemCellProduct-titleLink\">Artificial Emotional Intelligence T-Shirt</a>\n\t\t\t\t\t\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-price\" id=\"page_zWidget0-price\">$21.95</div>\n\t\t\t<span class=\"ZazzleCollectionItemCellProduct-byLine\">by <a href=\"javascript://\" id=\"page_zWidget0-storeLink\">PromptlyTechnologies</a></span>\n\t\t</div>\n\t\t\n\t</div>\n\n\t\n</div>",
+      "price": "$21.95",
+      "media:title": "Artificial Emotional Intelligence T-Shirt",
+      "media:description": "We always thought artificial intelligence would be terrible at art, but great at math. Instead, we got the opposite—chatbots with surprising emotional sensitivity and social intelligence, but that fail at five-digit multiplication problems. In some ways, this may be the best-case scenario for human survival, because it means AI already possesses all the skills it needs to peacefully coexist with us.",
+      "media:price": "$21.95",
+      "media:thumbnail": {
+        "@_url": "https://rlv.zcache.com/artificial_emotional_intelligence_t_shirt-r353d26620dc04647909b0627bc3093c2_k2gr0_152.jpg"
+      },
+      "media:content": {
+        "@_url": "https://rlv.zcache.com/artificial_emotional_intelligence_t_shirt-r353d26620dc04647909b0627bc3093c2_k2gr0_500.jpg"
+      },
+      "media:keywords": "science fiction, robot, child, rose, pink, fantasy, cute, adorable, artificial intelligence, future",
+      "media:rating": {
+        "#text": "g",
+        "@_scheme": "urn:mpaa"
+      }
     },
-    "media:content": {
-      "@_url": "https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_500.jpg"
+    {
+      "guid": "https://www.zazzle.com/triumph_of_the_ukrainian_tractor_wood_wall_art-256658668742223909",
+      "pubDate": "Tue, 17 Oct 2023 20:28:11 GMT",
+      "title": "Triumph of the Ukrainian tractor Wood Wall Art",
+      "link": "https://www.zazzle.com/triumph_of_the_ukrainian_tractor_wood_wall_art-256658668742223909",
+      "author": "PromptlyTechnologies",
+      "description": "<div\n\tid=\"page_zWidget1\"\n\tclass=\"ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct\"\n\t\n    data-itemid='256658668742223909'\n>\n\t\n\n\t<div\n        id=\"page_zWidget1-main\"\n        class=\"ZazzleCollectionItemCell-main ZazzleCollectionItemCellProduct-main\"\n    >\n\t\t\n\n\t\t\n\t\t\n\t\t<div  class=\"ZazzleCollectionItemCell-realview ZazzleCollectionItemCellProduct-realview clearfix\">\n\t\t\t\n\t\t\t<a href=\"https://www.zazzle.com/triumph_of_the_ukrainian_tractor_wood_wall_art-256658668742223909\" id=\"page_zWidget1-imageLink\" class=\"ZazzleCollectionItemCell-realviewLink ZazzleCollectionItemCellProduct-realviewLink\">\n\t\t<div class=\"ZazzleCollectionItemCellProduct-image\">\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-placeholder\"></div>\n\t\t\n\n\n\n\t<img\n\t\tid=\"page_zWidget1-preview\"\n\t\tclass=\"ZazzleCollectionItemCell-realviewImage ZazzleCollectionItemCellProduct-realviewImage\"\n\t\tsrc=\"https://rlv.zcache.com/triumph_of_the_ukrainian_tractor_wood_wall_art-rc085af1b85524df59458ccf5e0c2025e_zfgxb_152.jpg?rlvnet=1\"\n\t\t alt=\"Triumph of the Ukrainian tractor Wood Wall Art\"\n\t/>\n\n\t\n\n\t\t</div>\n\t\t</a>\n\t\t\t\n\t\t</div>\n\n\t\t\n\n\t\t\n\t\t<div class=\"ZazzleCollectionItemCell-info ZazzleCollectionItemCellProduct-info clearfix \" id=\"page_zWidget1-info\">\n\t\t\n\t\t\t\n\n\t\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-title\" >\n\t\t\t\t<a href=\"https://www.zazzle.com/triumph_of_the_ukrainian_tractor_wood_wall_art-256658668742223909\" id=\"page_zWidget1-titleLink\" class=\"ZazzleCollectionItemCellProduct-titleLink\">Triumph of the Ukrainian tractor Wood Wall Art</a>\n\t\t\t\t\t\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-price\" id=\"page_zWidget1-price\">$49.60</div>\n\t\t\t<span class=\"ZazzleCollectionItemCellProduct-byLine\">by <a href=\"javascript://\" id=\"page_zWidget1-storeLink\">PromptlyTechnologies</a></span>\n\t\t</div>\n\t\t\n\t</div>\n\n\t\n</div>",
+      "price": "$49.60",
+      "media:title": "Triumph of the Ukrainian tractor",
+      "media:description": "Agriculture has long been a pillar of Ukrainian strength. But after the Russian invasion of 2022, tractors also became a symbol of resistance after several Russian battle tanks got stuck in the mud and were hauled away by Ukrainian tractors for use in the country's defense. Also depicted in this image: sunflowers sprouting from the captured tank's hatch.\n\nSlava heroiam! Slava traktoram! Slava ukraini!",
+      "media:price": "$49.60",
+      "media:thumbnail": {
+        "@_url": "https://rlv.zcache.com/triumph_of_the_ukrainian_tractor_wood_wall_art-rc085af1b85524df59458ccf5e0c2025e_zfgxb_152.jpg?rlvnet=1"
+      },
+      "media:content": {
+        "@_url": "https://rlv.zcache.com/triumph_of_the_ukrainian_tractor_wood_wall_art-rc085af1b85524df59458ccf5e0c2025e_zfgxb_500.jpg?rlvnet=1"
+      },
+      "media:keywords": "tractor, ukraine, slava ukraini, slava heroiam, tank, sunflowers, russia, war, victory",
+      "media:rating": {
+        "#text": "g",
+        "@_scheme": "urn:mpaa"
+      }
     },
-    "media:keywords": "space, astronaut, planet, sci-fi, science fiction, ringed planet, surfing, orange, blue, surfer",
-    "media:rating": {
-      "#text": "g",
-      "@_scheme": "urn:mpaa"
+    {
+      "guid": "https://www.zazzle.com/sunflower_season_slava_ukraini_t_shirt-256008436262330535",
+      "pubDate": "Tue, 17 Oct 2023 17:20:02 GMT",
+      "title": "Sunflower Season Slava Ukraini T-Shirt",
+      "link": "https://www.zazzle.com/sunflower_season_slava_ukraini_t_shirt-256008436262330535",
+      "author": "PromptlyTechnologies",
+      "description": "<div\n\tid=\"page_zWidget2\"\n\tclass=\"ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct\"\n\t\n    data-itemid='256008436262330535'\n>\n\t\n\n\t<div\n        id=\"page_zWidget2-main\"\n        class=\"ZazzleCollectionItemCell-main ZazzleCollectionItemCellProduct-main\"\n    >\n\t\t\n\n\t\t\n\t\t\n\t\t<div  class=\"ZazzleCollectionItemCell-realview ZazzleCollectionItemCellProduct-realview clearfix\">\n\t\t\t\n\t\t\t<a href=\"https://www.zazzle.com/sunflower_season_slava_ukraini_t_shirt-256008436262330535\" id=\"page_zWidget2-imageLink\" class=\"ZazzleCollectionItemCell-realviewLink ZazzleCollectionItemCellProduct-realviewLink\">\n\t\t<div class=\"ZazzleCollectionItemCellProduct-image\">\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-placeholder\"></div>\n\t\t\n\n\n\n\t<img\n\t\tid=\"page_zWidget2-preview\"\n\t\tclass=\"ZazzleCollectionItemCell-realviewImage ZazzleCollectionItemCellProduct-realviewImage\"\n\t\tsrc=\"https://rlv.zcache.com/sunflower_season_slava_ukraini_t_shirt-r9fe0ac8f18b440c6a09e114cf6412a67_k2gr0_152.jpg\"\n\t\t alt=\"Sunflower Season Slava Ukraini T-Shirt\"\n\t/>\n\n\t\n\n\t\t</div>\n\t\t</a>\n\t\t\t\n\t\t</div>\n\n\t\t\n\n\t\t\n\t\t<div class=\"ZazzleCollectionItemCell-info ZazzleCollectionItemCellProduct-info clearfix \" id=\"page_zWidget2-info\">\n\t\t\n\t\t\t\n\n\t\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-title\" >\n\t\t\t\t<a href=\"https://www.zazzle.com/sunflower_season_slava_ukraini_t_shirt-256008436262330535\" id=\"page_zWidget2-titleLink\" class=\"ZazzleCollectionItemCellProduct-titleLink\">Sunflower Season Slava Ukraini T-Shirt</a>\n\t\t\t\t\t\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-price\" id=\"page_zWidget2-price\">$21.95</div>\n\t\t\t<span class=\"ZazzleCollectionItemCellProduct-byLine\">by <a href=\"javascript://\" id=\"page_zWidget2-storeLink\">PromptlyTechnologies</a></span>\n\t\t</div>\n\t\t\n\t</div>\n\n\t\n</div>",
+      "price": "$21.95",
+      "media:title": "Sunflower Season Slava Ukraini T-Shirt",
+      "media:description": "The sunflower is the national flower of Ukraine and holds a special place in the hearts of many Ukrainians. Amid the Russian invasion that began in 2022, it also became a symbol of resistance and defiance after a Ukrainian grandmother was recorded telling armed Russian soldiers, “Take these seeds so sunflowers grow here when you die.”\n\n50% of proceeds from Ukraine-themed products will be donated to as military or humanitarian aid to Ukraine.",
+      "media:price": "$21.95",
+      "media:thumbnail": {
+        "@_url": "https://rlv.zcache.com/sunflower_season_slava_ukraini_t_shirt-r9fe0ac8f18b440c6a09e114cf6412a67_k2gr0_152.jpg"
+      },
+      "media:content": {
+        "@_url": "https://rlv.zcache.com/sunflower_season_slava_ukraini_t_shirt-r9fe0ac8f18b440c6a09e114cf6412a67_k2gr0_500.jpg"
+      },
+      "media:keywords": "heroiam, slava, glory, ukraine, ukraini, russia, war, resistance, democracy, uaf",
+      "media:rating": {
+        "#text": "g",
+        "@_scheme": "urn:mpaa"
+      }
+    },
+    {
+      "guid": "https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",
+      "pubDate": "Sun, 07 May 2023 15:11:03 GMT",
+      "title": "Saturn Surfer T-Shirt",
+      "link": "https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",
+      "author": "PromptlyTechnologies",
+      "description": "<div\n\tid=\"page_zWidget3\"\n\tclass=\"ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct\"\n\t\n    data-itemid='256782080270214030'\n>\n\t\n\n\t<div\n        id=\"page_zWidget3-main\"\n        class=\"ZazzleCollectionItemCell-main ZazzleCollectionItemCellProduct-main\"\n    >\n\t\t\n\n\t\t\n\t\t\n\t\t<div  class=\"ZazzleCollectionItemCell-realview ZazzleCollectionItemCellProduct-realview clearfix\">\n\t\t\t\n\t\t\t<a href=\"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030\" id=\"page_zWidget3-imageLink\" class=\"ZazzleCollectionItemCell-realviewLink ZazzleCollectionItemCellProduct-realviewLink\">\n\t\t<div class=\"ZazzleCollectionItemCellProduct-image\">\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-placeholder\"></div>\n\t\t\n\n\n\n\t<img\n\t\tid=\"page_zWidget3-preview\"\n\t\tclass=\"ZazzleCollectionItemCell-realviewImage ZazzleCollectionItemCellProduct-realviewImage\"\n\t\tsrc=\"https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_152.jpg\"\n\t\t alt=\"Saturn Surfer T-Shirt\"\n\t/>\n\n\t\n\n\t\t</div>\n\t\t</a>\n\t\t\t\n\t\t</div>\n\n\t\t\n\n\t\t\n\t\t<div class=\"ZazzleCollectionItemCell-info ZazzleCollectionItemCellProduct-info clearfix \" id=\"page_zWidget3-info\">\n\t\t\n\t\t\t\n\n\t\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-title\" >\n\t\t\t\t<a href=\"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030\" id=\"page_zWidget3-titleLink\" class=\"ZazzleCollectionItemCellProduct-titleLink\">Saturn Surfer T-Shirt</a>\n\t\t\t\t\t\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"ZazzleCollectionItemCellProduct-price\" id=\"page_zWidget3-price\">$21.20</div>\n\t\t\t<span class=\"ZazzleCollectionItemCellProduct-byLine\">by <a href=\"javascript://\" id=\"page_zWidget3-storeLink\">PromptlyTechnologies</a></span>\n\t\t</div>\n\t\t\n\t</div>\n\n\t\n</div>",
+      "price": "$21.20",
+      "media:title": "Saturn Surfer T-Shirt",
+      "media:description": "An astronaut surfs the golden rings of a planet in outer space—a blue gas giant",
+      "media:price": "$21.20",
+      "media:thumbnail": {
+        "@_url": "https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_152.jpg"
+      },
+      "media:content": {
+        "@_url": "https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_500.jpg"
+      },
+      "media:keywords": "space, astronaut, planet, sci-fi, science fiction, ringed planet, surfing, orange, blue, surfer",
+      "media:rating": {
+        "#text": "g",
+        "@_scheme": "urn:mpaa"
+      }
     }
-  }
+  ]
 }

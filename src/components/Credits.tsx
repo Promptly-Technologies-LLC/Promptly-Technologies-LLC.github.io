@@ -19,7 +19,7 @@ const Credits: React.FC = () => {
           <span>President</span>
         </div>
         <div className="panelcontainer">
-          <span>Baljinder Singh</span>
+          <span>BJ Singh</span>
           <ComicPanel
             backgroundImage="images/team/Baljinder.jpg"
             altText='Portrait of BJ Singh, Partner'

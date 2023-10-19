@@ -40,9 +40,12 @@ const Hero: React.FC = () => {
                             dangerouslySetInnerHTML={{ __html: hero.script }}
                         />
                         <div className="social-icons">
-                            {Object.entries(properties.socialProfiles).map(([key, value]) => {
+                            {Object.entries(properties.socialProfiles).map(([key, value], index) => {
                                 return (
-                                    <SocialIcon iconName={key} url={value} className="icon-link" key={key}/>
+                                    <>
+                                        {(index !== 0 && index % 4 === 0) && <br />}
+                                        <SocialIcon iconName={key} url={value} className="icon-link" key={key}/>
+                                    </>
                                 );
                             })}
                         </div>

@@ -6,6 +6,10 @@ import './Products.css';
 const Products: React.FC = () => {
     const productFeed: ProductFeed = productFeedJSON;
 
+    const truncateDescription = (description: string, maxLength: number = 150) => {
+        return description.length <= maxLength ? description : description.slice(0, maxLength) + '...';
+    };
+
     const renderProductItems = () => {
         if (!productFeed || !productFeed.item) return null;
 
@@ -18,6 +22,7 @@ const Products: React.FC = () => {
                         <img src={item["media:content"]["@_url"]} alt={item.title} className="product-image"/>
                         <div className="product-hover-banner">
                             <span className="product-title">{item["media:title"]}</span>
+                            <span className="product-description">{truncateDescription(item["media:description"])}</span>
                         </div>
                     </div>
                     <div className="product-price">{item["media:price"]}</div>

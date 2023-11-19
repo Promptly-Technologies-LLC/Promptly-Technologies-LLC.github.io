@@ -28,12 +28,12 @@
 /* Horizontal Positions */
 .narration-container.h-left {
   left: 2%;
-  max-width: 50%;
+  max-width: 60%;
 }
 
 .narration-container.h-right {
   right: 2%;
-  max-width: 50%;
+  max-width: 60%;
 }
 
 @media only screen and (max-width: 300px) {

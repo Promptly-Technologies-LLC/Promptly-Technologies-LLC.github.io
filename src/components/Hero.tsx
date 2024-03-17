@@ -42,9 +42,7 @@ const Hero: React.FC = () => {
                         <div className="social-icons">
                             {Object.entries(properties.socialProfiles).map(([key, value]) => {
                                 return (
-                                    <>
-                                        <SocialIcon iconName={key} url={value} className="icon-link" key={key}/>
-                                    </>
+                                    <SocialIcon iconName={key} url={value} className="icon-link" key={key}/>
                                 );
                             })}
                         </div>

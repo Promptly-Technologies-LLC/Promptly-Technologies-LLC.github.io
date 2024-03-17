@@ -13,7 +13,7 @@ html {
 
 html,
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
+  font-family: 'Bangers', cursive, -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
     'Helvetica', sans-serif;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -40,7 +40,7 @@ a {
 }
 
 section {
-  @apply text-center;
+  @apply text-center w-full;
 }
 
 h1 {
@@ -56,7 +56,19 @@ h3 {
 }
 
 p {
-  @apply my-4 text-lg font-sans;
+  @apply py-4 text-lg font-sans;
+}
+
+button {
+  @apply my-4 text-base font-sans;
+}
+
+input, textarea {
+  @apply text-base font-sans w-full border-gray-200 border-2;
+}
+
+.button {
+  @apply p-2 m-0 bg-blue-600 hover:bg-blue-800 text-white rounded-md;
 }
 
 .animated {

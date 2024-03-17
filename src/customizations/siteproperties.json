@@ -8,6 +8,7 @@
   "socialCards": ["/images/card.jpg"],
   "favicon": "/images/favicon.ico",
   "robots": {"index": true, "follow": true},
+  "formspreeFormId": "xqkrdalo",
   "calendlyUrl": "https://calendly.com/promptly-technologies/10min",
   "zazzleUrl" : "https://feed.zazzle.com/store/promptlytechnologies/rss",
   "callToAction": "Book a free ten-minute meeting today to discuss how Promptly can help your business grapple with disruption by AI",

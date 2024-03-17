@@ -15,7 +15,8 @@ interface SiteProperties {
     socialCards: string[];
     favicon: string;
     robots: Robots;
-    calendlyUrl: string;
+    calendlyUrl?: string;
+    formspreeFormId?: string;
     substackUrl?: string;
     zazzleUrl?: string;
     callToAction: string;

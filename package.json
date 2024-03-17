@@ -1,7 +1,7 @@
 {
   "name": "promptlytechnologiesllc",
   "version": "1.0.2",
-  "author": "Christopher C. Smith <christopher.smith@promptlytechnologies.com>",
+  "author": "Christopher C. Smith",
   "homepage": "https://promptlytechnologies.com",
   "scripts": {
     "dev": "vite",

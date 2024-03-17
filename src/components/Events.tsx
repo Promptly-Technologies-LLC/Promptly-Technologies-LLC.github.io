@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Calendar } from '@fullcalendar/core';
 import listPlugin from '@fullcalendar/list';
-import interactionPlugin from '@fullcalendar/interaction';
 import eventsJSON from '../customizations/events.json';
 
 // Put location information in the event's title
@@ -16,7 +15,7 @@ export const Events = () => {
   useEffect(() => {
     if (calendarRef.current) {
       const calendar = new Calendar(calendarRef.current, {
-        plugins: [listPlugin, interactionPlugin],
+        plugins: [listPlugin],
         initialView: 'listMonth',
         events: eventsJSON,
       });

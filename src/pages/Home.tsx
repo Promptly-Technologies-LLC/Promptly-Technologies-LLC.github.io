@@ -3,7 +3,7 @@ import './Home.css';
 import Hero from '../components/Hero';
 import ContactForm from '../components/ContactForm';
 import Story from '../components/Story';
-import { Events } from '../components/Events';
+import Events from '../components/Events';
 import Credits from '../components/Credits';
 
 const Home: React.FC = () => {

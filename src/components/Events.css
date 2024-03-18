@@ -1,0 +1,3 @@
+.events {
+  @apply flex flex-col place-items-center px-4 py-20 font-sans gap-6 lg:w-2/3;
+}

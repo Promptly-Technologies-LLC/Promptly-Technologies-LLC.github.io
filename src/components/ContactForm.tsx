@@ -15,11 +15,11 @@ export default function ContactForm() {
 
   // Return component only if we have a formId
   return (
-    <section className="flex flex-col w-full place-items-center" id="contact">
+    <section className="contact-section" id="contact">
       <div className="headercontainer">
         <h1 className="pt-12 pb-8">Contact</h1>
       </div>
-      <div className="md:w-1/2 p-4">
+      <div className="contact-container">
         <p>We'll build your made-to-order AI agent, app, or software automation in Python and Typescript. Contact us now to get a quote!</p>
         {state ? 
           <form onSubmit={handleSubmit}>

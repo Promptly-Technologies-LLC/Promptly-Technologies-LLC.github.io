@@ -17,6 +17,8 @@ interface SiteProperties {
     robots: Robots;
     calendlyUrl?: string;
     formspreeFormId?: string;
+    convertKitFormId?: string;
+    convertKitDataUid?: string;
     substackUrl?: string;
     zazzleUrl?: string;
     callToAction: string;

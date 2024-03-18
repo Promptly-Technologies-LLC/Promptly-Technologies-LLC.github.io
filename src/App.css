@@ -64,11 +64,16 @@ button {
 }
 
 input, textarea {
-  @apply text-base font-sans w-full border-gray-200 border-2;
+  @apply p-2 text-base font-sans w-full border-gray-200 border-2 placeholder:text-gray-500;
+}
+
+ol, ul {
+  list-style-position: outside;
+  padding-left: 1em;
 }
 
 .button {
-  @apply p-2 m-0 bg-blue-600 hover:bg-blue-800 text-white rounded-md;
+  @apply p-2 m-0 bg-slate-600 hover:bg-slate-800 text-white rounded-md;
 }
 
 .animated {

@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import { Calendar } from '@fullcalendar/core';
 import listPlugin from '@fullcalendar/list';
 import eventsJSON from '../customizations/events.json';
+import SubscribeForm from '../components/SubscribeForm';
+import './Events.css';
 
 // Put location information in the event's title
 // { title: 'Meeting at Jim's Deli',
@@ -9,7 +11,7 @@ import eventsJSON from '../customizations/events.json';
 // end: '2024-03-16T12:30:00',
 // url: 'http://zoom.com/roomxyz' }
 
-export const Events = () => {
+export default function Events() {
   const calendarRef = useRef(null);
 
   useEffect(() => {
@@ -18,6 +20,9 @@ export const Events = () => {
         plugins: [listPlugin],
         initialView: 'listMonth',
         events: eventsJSON,
+        headerToolbar: {
+          right: 'prev,next'
+        },
       });
       calendar.render();
 
@@ -27,11 +32,12 @@ export const Events = () => {
   }, []); // Empty dependency array means this effect runs once after the initial render
 
   return (
-    <section className="flex flex-col place-items-center py-20 font-sans lg:w-2/3" id="events">
+    <section className="events" id="events">
       <div className="headercontainer">
         <h1 className="pt-12 pb-8">Events</h1>
       </div>
       <div className="w-full p-0 h-64" ref={calendarRef} id='calendar'></div>
+      <SubscribeForm />
     </section>
   );
 };

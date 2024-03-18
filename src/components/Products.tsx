@@ -6,6 +6,11 @@ import './Products.css';
 const Products: React.FC = () => {
     const productFeed: ProductFeed = productFeedJSON;
 
+    // Replace '&quot;' with '"' in the description
+    const cleanDescription = (description: string) => {
+        return description.replace(/&quot;/g, '"');
+    }
+
     const truncateDescription = (description: string, maxLength: number = 150) => {
         return description.length <= maxLength ? description : description.slice(0, maxLength) + '...';
     };
@@ -22,7 +27,7 @@ const Products: React.FC = () => {
                         <img src={item["media:content"]["@_url"]} alt={item.title} className="product-image"/>
                         <div className="product-hover-banner">
                             <span className="product-title">{item["media:title"]}</span>
-                            <span className="product-description">{truncateDescription(item["media:description"])}</span>
+                            <span className="product-description">{truncateDescription(cleanDescription(item["media:description"]))}</span>
                         </div>
                     </div>
                     <div className="product-price">{item["media:price"]}</div>

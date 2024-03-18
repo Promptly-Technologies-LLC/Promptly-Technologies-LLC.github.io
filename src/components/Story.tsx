@@ -3,6 +3,7 @@ import ThreePanelBlock from './ThreePanelBlock';
 import ThreePanelRow from './ThreePanelRow';
 import ComicPanel from './ComicPanel';
 import Feature from './Feature';
+import Events from '../components/Events';
 
 const Story: React.FC = () => {
   return (
@@ -32,7 +33,7 @@ const Story: React.FC = () => {
           horizontalPosition="left"
           verticalPosition="bottom"
         />
-      ]} widthClass='xl:w-3/4'/>
+      ]} widthClass='xl:w-3/4' orientation='right' />
       <Feature />
       <ThreePanelRow panels={[
         <ComicPanel 
@@ -56,6 +57,28 @@ const Story: React.FC = () => {
           verticalPosition="top"
         />
       ]} widthClass='xl:w-3/4'/>
+      <Events />
+      <ThreePanelBlock panels={[
+        <ComicPanel 
+          text="At Promptly, we're working toward a future in which AI serves the cause of human thriving."
+          backgroundImage="images/greening.jpg"
+          altText="Robot gazes up through the canopy of a forest"
+          verticalPosition="top"
+        />,
+        <ComicPanel 
+          text="This requires new business and training paradigms that give workers equity ownership of models that train on their work."
+          backgroundImage="images/opensource.jpg"
+          altText="Plucky open-source developers collaborate together in a shared workspace"
+          horizontalPosition="left"
+          verticalPosition="bottom"
+        />,
+        <ComicPanel 
+          text="Contact us today to discuss how you can support this mission. Let's partner to empower small businesses and non-profits through AI!"
+          backgroundImage="images/nonprofit.jpg"
+          altText="A diverse team of nonprofit volunteers"
+          verticalPosition="bottom"
+        />
+      ]} widthClass='xl:w-3/4' orientation='left' />
     </section>
   );
 };

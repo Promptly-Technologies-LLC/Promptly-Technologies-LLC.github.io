@@ -4,15 +4,21 @@ import './Nav.css';
 
 const Nav: React.FC = () => {
     return (
-            <div className="space-x-6 inline-flex flex-wrap justify-center">
-                <HashLink to="#story" className="nav-link font-bangers">
+            <div className="space-x-6 inline-flex flex-wrap justify-center font-bangers">
+                <HashLink to="#contact" className="nav-link">
+                    Contact
+                </HashLink>
+                <HashLink to="#story" className="nav-link">
                     Story
                 </HashLink>
-                <HashLink to="#book" className="nav-link font-bangers">
-                    Bookings
+                <HashLink to="#events" className="nav-link">
+                    Events
                 </HashLink>
-                <HashLink to="#credits" className="nav-link font-bangers">
+                <HashLink to="#credits" className="nav-link">
                     Credits
+                </HashLink>
+                <HashLink to="/Store" className="nav-link">
+                    Store
                 </HashLink>
             </div>
     );

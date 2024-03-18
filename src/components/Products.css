@@ -1,66 +1,44 @@
 .product-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    @apply mt-12;
+    @apply font-sans flex flex-wrap justify-center mt-12;
 }
 
 .product-item {
-    position: relative;
-    max-width: 250px;
-    margin: 0 auto;
+    @apply relative max-w-xs mx-auto transition-opacity duration-300;
 }
 
-/* The rest of your CSS remains unchanged */
 .product-link {
-    text-decoration: none;
-    color: inherit;
+    @apply no-underline;
 }
 
 .product-image-container {
-    position: relative;
-    overflow: hidden;
+    @apply relative overflow-hidden;
 }
 
 .product-image {
-    width: 100%;
-    transition: opacity 0.3s ease;
+    @apply w-full;
 }
 
+/* Convert styles to Tailwind with @apply directives */
 .product-hover-banner {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    @apply absolute bottom-0 left-0 right-0 bg-black p-2 opacity-0;
 }
 
 .product-title {
-    display: block;
-    font-weight: bold;
-    @apply text-white;
+    @apply block text-white font-bold;
 }
 
 .product-description {
-    display: block;
-    font-size: 0.9em;
-    line-height: 1.2;
-    @apply text-white;
+    @apply block text-white text-sm leading-tight;
 }
 
 .product-price {
-    text-align: center;
-    margin-top: 10px;
-    font-weight: bold;
+    @apply text-center py-2 font-bold;
 }
 
 .product-item:hover .product-image {
-    opacity: 0.7;
+    @apply opacity-70;
 }
 
 .product-item:hover .product-hover-banner {
-    opacity: 1;
+    @apply opacity-100 bg-opacity-60;
 }

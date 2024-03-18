@@ -6,11 +6,15 @@ The business website of Promptly Technologies, LLC is designed in the style of a
 
 ## Structure and customization
 
-The entry points of the site, of course, are `index.html`, `main.tsx`, and `App.tsx`, as is traditional in React + Typescript architecture. The site consists of two pages, `Home` and `Legal`. The former hosts the core of the site, while the latter hosts the privacy policy. The Home consists of a `Hero` section (the "cover" of our comic book), a `Story` section (the comic strips), a `Bookings` section for users to book consultations (roughly analogous to the subscription page in an old-timey comic book), and `Credits` section (really our "Team" section but presented in the style of comic book credits).
+The entry points of the site, of course, are `index.html`, `main.tsx`, and `App.tsx`, as is traditional in React + Typescript architecture.
+
+The site consists of three pages, `Home`, `Legal`, and `Store`. The `Home` page hosts the core of the site, `Legal` hosts the terms and conditions and privacy policy, and `Store` hosts products syndicated from Zazzle via an RSS feed which we scrape using a Github Actions script.
+
+The `Home` page consists of a `Hero` section (the "cover" of our comic book), a `ContactForm` section powered by FormSpree, a `Story` section (the comic strips), an `Events` section with a subscription form powered by ConvertKit, and a `Credits` section (really our "Team" section but presented in the style of comic book credits).
 
 Some of the metadata and content of the site is controlled from JSON files in the `src/customizations` folder. You can add new social profiles here, and also change the text that appears in the hero section.
 
-The `Booking` section is a Calendly iframe displayed from offsite and must be controlled from the Calendly dashboard.
+To use the `ContactForm` or `SubscribeForm` components, you will need [FormSpree](https://formspree.io/) and [ConvertKit](https://convertkit.com/) accounts, respectively. There is also a `Bookings` component, not currently implemented, which is powered by [Calendly](https://calendly.com/). Sign up, create a form, and put your form URL or ID(s) in `src/customizations/siteproperties.json`.
 
 ## Contributing
 

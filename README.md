@@ -14,7 +14,7 @@ The `Home` page consists of a `Hero` section (the "cover" of our comic book), a 
 
 Some of the metadata and content of the site is controlled from JSON files in the `src/customizations` folder. You can add new social profiles here, and also change the text that appears in the hero section.
 
-To use the `ContactForm` or `SubscribeForm` components, you will need [FormSpree](https://formspree.io/) and [ConvertKit](https://convertkit.com/) accounts, respectively. There is also a `Bookings` component, not currently implemented, which is powered by [Calendly](https://calendly.com/). Sign up, create a form, and put your form URL or ID(s) in `src/customizations/siteproperties.json`.
+To use the `ContactForm` or `SubscribeForm` components, you will need [FormSpree](https://formspree.io/) and [ConvertKit](https://convertkit.com/?lmref=R3jWSQ) accounts, respectively. There is also a `Bookings` component, not currently implemented, which is powered by [Calendly](https://calendly.com/). Sign up, create a form, and put your form URL or ID(s) in `src/customizations/siteproperties.json`.
 
 ## Contributing
 

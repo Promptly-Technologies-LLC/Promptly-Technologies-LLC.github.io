@@ -146,14 +146,14 @@ but received
 					
 			</div>
 		
-			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget0-price">$20.15</div>
+			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget0-price">$21.20</div>
 			<span class="ZazzleCollectionItemCellProduct-byLine">by <a href="javascript://" id="page_zWidget0-storeLink">PromptlyTechnologies</a></span>
 		</div>
 		
 	</div>
 
 	
-</div>`,price:"$20.15","media:title":"African-American Stargazer Men's T-Shirt","media:description":"A Black man looks to the sky. The solar system shimmers in the reflection on his mirrored sunglasses. The stars are his destination.","media:price":"$20.15","media:thumbnail":{"@_url":"https://rlv.zcache.com/african_american_stargazer_mens_t_shirt-re0ee37b9692b40db8b580b78c9caacfe_k2gm8_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/african_american_stargazer_mens_t_shirt-re0ee37b9692b40db8b580b78c9caacfe_k2gm8_500.jpg"},"media:keywords":"african-american, black, stem, science, starscape, planets, space, cosmology, astronomy, sunglasses","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/black_scientists_eureka_moment_mens_t_shirt-256370190813609569",pubDate:"Wed, 13 Mar 2024 14:18:48 GMT",title:"Black Scientist's Eureka Moment Men's T-shirt",link:"https://www.zazzle.com/black_scientists_eureka_moment_mens_t_shirt-256370190813609569",author:"PromptlyTechnologies",description:`<div
+</div>`,price:"$21.20","media:title":"African-American Stargazer Men's T-Shirt","media:description":"A Black man looks to the sky. The solar system shimmers in the reflection on his mirrored sunglasses. The stars are his destination.","media:price":"$21.20","media:thumbnail":{"@_url":"https://rlv.zcache.com/african_american_stargazer_mens_t_shirt-re0ee37b9692b40db8b580b78c9caacfe_k2gm8_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/african_american_stargazer_mens_t_shirt-re0ee37b9692b40db8b580b78c9caacfe_k2gm8_500.jpg"},"media:keywords":"african-american, black, stem, science, starscape, planets, space, cosmology, astronomy, sunglasses","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/black_scientists_eureka_moment_mens_t_shirt-256370190813609569",pubDate:"Wed, 13 Mar 2024 14:18:48 GMT",title:"Black Scientist's Eureka Moment Men's T-shirt",link:"https://www.zazzle.com/black_scientists_eureka_moment_mens_t_shirt-256370190813609569",author:"PromptlyTechnologies",description:`<div
 	id="page_zWidget1"
 	class="ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct"
 	
@@ -205,14 +205,14 @@ but received
 					
 			</div>
 		
-			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget1-price">$20.15</div>
+			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget1-price">$21.20</div>
 			<span class="ZazzleCollectionItemCellProduct-byLine">by <a href="javascript://" id="page_zWidget1-storeLink">PromptlyTechnologies</a></span>
 		</div>
 		
 	</div>
 
 	
-</div>`,price:"$20.15","media:title":"Black Scientist's Eureka Moment Men's T-shirt","media:description":"Profoundly under-represented in the sciences, African-Americans are recently making real inroads into STEM fields and institutions. This t-shirt design by Christopher Smith depicts a Black cosmologist's breakthrough moment when he conceives a new scientific theory.","media:price":"$20.15","media:thumbnail":{"@_url":"https://rlv.zcache.com/black_scientists_eureka_moment_mens_t_shirt-rc13f18529c5747cfbc10717e1db390c0_k2gm8_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/black_scientists_eureka_moment_mens_t_shirt-rc13f18529c5747cfbc10717e1db390c0_k2gm8_500.jpg"},"media:keywords":"black, african-american, science, stem, representation, diversity, inclusion, insight, cosmology, astronomy","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/corgi_christmas_sweater_customizable_gift_coupon_holiday_card-256554549410843120",pubDate:"Thu, 16 Nov 2023 15:20:26 GMT",title:'"Corgi Christmas Sweater" Customizable Gift Coupon Holiday Card',link:"https://www.zazzle.com/corgi_christmas_sweater_customizable_gift_coupon_holiday_card-256554549410843120",author:"PromptlyTechnologies",description:`<div
+</div>`,price:"$21.20","media:title":"Black Scientist's Eureka Moment Men's T-shirt","media:description":"Profoundly under-represented in the sciences, African-Americans are recently making real inroads into STEM fields and institutions. This t-shirt design by Christopher Smith depicts a Black cosmologist's breakthrough moment when he conceives a new scientific theory.","media:price":"$21.20","media:thumbnail":{"@_url":"https://rlv.zcache.com/black_scientists_eureka_moment_mens_t_shirt-rc13f18529c5747cfbc10717e1db390c0_k2gm8_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/black_scientists_eureka_moment_mens_t_shirt-rc13f18529c5747cfbc10717e1db390c0_k2gm8_500.jpg"},"media:keywords":"black, african-american, science, stem, representation, diversity, inclusion, insight, cosmology, astronomy","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/corgi_christmas_sweater_customizable_gift_coupon_holiday_card-256554549410843120",pubDate:"Thu, 16 Nov 2023 15:20:26 GMT",title:'"Corgi Christmas Sweater" Customizable Gift Coupon Holiday Card',link:"https://www.zazzle.com/corgi_christmas_sweater_customizable_gift_coupon_holiday_card-256554549410843120",author:"PromptlyTechnologies",description:`<div
 	id="page_zWidget2"
 	class="ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct"
 	
@@ -264,14 +264,14 @@ but received
 					
 			</div>
 		
-			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget2-price">$2.33</div>
+			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget2-price">$2.44</div>
 			<span class="ZazzleCollectionItemCellProduct-byLine">by <a href="javascript://" id="page_zWidget2-storeLink">PromptlyTechnologies</a></span>
 		</div>
 		
 	</div>
 
 	
-</div>`,price:"$2.33","media:title":'"Corgi Christmas Sweater" Customizable Gift Coupon',"media:description":"This Christmas, give your loved one an adorable &quot;corgi Christmas sweater&quot; voucher for a massage, back rub, vacation, or night on the town. With this customizable coupon decorated with cute short-legged fuzz-monsters in warm winter clothes, you can entitle your beau, spouse, or partner to anything you want.","media:price":"$2.33","media:thumbnail":{"@_url":"https://rlv.zcache.com/corgi_christmas_sweater_customizable_gift_coupon_holiday_card-r999355bb3e62496eb221011d76d93521_u79mw_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/corgi_christmas_sweater_customizable_gift_coupon_holiday_card-r999355bb3e62496eb221011d76d93521_u79mw_500.jpg"},"media:keywords":"corgis, puppies, chonk, doggos, dogs, christmas, holiday, gifts, cute, adorable","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/artificial_emotional_intelligence_t_shirt-256591972449338616",pubDate:"Tue, 17 Oct 2023 20:52:05 GMT",title:"Artificial Emotional Intelligence T-Shirt",link:"https://www.zazzle.com/artificial_emotional_intelligence_t_shirt-256591972449338616",author:"PromptlyTechnologies",description:`<div
+</div>`,price:"$2.44","media:title":'"Corgi Christmas Sweater" Customizable Gift Coupon',"media:description":"This Christmas, give your loved one an adorable &quot;corgi Christmas sweater&quot; voucher for a massage, back rub, vacation, or night on the town. With this customizable coupon decorated with cute short-legged fuzz-monsters in warm winter clothes, you can entitle your beau, spouse, or partner to anything you want.","media:price":"$2.44","media:thumbnail":{"@_url":"https://rlv.zcache.com/corgi_christmas_sweater_customizable_gift_coupon_holiday_card-r999355bb3e62496eb221011d76d93521_u79mw_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/corgi_christmas_sweater_customizable_gift_coupon_holiday_card-r999355bb3e62496eb221011d76d93521_u79mw_500.jpg"},"media:keywords":"corgis, puppies, chonk, doggos, dogs, christmas, holiday, gifts, cute, adorable","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/artificial_emotional_intelligence_t_shirt-256591972449338616",pubDate:"Tue, 17 Oct 2023 20:52:05 GMT",title:"Artificial Emotional Intelligence T-Shirt",link:"https://www.zazzle.com/artificial_emotional_intelligence_t_shirt-256591972449338616",author:"PromptlyTechnologies",description:`<div
 	id="page_zWidget3"
 	class="ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct"
 	
@@ -323,14 +323,14 @@ but received
 					
 			</div>
 		
-			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget3-price">$20.85</div>
+			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget3-price">$21.95</div>
 			<span class="ZazzleCollectionItemCellProduct-byLine">by <a href="javascript://" id="page_zWidget3-storeLink">PromptlyTechnologies</a></span>
 		</div>
 		
 	</div>
 
 	
-</div>`,price:"$20.85","media:title":"Artificial Emotional Intelligence T-Shirt","media:description":"Instead of the coldly logical AIs we expected, what we got are chatbots with surprising emotional sensitivity, but that fail at math. Hopefully that bodes well for the peaceful future coexistence of humans and AI.","media:price":"$20.85","media:thumbnail":{"@_url":"https://rlv.zcache.com/artificial_emotional_intelligence_t_shirt-r353d26620dc04647909b0627bc3093c2_k2gr0_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/artificial_emotional_intelligence_t_shirt-r353d26620dc04647909b0627bc3093c2_k2gr0_500.jpg"},"media:keywords":"science fiction, robot, child, rose, pink, fantasy, cute, adorable, artificial intelligence, future","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/triumph_of_the_ukrainian_tractor_wood_wall_art-256658668742223909",pubDate:"Tue, 17 Oct 2023 20:28:11 GMT",title:"Triumph of the Ukrainian tractor Wood Wall Art",link:"https://www.zazzle.com/triumph_of_the_ukrainian_tractor_wood_wall_art-256658668742223909",author:"PromptlyTechnologies",description:`<div
+</div>`,price:"$21.95","media:title":"Artificial Emotional Intelligence T-Shirt","media:description":"Instead of the coldly logical AIs we expected, what we got are chatbots with surprising emotional sensitivity, but that fail at math. Hopefully that bodes well for the peaceful future coexistence of humans and AI.","media:price":"$21.95","media:thumbnail":{"@_url":"https://rlv.zcache.com/artificial_emotional_intelligence_t_shirt-r353d26620dc04647909b0627bc3093c2_k2gr0_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/artificial_emotional_intelligence_t_shirt-r353d26620dc04647909b0627bc3093c2_k2gr0_500.jpg"},"media:keywords":"science fiction, robot, child, rose, pink, fantasy, cute, adorable, artificial intelligence, future","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/triumph_of_the_ukrainian_tractor_wood_wall_art-256658668742223909",pubDate:"Tue, 17 Oct 2023 20:28:11 GMT",title:"Triumph of the Ukrainian tractor Wood Wall Art",link:"https://www.zazzle.com/triumph_of_the_ukrainian_tractor_wood_wall_art-256658668742223909",author:"PromptlyTechnologies",description:`<div
 	id="page_zWidget4"
 	class="ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct"
 	
@@ -382,16 +382,16 @@ but received
 					
 			</div>
 		
-			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget4-price">$47.15</div>
+			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget4-price">$49.60</div>
 			<span class="ZazzleCollectionItemCellProduct-byLine">by <a href="javascript://" id="page_zWidget4-storeLink">PromptlyTechnologies</a></span>
 		</div>
 		
 	</div>
 
 	
-</div>`,price:"$47.15","media:title":"Triumph of the Ukrainian tractor","media:description":`Amid the 2022 Russian invasion, Ukrainian tractors became a symbol of national pride after several abandoned Russian battle tanks were hauled away by tractors for use in the country's defense.
+</div>`,price:"$49.60","media:title":"Triumph of the Ukrainian tractor","media:description":`Amid the 2022 Russian invasion, Ukrainian tractors became a symbol of national pride after several abandoned Russian battle tanks were hauled away by tractors for use in the country's defense.
 
-50% of proceeds from Ukraine-themed products will go to humanitarian or military aid for Ukraine.`,"media:price":"$47.15","media:thumbnail":{"@_url":"https://rlv.zcache.com/triumph_of_the_ukrainian_tractor_wood_wall_art-rc085af1b85524df59458ccf5e0c2025e_zfgxb_152.jpg?rlvnet=1"},"media:content":{"@_url":"https://rlv.zcache.com/triumph_of_the_ukrainian_tractor_wood_wall_art-rc085af1b85524df59458ccf5e0c2025e_zfgxb_500.jpg?rlvnet=1"},"media:keywords":"tractor, ukraine, slava ukraini, slava heroiam, tank, sunflowers, russia, war, victory","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/sunflower_season_t_shirt-256008436262330535",pubDate:"Tue, 17 Oct 2023 17:20:02 GMT",title:"Sunflower Season T-Shirt",link:"https://www.zazzle.com/sunflower_season_t_shirt-256008436262330535",author:"PromptlyTechnologies",description:`<div
+50% of proceeds from Ukraine-themed products will go to humanitarian or military aid for Ukraine.`,"media:price":"$49.60","media:thumbnail":{"@_url":"https://rlv.zcache.com/triumph_of_the_ukrainian_tractor_wood_wall_art-rc085af1b85524df59458ccf5e0c2025e_zfgxb_152.jpg?rlvnet=1"},"media:content":{"@_url":"https://rlv.zcache.com/triumph_of_the_ukrainian_tractor_wood_wall_art-rc085af1b85524df59458ccf5e0c2025e_zfgxb_500.jpg?rlvnet=1"},"media:keywords":"tractor, ukraine, slava ukraini, slava heroiam, tank, sunflowers, russia, war, victory","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/sunflower_season_t_shirt-256008436262330535",pubDate:"Tue, 17 Oct 2023 17:20:02 GMT",title:"Sunflower Season T-Shirt",link:"https://www.zazzle.com/sunflower_season_t_shirt-256008436262330535",author:"PromptlyTechnologies",description:`<div
 	id="page_zWidget5"
 	class="ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct"
 	
@@ -443,16 +443,16 @@ but received
 					
 			</div>
 		
-			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget5-price">$20.85</div>
+			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget5-price">$21.95</div>
 			<span class="ZazzleCollectionItemCellProduct-byLine">by <a href="javascript://" id="page_zWidget5-storeLink">PromptlyTechnologies</a></span>
 		</div>
 		
 	</div>
 
 	
-</div>`,price:"$20.85","media:title":"Sunflower Season T-Shirt","media:description":`Amid the 2022 Russian invasion, Ukraine's national flower—the sunflower—also became a symbol of resistance when a Ukrainian grandmother told armed Russian soldiers, “Take these seeds so sunflowers grow here when you die.”
+</div>`,price:"$21.95","media:title":"Sunflower Season T-Shirt","media:description":`Amid the 2022 Russian invasion, Ukraine's national flower—the sunflower—also became a symbol of resistance when a Ukrainian grandmother told armed Russian soldiers, “Take these seeds so sunflowers grow here when you die.”
 
-50% of proceeds from Ukraine-themed products will be donated to as military or humanitarian aid to Ukraine.`,"media:price":"$20.85","media:thumbnail":{"@_url":"https://rlv.zcache.com/sunflower_season_t_shirt-r9fe0ac8f18b440c6a09e114cf6412a67_k2gr0_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/sunflower_season_t_shirt-r9fe0ac8f18b440c6a09e114cf6412a67_k2gr0_500.jpg"},"media:keywords":"heroiam, slava, glory, ukraine, ukraini, russia, war, resistance, democracy, uaf","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",pubDate:"Sun, 07 May 2023 15:11:03 GMT",title:"Saturn Surfer T-Shirt",link:"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",author:"PromptlyTechnologies",description:`<div
+50% of proceeds from Ukraine-themed products will be donated to as military or humanitarian aid to Ukraine.`,"media:price":"$21.95","media:thumbnail":{"@_url":"https://rlv.zcache.com/sunflower_season_t_shirt-r9fe0ac8f18b440c6a09e114cf6412a67_k2gr0_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/sunflower_season_t_shirt-r9fe0ac8f18b440c6a09e114cf6412a67_k2gr0_500.jpg"},"media:keywords":"heroiam, slava, glory, ukraine, ukraini, russia, war, resistance, democracy, uaf","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}},{guid:"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",pubDate:"Sun, 07 May 2023 15:11:03 GMT",title:"Saturn Surfer T-Shirt",link:"https://www.zazzle.com/saturn_surfer_t_shirt-256782080270214030",author:"PromptlyTechnologies",description:`<div
 	id="page_zWidget6"
 	class="ZazzleCollectionItemCell ZazzleCollectionItemCellProduct ZazzleCollectionItemCellProduct-Grid ZazzleCollectionItemCell-152 ZazzleCollectionItemCellProduct-152 clearfix GAContext-Search GA-MaybeProduct"
 	
@@ -504,11 +504,11 @@ but received
 					
 			</div>
 		
-			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget6-price">$20.15</div>
+			<div class="ZazzleCollectionItemCellProduct-price" id="page_zWidget6-price">$21.20</div>
 			<span class="ZazzleCollectionItemCellProduct-byLine">by <a href="javascript://" id="page_zWidget6-storeLink">PromptlyTechnologies</a></span>
 		</div>
 		
 	</div>
 
 	
-</div>`,price:"$20.15","media:title":"Saturn Surfer T-Shirt","media:description":"An astronaut surfs the golden rings of a planet in outer space—a blue gas giant","media:price":"$20.15","media:thumbnail":{"@_url":"https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_500.jpg"},"media:keywords":"space, astronaut, planet, sci-fi, science fiction, ringed planet, surfing, orange, blue, surfer","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}}],kA={title:_A,link:wA,description:CA,language:EA,ttl:AA,"opensearch:totalResults":7,"opensearch:startIndex":1,"opensearch:itemsPerPage":60,"opensearch:Query":{"@_role":"request","@_searchTerms":""},item:SA},xA=()=>{const e=kA,t=i=>i.replace(/&quot;/g,'"'),n=(i,l=150)=>i.length<=l?i:i.slice(0,l)+"...",r=()=>!e||!e.item?null:(Array.isArray(e.item)?e.item:[e.item]).map(l=>m.jsx("div",{className:"product-item",children:m.jsxs("a",{href:`${l.link}?rf=238132560883807003`,target:"_blank",rel:"noopener noreferrer",className:"product-link",children:[m.jsxs("div",{className:"product-image-container",children:[m.jsx("img",{src:l["media:content"]["@_url"],alt:l.title,className:"product-image"}),m.jsxs("div",{className:"product-hover-banner",children:[m.jsx("span",{className:"product-title",children:l["media:title"]}),m.jsx("span",{className:"product-description",children:n(t(l["media:description"]))})]})]}),m.jsx("div",{className:"product-price",children:l["media:price"]})]})},l.guid));return m.jsxs("section",{id:"store",className:"mx-auto mt-12",children:[m.jsx("div",{className:"headercontainer",children:m.jsx("h1",{children:"Store"})}),m.jsx("div",{className:"product-grid",children:r()})]})},bA=()=>{const e=vu(),t=e>=768;return m.jsxs("main",{id:"skip",children:[m.jsx(mu,{text:"PROMPTLY TECHNOLOGIES",fontSize:t?90:50,lineSplit:!t,width:e}),m.jsx(Ru,{}),m.jsx(xA,{}),m.jsx(Nu,{})]})},TA=()=>m.jsx(m.Fragment,{children:m.jsx(A0,{basename:"/",children:m.jsxs(m0,{children:[m.jsx(kr,{path:"/",element:m.jsx(gA,{})}),m.jsx(kr,{path:"/Legal",element:m.jsx(yA,{})}),m.jsx(kr,{path:"/Store",element:m.jsx(bA,{})}),m.jsx(kr,{path:"*",element:m.jsx("h1",{children:"Not Found"})})]})})});ds.createRoot(document.getElementById("root")).render(m.jsx(Q.StrictMode,{children:m.jsx(TA,{})}));
+</div>`,price:"$21.20","media:title":"Saturn Surfer T-Shirt","media:description":"An astronaut surfs the golden rings of a planet in outer space—a blue gas giant","media:price":"$21.20","media:thumbnail":{"@_url":"https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_152.jpg"},"media:content":{"@_url":"https://rlv.zcache.com/saturn_surfer_t_shirt-r71e635323ea340e5837e7f8cb1a28273_k2gm8_500.jpg"},"media:keywords":"space, astronaut, planet, sci-fi, science fiction, ringed planet, surfing, orange, blue, surfer","media:rating":{"#text":"g","@_scheme":"urn:mpaa"}}],kA={title:_A,link:wA,description:CA,language:EA,ttl:AA,"opensearch:totalResults":7,"opensearch:startIndex":1,"opensearch:itemsPerPage":60,"opensearch:Query":{"@_role":"request","@_searchTerms":""},item:SA},xA=()=>{const e=kA,t=i=>i.replace(/&quot;/g,'"'),n=(i,l=150)=>i.length<=l?i:i.slice(0,l)+"...",r=()=>!e||!e.item?null:(Array.isArray(e.item)?e.item:[e.item]).map(l=>m.jsx("div",{className:"product-item",children:m.jsxs("a",{href:`${l.link}?rf=238132560883807003`,target:"_blank",rel:"noopener noreferrer",className:"product-link",children:[m.jsxs("div",{className:"product-image-container",children:[m.jsx("img",{src:l["media:content"]["@_url"],alt:l.title,className:"product-image"}),m.jsxs("div",{className:"product-hover-banner",children:[m.jsx("span",{className:"product-title",children:l["media:title"]}),m.jsx("span",{className:"product-description",children:n(t(l["media:description"]))})]})]}),m.jsx("div",{className:"product-price",children:l["media:price"]})]})},l.guid));return m.jsxs("section",{id:"store",className:"mx-auto mt-12",children:[m.jsx("div",{className:"headercontainer",children:m.jsx("h1",{children:"Store"})}),m.jsx("div",{className:"product-grid",children:r()})]})},bA=()=>{const e=vu(),t=e>=768;return m.jsxs("main",{id:"skip",children:[m.jsx(mu,{text:"PROMPTLY TECHNOLOGIES",fontSize:t?90:50,lineSplit:!t,width:e}),m.jsx(Ru,{}),m.jsx(xA,{}),m.jsx(Nu,{})]})},TA=()=>m.jsx(m.Fragment,{children:m.jsx(A0,{basename:"/",children:m.jsxs(m0,{children:[m.jsx(kr,{path:"/",element:m.jsx(gA,{})}),m.jsx(kr,{path:"/Legal",element:m.jsx(yA,{})}),m.jsx(kr,{path:"/Store",element:m.jsx(bA,{})}),m.jsx(kr,{path:"*",element:m.jsx("h1",{children:"Not Found"})})]})})});ds.createRoot(document.getElementById("root")).render(m.jsx(Q.StrictMode,{children:m.jsx(TA,{})}));

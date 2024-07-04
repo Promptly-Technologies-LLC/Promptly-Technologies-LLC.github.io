@@ -17,13 +17,13 @@ jobs:
           ref: main
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 'latest'
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 'latest'
 
       - name: Install Dependencies
         run: pnpm install
@@ -32,7 +32,7 @@ jobs:
         run: pnpm run build
 
       - name: Commit and push changes to repository
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'Automated build/product feed update'
 

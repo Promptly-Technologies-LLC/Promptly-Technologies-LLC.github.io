@@ -19,3 +19,5 @@ To use the `ContactForm` or `SubscribeForm` components, you will need [FormSpree
 ## Contributing
 
 If you find a bug or have a feature request, please open an issue on Github. If you would like to contribute code, please open a pull request. We welcome contributions!
+
+- [ ] Add a Github Actions script to send email notifications to subscribers when new events are added to the calendar

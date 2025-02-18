@@ -42,13 +42,13 @@ const Credits: React.FC = () => {
           />
           <span>Partner</span>
         </div>
-        <div className="panelcontainer col-start-2 md:col-start-9">
-          <span>MidJourney Bot</span>
+        <div className="panelcontainer">
+          <span>Jenny Xu</span>
           <ComicPanel 
-            backgroundImage="images/team/MidJourneyBot.jpg"
-            altText = 'Portrait of MidJourney Bot, Robot Intern'
+            backgroundImage="images/team/Jenny.jpg"
+            altText = 'Portrait of Jenny Xu, Intern'
           />
-          <span>Robot Intern</span>
+          <span>Intern</span>
         </div>
     </div>
     <Footer />

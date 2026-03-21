@@ -7,7 +7,8 @@
     "dev": "vite",
     "setmetadata": "node scripts/setmetadata.mjs",
     "fetchproducts": "node scripts/fetchproductfeed.mjs",
-    "build": "bun run setmetadata && bun run fetchproducts && tsc && vite build",
+    "sitemap": "node scripts/generatesitemap.mjs",
+    "build": "bun run setmetadata && bun run fetchproducts && tsc && vite build && bun run sitemap",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "playwright test",
@@ -29,6 +30,7 @@
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
     "@extractus/feed-extractor": "^7.1.7",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4.2.2",

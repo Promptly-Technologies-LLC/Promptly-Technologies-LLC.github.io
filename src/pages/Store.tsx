@@ -12,11 +12,12 @@ const Store: React.FC = () => {
     
     return(
         <main id="skip">
-            <ComicTitle 
+            <ComicTitle
                 text="PROMPTLY TECHNOLOGIES"
-                fontSize={isLargeScreen ? 90 : 50} 
+                fontSize={isLargeScreen ? 90 : 50}
                 lineSplit={!isLargeScreen}
                 width={windowWidth}
+                headingLevel="h1"
             />
             <SimpleNav />
             <Products />

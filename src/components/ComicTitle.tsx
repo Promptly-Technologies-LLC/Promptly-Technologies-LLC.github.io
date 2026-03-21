@@ -5,9 +5,10 @@ interface ComicTitleProps {
     fontSize: number;
     lineSplit?: boolean;
     width: number;
+    headingLevel?: 'h1' | 'h2' | 'h3';
 }
 
-const ComicTitle: React.FC<ComicTitleProps> = ({ text, fontSize, lineSplit, width }) => {
+const ComicTitle: React.FC<ComicTitleProps> = ({ text, fontSize, lineSplit, width, headingLevel }) => {
     const words = text.split(' ');
     const viewBoxWidth = width;
     const numLines = lineSplit ? words.length : 1;
@@ -35,12 +36,16 @@ const ComicTitle: React.FC<ComicTitleProps> = ({ text, fontSize, lineSplit, widt
     const maxJitterOffset = getJitterOffset(fontSize, words[0]);
     const adjustedViewBoxHeight = calculatedViewBoxHeight + maxJitterOffset;
 
+    const Wrapper = headingLevel || 'div';
+
     return (
-        <div className="w-full">
-            <svg 
-                xmlns="http://www.w3.org/2000/svg" 
+        <Wrapper className="w-full" style={{ margin: 0 }}>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
                 width={width}
                 viewBox={`0 0 ${viewBoxWidth} ${calculatedViewBoxHeight}`}
+                role="img"
+                aria-label={text}
             >
                 <defs>
                     {/* Roughened Text filter */}
@@ -113,7 +118,7 @@ const ComicTitle: React.FC<ComicTitleProps> = ({ text, fontSize, lineSplit, widt
             )}
 
             </svg>
-        </div>
+        </Wrapper>
     );
 }
 

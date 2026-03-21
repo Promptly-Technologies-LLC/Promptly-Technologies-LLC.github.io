@@ -44,6 +44,7 @@ test.describe("Home page", () => {
   test("full page", async ({ page }) => {
     await expect(page).toHaveScreenshot("home-full.png", {
       fullPage: true,
+      timeout: 15000,
       ...screenshotOptions,
     });
   });

@@ -39,7 +39,35 @@ $('head').append(`<meta property="og:description" content="${data['shortDescript
 
 for (let card of data["socialCards"]) {
     $('head').append(`<meta property="og:image" content="${urlString + card}">`);
+    $('head').append(`<meta property="og:image:alt" content="${data['shortDescription']}">`);
 }
+
+// Canonical URL
+$('head').append(`<link rel="canonical" href="${urlString}">`);
+
+// Twitter Card meta tags
+$('head').append('<meta name="twitter:card" content="summary_large_image">');
+$('head').append(`<meta name="twitter:title" content="${data['title']}">`);
+$('head').append(`<meta name="twitter:description" content="${data['shortDescription']}">`);
+if (data["socialCards"].length > 0) {
+    $('head').append(`<meta name="twitter:image" content="${urlString + data['socialCards'][0]}">`);
+}
+if (data["socialProfiles"]?.["Twitter"]) {
+    const twitterHandle = data["socialProfiles"]["Twitter"].split('/').pop();
+    $('head').append(`<meta name="twitter:site" content="@${twitterHandle}">`);
+}
+
+// Schema.org JSON-LD structured data
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": data['title'],
+    "url": urlString,
+    "description": data['longDescription'] || data['shortDescription'],
+    "logo": data["socialCards"].length > 0 ? urlString + data["socialCards"][0] : undefined,
+    "sameAs": Object.values(data["socialProfiles"] || {}),
+};
+$('head').append(`<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`);
 
 // Save updated HTML file
 fs.writeFileSync('index.html', beautify.default.html($.html(), { indent_size: 2, preserve_newlines: false }));

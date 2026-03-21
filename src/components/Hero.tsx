@@ -20,11 +20,12 @@ const Hero: React.FC = () => {
         <section id="hero" className="hero-container">
             <div className="top-content-wrapper">
                 <div className="comic-title">
-                    <ComicTitle 
+                    <ComicTitle
                         text="PROMPTLY TECHNOLOGIES"
-                        fontSize={isLargeScreen ? 90 : 50} 
+                        fontSize={isLargeScreen ? 90 : 50}
                         lineSplit={!isLargeScreen}
                         width={windowWidth}
+                        headingLevel="h1"
                     />
                 </div>
                 <div className="inline-flex nav-wrapper">

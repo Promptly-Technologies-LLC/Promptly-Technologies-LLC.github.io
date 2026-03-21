@@ -1,7 +1,12 @@
 import { test, expect, Page } from "@playwright/test";
 
-// Wait for fonts and images to load before taking screenshots
-async function waitForPageReady(page: Page) {
+// Wait for the SPA to render, then for fonts and images to load
+async function waitForPageReady(page: Page, waitForSelector?: string) {
+  // Wait for the React app to mount and render content
+  await page.waitForSelector(waitForSelector ?? "main", {
+    state: "attached",
+    timeout: 15000,
+  });
   await page.waitForLoadState("networkidle");
   // Wait for web fonts to load
   await page.evaluate(() => document.fonts.ready);
@@ -32,7 +37,8 @@ const screenshotOptions = {
 test.describe("Home page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/#/");
-    await waitForPageReady(page);
+    // Wait for the last section to prove the full SPA rendered
+    await waitForPageReady(page, "#credits");
   });
 
   test("full page", async ({ page }) => {

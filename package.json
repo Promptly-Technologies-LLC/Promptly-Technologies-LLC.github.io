@@ -7,7 +7,7 @@
     "dev": "vite",
     "setmetadata": "node scripts/setmetadata.mjs",
     "fetchproducts": "node scripts/fetchproductfeed.mjs",
-    "build": "npm run setmetadata && npm run fetchproducts && tsc && vite build",
+    "build": "bun run setmetadata && bun run fetchproducts && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "playwright test",
@@ -25,7 +25,7 @@
     "react": "^18.3.1",
     "react-calendly": "^4.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.1",
+    "react-router-dom": "~6.24.1",
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {

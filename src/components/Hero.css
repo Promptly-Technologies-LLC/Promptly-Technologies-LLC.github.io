@@ -1,3 +1,5 @@
+@reference "../App.css";
+
 /* hero.css */
 /* Using TailwindCSS with @apply */
 .hero-container {

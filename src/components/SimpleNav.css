@@ -1,3 +1,5 @@
+@reference "../App.css";
+
 .simplenavlinks {@apply flex flex-wrap pt-4 justify-center text-2xl font-bangers}
 
 .simplenavlink {@apply px-4 no-underline hover:underline}

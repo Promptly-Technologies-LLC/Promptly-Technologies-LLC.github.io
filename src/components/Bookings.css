@@ -1,3 +1,5 @@
+@reference "../App.css";
+
 #book {
     @apply mb-8 mt-0;
 }

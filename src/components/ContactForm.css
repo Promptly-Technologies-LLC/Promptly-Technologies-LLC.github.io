@@ -1,3 +1,5 @@
+@reference "../App.css";
+
 .contact-section {
   @apply flex flex-col w-full place-items-center;
 }

@@ -28,3 +28,8 @@ dist-ssr
 venv
 .aider*
 .specstory
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/

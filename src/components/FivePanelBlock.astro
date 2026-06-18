@@ -1,0 +1,36 @@
+---
+import ComicPanel from './ComicPanel.astro';
+import type { ComicPanelProps } from '../types/comicpanel';
+
+interface Props {
+  panels: ComicPanelProps[];
+  widthClass?: string;
+  heightClass?: string;
+}
+
+const { panels, widthClass = 'w-auto', heightClass = 'h-auto' } = Astro.props;
+---
+
+<div
+  class:list={[
+    widthClass,
+    heightClass,
+    'mx-auto xl:max-h-screen grid gap-4 px-4 pt-4 grid-cols-1 md:grid-cols-2 md:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2',
+  ]}
+>
+  <div class="w-full md:col-span-1 md:row-span-1 md:col-start-1 md:row-start-1">
+    <ComicPanel {...panels[0]} />
+  </div>
+  <div class="w-full md:col-span-1 md:row-span-1 md:row-start-1 md:col-start-2 xl:col-start-1 xl:row-start-2">
+    <ComicPanel {...panels[1]} />
+  </div>
+  <div class="w-full md:col-span-1 md:row-span-1 md:row-start-2 md:col-start-1 xl:col-start-2 xl:row-start-1">
+    <ComicPanel {...panels[2]} />
+  </div>
+  <div class="w-full md:col-span-1 md:row-span-1 xl:col-start-2 xl:row-start-2 md:row-start-3 md:col-start-1">
+    <ComicPanel {...panels[3]} />
+  </div>
+  <div class="w-full md:col-span-1 md:row-span-2">
+    <ComicPanel {...panels[4]} />
+  </div>
+</div>

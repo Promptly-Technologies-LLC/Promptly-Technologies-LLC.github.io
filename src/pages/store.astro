@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComicTitle from '../components/ComicTitle.astro';
+import SimpleNav from '../components/SimpleNav.astro';
+import Products from '../components/Products.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Store | Promptly Technologies, LLC"
+  description="Promptly Technologies merchandise and products from our Zazzle store."
+  path="/store"
+>
+  <main id="skip">
+    <ComicTitle />
+    <SimpleNav />
+    <Products />
+    <Footer />
+  </main>
+</BaseLayout>

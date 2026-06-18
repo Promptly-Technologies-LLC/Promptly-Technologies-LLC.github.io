@@ -1,0 +1,33 @@
+---
+import '../components/Credits.css';
+import ComicPanel from './ComicPanel.astro';
+import Footer from './Footer.astro';
+
+const team = [
+  { name: 'Christopher C. Smith', role: 'President', image: 'images/team/Chris.jpg', alt: 'Portrait of Christopher C. Smith, President' },
+  { name: 'BJ Singh', role: 'Partner', image: 'images/team/Baljinder.jpg', alt: 'Portrait of BJ Singh, Partner' },
+  { name: 'Neil Carlson', role: 'Partner', image: 'images/team/Neil.jpg', alt: 'Portrait of Neil Carlson, Partner' },
+  { name: 'Cliff Bentley', role: 'Partner', image: 'images/team/Cliff.jpg', alt: 'Portrait of Cliff Bentley, Partner' },
+  { name: 'Jenny Xu', role: 'Intern', image: 'images/team/Jenny.jpg', alt: 'Portrait of Jenny Xu, Intern' },
+  { name: 'Sravan Parakala', role: 'Intern', image: 'images/team/Sravan.jpg', alt: 'Portrait of Sravan Parakala, Intern' },
+  { name: 'Rafi Khan', role: 'Intern', image: 'images/team/Rafi.jpg', alt: 'Portrait of Rafiuzzaman Khan, Intern' },
+];
+---
+
+<section id="credits" class="bg-gray-200">
+  <div class="headercontainer pb-8 pt-8">
+    <h1>Credits</h1>
+  </div>
+  <div class="creditcontainer">
+    {
+      team.map((member) => (
+        <div class="panelcontainer">
+          <span>{member.name}</span>
+          <ComicPanel backgroundImage={member.image} altText={member.alt} />
+          <span>{member.role}</span>
+        </div>
+      ))
+    }
+  </div>
+  <Footer />
+</section>

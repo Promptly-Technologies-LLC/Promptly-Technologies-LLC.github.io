@@ -1,0 +1,31 @@
+---
+import '../components/ComicPanel.css';
+import ComicNarration from './ComicNarration.astro';
+
+interface Props {
+  text?: string;
+  backgroundImage: string;
+  altText?: string;
+  verticalPosition?: 'top' | 'center' | 'bottom';
+  horizontalPosition?: 'left' | 'center' | 'right';
+}
+
+const {
+  text,
+  backgroundImage,
+  altText = 'Comic Background',
+  verticalPosition = 'center',
+  horizontalPosition = 'center',
+} = Astro.props;
+---
+
+<div class="comic-panel-container">
+  <img class="comic-panel-image" src={backgroundImage} alt={altText} />
+  {
+    text && (
+      <span class={`narration-container v-${verticalPosition} h-${horizontalPosition}`}>
+        <ComicNarration text={text} />
+      </span>
+    )
+  }
+</div>

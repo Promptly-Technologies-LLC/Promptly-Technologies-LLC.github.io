@@ -1,7 +1,16 @@
 .creditcontainer {
-    @apply w-auto h-auto md:max-h-screen mx-auto grid gap-4 px-4 pb-4 grid-cols-4 md:grid-cols-10;
+    @apply w-auto h-auto mx-auto grid gap-4 px-4 pb-12 grid-cols-4 md:grid-cols-10;
 }
 
 .panelcontainer {
     @apply w-full text-center font-bangers py-6 col-span-2;
+}
+
+/* Center the second row: two col-span-2 panels in cols 4–7 of a 10-column grid. */
+.panelcontainer:nth-child(6) {
+    @apply md:col-start-4;
+}
+
+.panelcontainer:nth-child(7) {
+    @apply md:col-start-6;
 }

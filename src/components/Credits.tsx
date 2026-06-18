@@ -50,6 +50,22 @@ const Credits: React.FC = () => {
           />
           <span>Intern</span>
         </div>
+        <div className="panelcontainer">
+          <span>Sravan Parakala</span>
+          <ComicPanel 
+            backgroundImage="images/team/Sravan.jpg"
+            altText = 'Portrait of Sravan Parakala, Intern'
+          />
+          <span>Intern</span>
+        </div>
+        <div className="panelcontainer">
+          <span>Rafi Khan</span>
+          <ComicPanel 
+            backgroundImage="images/team/Rafi.jpg"
+            altText = 'Portrait of Rafiuzzaman Khan, Intern'
+          />
+          <span>Intern</span>
+        </div>
     </div>
     <Footer />
     </section>

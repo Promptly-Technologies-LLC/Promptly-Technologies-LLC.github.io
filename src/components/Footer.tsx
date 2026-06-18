@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
     <footer id="footer" className="footer">
         <div className="footercontents">
             <div className="copyrighttext">
-            Published by <HashLink to="/#" className="text-sm font-normal" >{properties.title}</HashLink>.<br/>Copyright 2023. All Rights Reserved.
+            Published by <HashLink to="/#" className="text-sm font-normal" >{properties.title}</HashLink>.<br/>Copyright 2026. All Rights Reserved.
             </div>
             <SimpleNav />
         </div>

@@ -1,122 +1,24 @@
 ---
+import ComicTitleSvg from './islands/ComicTitle';
+
 interface Props {
   text?: string;
+  accessibleText?: string;
+  /** Use h1 on the home page; use p on subpages that already have their own h1. */
+  asPageHeading?: boolean;
 }
 
-const { text = 'PROMPTLY TECHNOLOGIES' } = Astro.props;
-
-const JITTERS = ['0', '-10', '8', '-8'];
-
-function generateJitter(length: number): string {
-  return Array.from({ length }, (_, i) => JITTERS[i % JITTERS.length]).join(',');
-}
-
-function getJitterOffset(fontSize: number, word: string): number {
-  return 10 + word.length * 0.5 + fontSize * 0.05;
-}
-
-const words = text.split(' ');
-const mobileFontSize = 50;
-const desktopFontSize = 90;
-const mobileJitterOffset = getJitterOffset(mobileFontSize, words[0]);
-const desktopJitterOffset = getJitterOffset(desktopFontSize, words[0]);
-
-const mobileViewBoxHeight = mobileFontSize * words.length + mobileFontSize / 1.85;
-const desktopViewBoxHeight = desktopFontSize + desktopFontSize / 1.85;
-
-const mobileViewBox = `0 0 400 ${mobileViewBoxHeight + mobileJitterOffset}`;
-const desktopViewBox = `0 0 1200 ${desktopViewBoxHeight + desktopJitterOffset}`;
-
-const desktopTextY =
-  (desktopViewBoxHeight + desktopJitterOffset) / 2 +
-  desktopFontSize / 2.5 +
-  desktopJitterOffset;
+const displayText = Astro.props.text ?? 'PROMPTLY TECHNOLOGIES';
+const spokenName =
+  Astro.props.accessibleText ??
+  displayText
+    .split(' ')
+    .map((word) => word.charAt(0) + word.slice(1).toLowerCase())
+    .join(' ');
+const asPageHeading = Astro.props.asPageHeading ?? true;
 ---
 
 <div class="w-full">
-  <svg
-    class="block md:hidden"
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    viewBox={mobileViewBox}
-    preserveAspectRatio="xMidYMid meet"
-    aria-hidden="true"
-  >
-    <defs>
-      <filter id="title-mob-outline">
-        <feMorphology operator="dilate" in="SourceAlpha" radius="3" />
-        <feComposite in="SourceGraphic" />
-      </filter>
-      <pattern id="title-mob-hexapolka" patternUnits="userSpaceOnUse" width="100" height="86" patternTransform="scale(.07)">
-        <rect width="100%" height="86" fill="#f0f" />
-        <circle cx="0" cy="44" r="16" id="title-mob-dot" fill="red" />
-        <use href="#title-mob-dot" transform="translate(48,0)" />
-        <use href="#title-mob-dot" transform="translate(25,-44)" />
-        <use href="#title-mob-dot" transform="translate(75,-44)" />
-        <use href="#title-mob-dot" transform="translate(100,0)" />
-        <use href="#title-mob-dot" transform="translate(75,42)" />
-        <use href="#title-mob-dot" transform="translate(25,42)" />
-      </pattern>
-      <filter id="title-mob-shadow">
-        <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#000000" />
-      </filter>
-    </defs>
-    {
-      words.map((word, index) => (
-        <text
-          fill="url(#title-mob-hexapolka)"
-          filter="url(#title-mob-outline) url(#title-mob-shadow)"
-          x="200"
-          y={mobileFontSize * (index + 1) + mobileJitterOffset}
-          dy={generateJitter(word.length)}
-          text-anchor="middle"
-          font-size={mobileFontSize}
-          font-family="Bangers, cursive"
-        >
-          {word}
-        </text>
-      ))
-    }
-  </svg>
-
-  <svg
-    class="hidden md:block"
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    viewBox={desktopViewBox}
-    preserveAspectRatio="xMidYMid meet"
-    aria-hidden="true"
-  >
-    <defs>
-      <filter id="title-desk-outline">
-        <feMorphology operator="dilate" in="SourceAlpha" radius="3" />
-        <feComposite in="SourceGraphic" />
-      </filter>
-      <pattern id="title-desk-hexapolka" patternUnits="userSpaceOnUse" width="100" height="86" patternTransform="scale(.07)">
-        <rect width="100%" height="86" fill="#f0f" />
-        <circle cx="0" cy="44" r="16" id="title-desk-dot" fill="red" />
-        <use href="#title-desk-dot" transform="translate(48,0)" />
-        <use href="#title-desk-dot" transform="translate(25,-44)" />
-        <use href="#title-desk-dot" transform="translate(75,-44)" />
-        <use href="#title-desk-dot" transform="translate(100,0)" />
-        <use href="#title-desk-dot" transform="translate(75,42)" />
-        <use href="#title-desk-dot" transform="translate(25,42)" />
-      </pattern>
-      <filter id="title-desk-shadow">
-        <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#000000" />
-      </filter>
-    </defs>
-    <text
-      fill="url(#title-desk-hexapolka)"
-      filter="url(#title-desk-outline) url(#title-desk-shadow)"
-      x="600"
-      y={desktopTextY}
-      dy={generateJitter(text.length)}
-      text-anchor="middle"
-      font-size={desktopFontSize}
-      font-family="Bangers, cursive"
-    >
-      {text}
-    </text>
-  </svg>
+  {asPageHeading ? <h1 class="sr-only">{spokenName}</h1> : <p class="sr-only">{spokenName}</p>}
+  <ComicTitleSvg client:only="react" text={displayText} />
 </div>

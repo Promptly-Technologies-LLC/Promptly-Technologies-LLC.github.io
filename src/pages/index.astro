@@ -4,12 +4,13 @@ import Hero from '../components/Hero.astro';
 import Story from '../components/Story.astro';
 import Credits from '../components/Credits.astro';
 import ContactForm from '../components/islands/ContactForm';
+import siteProperties from '../customizations/siteproperties.json';
 ---
 
 <BaseLayout path="/">
   <main class="flex flex-col place-items-center w-full" id="skip">
     <Hero />
-    <ContactForm client:load />
+    <ContactForm client:visible formspreeFormId={siteProperties.formspreeFormId} />
     <Story />
     <Credits />
   </main>

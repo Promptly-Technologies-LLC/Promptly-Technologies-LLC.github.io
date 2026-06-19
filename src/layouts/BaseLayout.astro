@@ -6,15 +6,18 @@ interface Props {
   title?: string;
   description?: string;
   path?: string;
+  noindex?: boolean;
 }
 
-const { title, description, path = '/' } = Astro.props;
+const { title, description, path = '/', noindex = false } = Astro.props;
 
 const props = siteProperties;
 const pageTitle = title ?? props.title;
 const pageDescription = description ?? props.shortDescription;
 const canonicalUrl = new URL(path, props.url).href;
-const robotsContent = `${props.robots.index ? 'index' : 'noindex'},${props.robots.follow ? 'follow' : 'nofollow'}`;
+const robotsContent = noindex
+  ? 'noindex, nofollow'
+  : `${props.robots.index ? 'index' : 'noindex'},${props.robots.follow ? 'follow' : 'nofollow'}`;
 const ogImage = props.socialCards[0]?.startsWith('http')
   ? props.socialCards[0]
   : `${props.url}${props.socialCards[0]}`;
@@ -31,8 +34,8 @@ const ogImage = props.socialCards[0]?.startsWith('http')
     <meta name="keywords" content={props.keywords.join(', ')} />
     <link rel="icon" href={props.favicon} />
     <meta name="robots" content={robotsContent} />
-    <link rel="canonical" href={canonicalUrl} />
-    <meta property="og:url" content={canonicalUrl} />
+    {!noindex && <link rel="canonical" href={canonicalUrl} />}
+    {!noindex && <meta property="og:url" content={canonicalUrl} />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
@@ -44,10 +47,10 @@ const ogImage = props.socialCards[0]?.startsWith('http')
     <script is:inline>
       (function () {
         var redirects = {
-          '#/Store': '/store',
-          '#/store': '/store',
-          '#/Legal': '/legal',
-          '#/legal': '/legal',
+          '#/Store': '/store/',
+          '#/store': '/store/',
+          '#/Legal': '/legal/',
+          '#/legal': '/legal/',
         };
         var target = redirects[location.hash];
         if (target) location.replace(target);

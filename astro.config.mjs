@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://promptlytechnologies.com',
+  trailingSlash: 'always',
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),

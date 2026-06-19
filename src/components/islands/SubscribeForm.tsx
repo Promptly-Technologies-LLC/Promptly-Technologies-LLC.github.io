@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
-import siteProperties from '../../customizations/siteproperties.json';
 import '../SubscribeForm.css';
 
-export default function SubscribeForm() {
-  const { convertKitFormId: formId, convertKitDataUid: dataUid } = siteProperties;
+interface Props {
+  convertKitFormId: string;
+  convertKitDataUid: string;
+}
+
+export default function SubscribeForm({ convertKitFormId: formId, convertKitDataUid: dataUid }: Props) {
   const [message, setMessage] = useState('');
 
   useEffect(() => {

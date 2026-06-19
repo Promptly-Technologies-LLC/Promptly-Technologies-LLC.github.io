@@ -3,12 +3,13 @@ import ThreePanelBlock from './ThreePanelBlock.astro';
 import ThreePanelRow from './ThreePanelRow.astro';
 import Feature from './Feature.astro';
 import Events from './islands/Events';
+import siteProperties from '../customizations/siteproperties.json';
 import type { ComicPanelProps } from '../types/comicpanel';
 ---
 
 <section class="relative flex flex-col w-full items-center" id="story">
   <div class="headercontainer">
-    <h1 class="pt-12 pb-8">Our Story</h1>
+    <h2 class="pt-12 pb-8">Our Story</h2>
   </div>
 
   <ThreePanelBlock
@@ -67,7 +68,11 @@ import type { ComicPanelProps } from '../types/comicpanel';
     ] satisfies ComicPanelProps[]}
   />
 
-  <Events client:visible />
+  <Events
+    client:visible
+    convertKitFormId={siteProperties.convertKitFormId}
+    convertKitDataUid={siteProperties.convertKitDataUid}
+  />
 
   <ThreePanelBlock
     widthClass="xl:w-3/4"

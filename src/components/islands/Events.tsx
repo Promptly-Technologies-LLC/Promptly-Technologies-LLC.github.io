@@ -5,7 +5,12 @@ import eventsJSON from '../../customizations/events.json';
 import SubscribeForm from './SubscribeForm';
 import '../Events.css';
 
-export default function Events() {
+interface Props {
+  convertKitFormId: string;
+  convertKitDataUid: string;
+}
+
+export default function Events({ convertKitFormId, convertKitDataUid }: Props) {
   const calendarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,10 +32,10 @@ export default function Events() {
   return (
     <section className="events" id="events">
       <div className="headercontainer">
-        <h1 className="pt-12 pb-8">Events</h1>
+        <h2 className="pt-12 pb-8">Events</h2>
       </div>
       <div className="w-full p-0 h-64" ref={calendarRef} id="calendar" />
-      <SubscribeForm />
+      <SubscribeForm convertKitFormId={convertKitFormId} convertKitDataUid={convertKitDataUid} />
     </section>
   );
 }

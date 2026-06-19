@@ -32,6 +32,9 @@ body.loading * {
 
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:not(.button) {
   @apply text-black underline hover:text-gray-600;
 }
 
@@ -47,6 +50,10 @@ h1 {
   @apply text-4xl font-bold font-bangers;
 }
 
+.headercontainer > h2:only-child {
+  @apply text-4xl font-bold font-bangers;
+}
+
 h2 {
   @apply text-2xl font-bold font-sans;
 }
@@ -59,7 +66,7 @@ p {
   @apply py-4 text-lg font-sans;
 }
 
-button {
+button:not(.button) {
   @apply my-4 text-base font-sans;
 }
 
@@ -73,7 +80,11 @@ ol, ul {
 }
 
 .button {
-  @apply p-2 m-0 bg-slate-600 hover:bg-slate-800 text-white rounded-md;
+  @apply inline-block p-2 m-0 border-0 bg-slate-600 hover:bg-slate-800 text-white hover:text-white rounded-md no-underline cursor-pointer text-base font-sans;
+}
+
+.button:disabled {
+  @apply opacity-50 cursor-not-allowed;
 }
 
 .animated {

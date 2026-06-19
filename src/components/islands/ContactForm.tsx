@@ -1,6 +1,9 @@
 import { useForm, ValidationError } from '@formspree/react';
-import propertiesJSON from '../../customizations/siteproperties.json';
 import '../ContactForm.css';
+
+interface Props {
+  formspreeFormId?: string;
+}
 
 function ContactFormInner({ formId }: { formId: string }) {
   const [state, handleSubmit] = useForm(formId);
@@ -10,7 +13,7 @@ function ContactFormInner({ formId }: { formId: string }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(event) => void handleSubmit(event)}>
       <input id="email" type="email" name="email" placeholder="Email Address" />
       <ValidationError prefix="Email" field="email" errors={state.errors} />
       <textarea id="message" name="message" placeholder="Project description" />
@@ -24,13 +27,11 @@ function ContactFormInner({ formId }: { formId: string }) {
   );
 }
 
-export default function ContactForm() {
-  const formId = propertiesJSON.formspreeFormId;
-
+export default function ContactForm({ formspreeFormId: formId }: Props) {
   return (
     <section className="contact-section" id="contact">
       <div className="headercontainer">
-        <h1 className="pt-12 pb-8">Contact</h1>
+        <h2 className="pt-12 pb-8">Contact</h2>
       </div>
       <div className="contact-container">
         <p>

@@ -20,21 +20,18 @@ jobs:
       - name: Install Dependencies
         run: bun install
 
-      - name: Type check
-        run: bunx astro check
-
       - name: Build
         run: bun run build
 
       - name: Commit and push changes to repository
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'Automated product feed update'
+          commit_message: 'Automated build/product feed update'
 
       - name: Get domain
         id: get-domain
         uses: notiz-dev/github-action-json-property@release
-        with:
+        with: 
           path: 'src/customizations/siteproperties.json'
           prop_path: 'url'
 

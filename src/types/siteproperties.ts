@@ -15,6 +15,7 @@ interface SiteProperties {
     socialCards: string[];
     favicon: string;
     robots: Robots;
+    calendlyUrl?: string;
     formspreeFormId?: string;
     convertKitFormId?: string;
     convertKitDataUid?: string;

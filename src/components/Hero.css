@@ -10,7 +10,7 @@
 }
 
 .comic-title {
-  @apply flex w-full justify-center items-center;
+  @apply flex justify-center items-center;
 }
 
 .top-content-wrapper {

@@ -7,7 +7,11 @@
 }
 
 .formkit-flow-control {
-  @apply flex flex-row gap-4 w-full lg:w-auto;
+  @apply flex flex-row flex-wrap items-end gap-4 w-full lg:w-auto;
+}
+
+.formkit-flow-control .button {
+  @apply shrink-0 self-end;
 }
 
 .formkit-field {

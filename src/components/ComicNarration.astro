@@ -1,0 +1,13 @@
+---
+import './ComicNarration.css';
+
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<div class="comic-narration-container">
+  <div class="comic-narration-border"></div>
+  <span class="comic-narration-text" set:html={text} />
+</div>

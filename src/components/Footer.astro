@@ -1,0 +1,17 @@
+---
+import './Footer.css';
+import propertiesJSON from '../customizations/siteproperties.json';
+import SimpleNav from './SimpleNav.astro';
+
+const properties = propertiesJSON;
+---
+
+<footer id="footer" class="footer">
+  <div class="footercontents">
+    <div class="copyrighttext">
+      Published by <a href="/" class="text-sm font-normal">{properties.title}</a>.<br />
+      Copyright 2026. All Rights Reserved.
+    </div>
+    <SimpleNav />
+  </div>
+</footer>

@@ -1,0 +1,63 @@
+---
+import siteProperties from '../customizations/siteproperties.json';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  path?: string;
+  noindex?: boolean;
+}
+
+const { title, description, path = '/', noindex = false } = Astro.props;
+
+const props = siteProperties;
+const pageTitle = title ?? props.title;
+const pageDescription = description ?? props.shortDescription;
+const canonicalUrl = new URL(path, props.url).href;
+const robotsContent = noindex
+  ? 'noindex, nofollow'
+  : `${props.robots.index ? 'index' : 'noindex'},${props.robots.follow ? 'follow' : 'nofollow'}`;
+const ogImage = props.socialCards[0]?.startsWith('http')
+  ? props.socialCards[0]
+  : `${props.url}${props.socialCards[0]}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="author" content={props.author} />
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={props.keywords.join(', ')} />
+    <link rel="icon" href={props.favicon} />
+    <meta name="robots" content={robotsContent} />
+    {!noindex && <link rel="canonical" href={canonicalUrl} />}
+    {!noindex && <meta property="og:url" content={canonicalUrl} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <script is:inline>
+      (function () {
+        var redirects = {
+          '#/Store': '/store/',
+          '#/store': '/store/',
+          '#/Legal': '/legal/',
+          '#/legal': '/legal/',
+        };
+        var target = redirects[location.hash];
+        if (target) location.replace(target);
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

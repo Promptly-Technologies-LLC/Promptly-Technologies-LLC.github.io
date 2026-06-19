@@ -1,0 +1,24 @@
+---
+import ComicTitleSvg from './islands/ComicTitle';
+
+interface Props {
+  text?: string;
+  accessibleText?: string;
+  /** Use h1 on the home page; use p on subpages that already have their own h1. */
+  asPageHeading?: boolean;
+}
+
+const displayText = Astro.props.text ?? 'PROMPTLY TECHNOLOGIES';
+const spokenName =
+  Astro.props.accessibleText ??
+  displayText
+    .split(' ')
+    .map((word) => word.charAt(0) + word.slice(1).toLowerCase())
+    .join(' ');
+const asPageHeading = Astro.props.asPageHeading ?? true;
+---
+
+<div class="w-full">
+  {asPageHeading ? <h1 class="sr-only">{spokenName}</h1> : <p class="sr-only">{spokenName}</p>}
+  <ComicTitleSvg client:only="react" text={displayText} />
+</div>

@@ -1,0 +1,56 @@
+---
+import './Products.css';
+import productFeedJSON from '../customizations/productfeed.json';
+import type ProductFeed from '../types/productfeed';
+
+const productFeed: ProductFeed = productFeedJSON;
+
+function cleanDescription(description: string): string {
+  return description.replace(/&quot;/g, '"');
+}
+
+function truncateDescription(description: string, maxLength = 150): string {
+  return description.length <= maxLength ? description : `${description.slice(0, maxLength)}...`;
+}
+
+const items = productFeed?.item
+  ? Array.isArray(productFeed.item)
+    ? productFeed.item
+    : [productFeed.item]
+  : [];
+---
+
+<section id="store" class="mx-auto mt-12">
+  <div class="headercontainer">
+    <h1>Store</h1>
+  </div>
+  <div class="product-grid">
+    {
+      items.map((item) => (
+        <div class="product-item">
+          <a
+            href={`${item.link}?rf=238132560883807003`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="product-link"
+          >
+            <div class="product-image-container">
+              <img
+                src={item['media:content']['@_url']}
+                alt={item.title}
+                class="product-image"
+              />
+              <div class="product-hover-banner">
+                <span class="product-title">{item['media:title']}</span>
+                <span class="product-description">
+                  {truncateDescription(cleanDescription(item['media:description']))}
+                </span>
+              </div>
+            </div>
+            <div class="product-price">{item['media:price']}</div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</section>

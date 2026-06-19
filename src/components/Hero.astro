@@ -1,0 +1,51 @@
+---
+import './Hero.css';
+import heroJSON from '../customizations/hero.json';
+import propertiesJSON from '../customizations/siteproperties.json';
+import ComicTitle from './ComicTitle.astro';
+import Nav from './Nav.astro';
+import ScallopedOval from './ScallopedOval.astro';
+import SocialIcon from './SocialIcon.astro';
+
+const hero = heroJSON;
+const properties = propertiesJSON;
+---
+
+<section id="hero" class="hero-container">
+  <div class="top-content-wrapper">
+    <div class="comic-title">
+      <ComicTitle />
+    </div>
+    <div class="inline-flex nav-wrapper">
+      <Nav />
+    </div>
+  </div>
+  <img
+    class="hero-image md:hero-image-positioned"
+    src={hero.src}
+    alt={hero.alt}
+    style={`--hero-adjustment: ${hero.adjustment}`}
+  />
+  <div class="bottom-container">
+    <div class="bottomwrapper">
+      <ScallopedOval class="px-10 py-10">
+        <div class="hero-script" set:html={hero.script} />
+        <div class="social-icons">
+          {
+            Object.entries(properties.socialProfiles).map(([key, value]) => (
+              <SocialIcon iconName={key} url={value} class="icon-link" />
+            ))
+          }
+        </div>
+      </ScallopedOval>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (min-width: 768px) {
+    .md\:hero-image-positioned {
+      left: var(--hero-adjustment);
+    }
+  }
+</style>

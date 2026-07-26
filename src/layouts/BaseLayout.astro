@@ -58,12 +58,7 @@ const ogImage = props.socialCards[0]?.startsWith('http')
     </script>
   </head>
   <body>
-    <a
-      href="#skip"
-      class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[100] focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:font-sans focus:text-base focus:text-black focus:underline"
-    >
-      Skip to content
-    </a>
+    <a href="#skip" class="skip-link">Skip to content</a>
     <slot />
   </body>
 </html>

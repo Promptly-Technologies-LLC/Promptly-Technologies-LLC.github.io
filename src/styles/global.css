@@ -30,6 +30,25 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  z-index: 100;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #000;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  text-decoration: underline;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 a:not(.button) {
   @apply text-black underline hover:text-gray-600;
 }

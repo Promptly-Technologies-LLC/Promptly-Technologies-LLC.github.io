@@ -13,6 +13,10 @@ dist
 dist-ssr
 .astro
 *.local
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
 
 # Editor directories and files
 .vscode/*

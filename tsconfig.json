@@ -4,11 +4,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "resolveJsonModule": true,
-    "verbatimModuleSyntax": false,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "verbatimModuleSyntax": false
   },
   "include": ["src", ".astro/types.d.ts"],
   "exclude": ["dist", "node_modules"]

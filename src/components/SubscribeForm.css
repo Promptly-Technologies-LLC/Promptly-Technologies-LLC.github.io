@@ -1,5 +1,5 @@
 .convertkit-form {
-  @apply flex flex-col items-center text-center p-4 relative overflow-visible;  
+  @apply flex flex-col items-center text-center p-4 relative overflow-visible;
 }
 
 .formkit-fields {
@@ -18,36 +18,10 @@
   @apply w-full lg:w-auto;
 }
 
-.formkit-form legend {
-  border: none;
-  font-size: inherit;
-  padding: 0;
-  position: relative;
-  display: table;
-}
-
-.formkit-form fieldset {
-  border: 0;
-  margin: 0;
-  min-width: 0;
-}
-
-.formkit-form[data-format="modal"],
-.formkit-form[data-format="slide in"],
-.formkit-form[data-format="sticky bar"] {
-  display: none;
-}
-
-.formkit-sticky-bar .formkit-form[data-format="sticky bar"] {
-  display: block;
-}
-
 .formkit-form .formkit-alert {
   background: #f9fafb;
   border: 1px solid #e3e3e3;
   border-radius: 5px;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   list-style: none;
   margin: 25px auto;
@@ -73,21 +47,16 @@
 }
 
 .formkit-form .formkit-spinner {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  height: 0px;
-  width: 0px;
+  height: 0;
   margin: 0 auto;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  width: 0px;
+  width: 0;
   overflow: hidden;
   text-align: center;
-  -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
 
@@ -99,38 +68,30 @@
   opacity: 0.3;
   border-radius: 100%;
   display: inline-block;
-  -webkit-animation: formkit-bouncedelay-formkit-form-data-uid-8e2f770298- 1.4s infinite ease-in-out both;
-  animation: formkit-bouncedelay-formkit-form-data-uid-8e2f770298- 1.4s infinite ease-in-out both;
+  animation: formkit-bouncedelay 1.4s infinite ease-in-out both;
 }
 
 .formkit-form .formkit-spinner > div:nth-child(1) {
-  -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 
 .formkit-form .formkit-spinner > div:nth-child(2) {
-  -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
 
-.formkit-form .formkit-submit[data-active] .formkit-spinner {
+.formkit-form .formkit-submit[data-active] .formkit-spinner,
+.formkit-form .button[data-active] .formkit-spinner {
   opacity: 1;
   height: 100%;
   width: 50px;
 }
 
-.formkit-form .formkit-submit[data-active] .formkit-spinner ~ span {
+.formkit-form .formkit-submit[data-active] .formkit-spinner ~ span,
+.formkit-form .button[data-active] .formkit-spinner ~ span {
   opacity: 0;
 }
 
-.formkit-form .formkit-powered-by[data-active="false"] {
-  opacity: 0.35;
-}
-
 .formkit-form .formkit-powered-by-convertkit-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   z-index: 5;
@@ -138,14 +99,11 @@
   position: relative;
 }
 
-.formkit-form .formkit-powered-by-convertkit-container[data-active="false"] {
+.formkit-form .formkit-powered-by-convertkit-container[data-active='false'] {
   opacity: 0.35;
 }
 
 .formkit-form .formkit-powered-by-convertkit {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background-color: #ffffff;
   border: 1px solid #dde2e7;
@@ -157,16 +115,11 @@
   margin: 0 auto;
   opacity: 0.95;
   padding: 0;
-  -webkit-text-decoration: none;
   text-decoration: none;
   text-indent: 100%;
-  -webkit-transition: ease-in-out all 200ms;
   transition: ease-in-out all 200ms;
   white-space: nowrap;
   overflow: hidden;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   width: 190px;
   background-repeat: no-repeat;
@@ -177,78 +130,26 @@
 .formkit-form .formkit-powered-by-convertkit:hover,
 .formkit-form .formkit-powered-by-convertkit:focus {
   background-color: #ffffff;
-  -webkit-transform: scale(1.025) perspective(1px);
-  -ms-transform: scale(1.025) perspective(1px);
   transform: scale(1.025) perspective(1px);
   opacity: 1;
 }
 
-.formkit-form .formkit-powered-by-convertkit[data-variant="dark"],
-.formkit-form .formkit-powered-by-convertkit[data-variant="light"] {
-  background-color: transparent;
-  border-color: transparent;
-  width: 166px;
-}
-
-.formkit-form .formkit-powered-by-convertkit[data-variant="light"] {
-  color: #ffffff;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='white'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='white'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='white'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='%23373F45'/%3E%3C/svg%3E");
-}
-
-@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-8e2f770298- {
+@keyframes formkit-bouncedelay {
   0%,
   80%,
   100% {
-      -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-      transform: scale(0);
+    transform: scale(0);
   }
 
   40% {
-      -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-      transform: scale(1);
+    transform: scale(1);
   }
-}
-
-@keyframes formkit-bouncedelay-formkit-form-data-uid-8e2f770298- {
-  0%,
-  80%,
-  100% {
-      -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-      transform: scale(0);
-  }
-
-  40% {
-      -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-      transform: scale(1);
-  }
-}
-
-.formkit-form blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  border-left: 5px solid #e1e1e1;
-}
-
-.formkit-form .seva-custom-content {
-  padding: 15px;
-  font-size: 16px;
-  color: #fff;
-  mix-blend-mode: difference;
-}
-
-.formkit-form .formkit-modal.guard {
-  max-width: 420px;
-  width: 100%;
 }
 
 .formkit-form {
   max-width: 700px;
 }
 
-.formkit-form [data-style="clean"] {
+.formkit-form [data-style='clean'] {
   width: 100%;
 }

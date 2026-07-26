@@ -47,9 +47,6 @@ jobs:
             echo ${{ steps.get-domain.outputs.prop }} > ./dist/CNAME
           fi
 
-      - name: Disable Jekyll on GitHub Pages
-        run: touch ./dist/.nojekyll
-
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:

@@ -14,9 +14,20 @@ function ContactFormInner({ formId }: { formId: string }) {
 
   return (
     <form onSubmit={(event) => void handleSubmit(event)}>
-      <input id="email" type="email" name="email" placeholder="Email Address" />
+      <input
+        id="email"
+        type="email"
+        name="email"
+        aria-label="Email Address"
+        placeholder="Email Address"
+      />
       <ValidationError prefix="Email" field="email" errors={state.errors} />
-      <textarea id="message" name="message" placeholder="Project description" />
+      <textarea
+        id="message"
+        name="message"
+        aria-label="Project description"
+        placeholder="Project description"
+      />
       <div>
         <button className="button" type="submit" disabled={state.submitting}>
           Submit

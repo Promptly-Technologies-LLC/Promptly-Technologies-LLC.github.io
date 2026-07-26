@@ -3,7 +3,6 @@
   "title": "Promptly Technologies, LLC",
   "author": "Christopher C. Smith",
   "shortDescription": "AI-powered software for small businesses and nonprofits, developed out of Albany, New York",
-  "longDescription": "With AI, small businesses can afford to build custom software. Early adopters will gain a profound advantage. Hire Promptly today to automate the busywork and find your software edge!",
   "keywords": ["Artificial intelligence", "AI", "LLMs", "LLM wrapper apps", "GPT-4", "OpenAI", "Promptly Technologies", "Promptly Technologies, LLC"],
   "socialCards": ["/images/card.jpg"],
   "favicon": "/images/favicon.ico",
@@ -12,7 +11,6 @@
   "convertKitFormId": "6344299",
   "convertKitDataUid": "8e2f770298",
   "zazzleUrl" : "https://www.zazzle.com/store/promptlytechnologies",
-  "callToAction": "Book a free ten-minute meeting today to discuss how Promptly can help your business grapple with disruption by AI",
   "socialProfiles": {
     "GitHub": "https://github.com/Promptly-Technologies-LLC",
     "Twitter": "https://twitter.com/PromptlyTech",

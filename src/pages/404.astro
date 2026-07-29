@@ -1,12 +1,162 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ComicTitle from '../components/ComicTitle.astro';
+import SimpleNav from '../components/SimpleNav.astro';
+import ComicPanel from '../components/ComicPanel.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout title="Page Not Found | Promptly Technologies, LLC" noindex>
-  <main class="flex flex-col items-center justify-center min-h-screen" id="skip">
-    <h1>Not Found</h1>
-    <p>
-      <a href="/">Return home</a>
-    </p>
+  <main id="skip" class="not-found-page">
+    <ComicTitle asPageHeading={false} />
+    <SimpleNav />
+    <section class="not-found-section" aria-labelledby="not-found-heading">
+      <h1 id="not-found-heading" class="not-found-heading">404</h1>
+      <div class="not-found-panel">
+        <ComicPanel
+          text="This panel was never inked. You've wandered off the page."
+          backgroundImage="images/future.jpg"
+          altText="A person falling into a wormhole"
+          verticalPosition="top"
+          horizontalPosition="left"
+        />
+      </div>
+      <p class="not-found-actions">
+        <a href="/" class="button not-found-home">Flip back to the cover</a>
+      </p>
+    </section>
+    <Footer />
   </main>
 </BaseLayout>
+
+<style>
+  .not-found-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100svh;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(252, 165, 165, 0.35), transparent 55%),
+      linear-gradient(180deg, #fff7f7 0%, #ffffff 40%, #f8fafc 100%);
+  }
+
+  .not-found-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 56rem;
+    padding: 0.5rem 1rem 2rem;
+    box-sizing: border-box;
+  }
+
+  .not-found-heading {
+    margin: 0.75rem 0 0;
+    font-family: 'Bangers', cursive;
+    font-size: clamp(4rem, 14vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: 0.04em;
+    color: #111;
+    text-shadow: 3px 3px 0 #fca5a5;
+    animation: not-found-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .not-found-panel {
+    width: 100%;
+    height: min(58vh, 28rem);
+    min-height: 16rem;
+    margin-top: 0.5rem;
+    animation: not-found-panel-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+  }
+
+  .not-found-panel :global(.comic-panel-container) {
+    box-shadow: 6px 6px 0 #111;
+  }
+
+  .not-found-panel :global(.comic-panel-image) {
+    animation: not-found-ken-burns 12s ease-out both;
+  }
+
+  .not-found-actions {
+    margin: 1.25rem 0 0;
+    padding: 0;
+    animation: not-found-fade-up 0.6s ease 0.28s both;
+  }
+
+  .not-found-home {
+    font-family: 'Bangers', cursive;
+    font-size: 1.25rem;
+    letter-spacing: 0.03em;
+    padding: 0.65rem 1.25rem;
+    background: #111;
+    border: 3px solid #111;
+    box-shadow: 4px 4px 0 #fca5a5;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      background-color 0.15s ease;
+  }
+
+  .not-found-home:hover {
+    background: #334155;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #fca5a5;
+  }
+
+  .not-found-home:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #fca5a5;
+  }
+
+  @keyframes not-found-pop {
+    from {
+      opacity: 0;
+      transform: scale(0.85) rotate(-2deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  @keyframes not-found-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes not-found-panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes not-found-ken-burns {
+    from {
+      transform: scale(1.08);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .not-found-heading,
+    .not-found-panel,
+    .not-found-panel :global(.comic-panel-image),
+    .not-found-actions {
+      animation: none;
+    }
+  }
+</style>

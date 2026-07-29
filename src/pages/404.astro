@@ -15,7 +15,7 @@ import Footer from '../components/Footer.astro';
       <div class="not-found-panel">
         <ComicPanel
           text="This panel was never inked. You've wandered off the page."
-          backgroundImage="images/future.jpg"
+          backgroundImage="/images/future.jpg"
           altText="A person falling into a wormhole"
           verticalPosition="top"
           horizontalPosition="left"
@@ -52,9 +52,9 @@ import Footer from '../components/Footer.astro';
   }
 
   .not-found-heading {
-    margin: 0.75rem 0 0;
+    margin: 0.35rem 0 0;
     font-family: 'Bangers', cursive;
-    font-size: clamp(4rem, 14vw, 7rem);
+    font-size: clamp(3.5rem, 12vw, 6rem);
     line-height: 0.9;
     letter-spacing: 0.04em;
     color: #111;
@@ -64,9 +64,9 @@ import Footer from '../components/Footer.astro';
 
   .not-found-panel {
     width: 100%;
-    height: min(58vh, 28rem);
-    min-height: 16rem;
-    margin-top: 0.5rem;
+    height: min(62vh, 32rem);
+    min-height: 18rem;
+    margin-top: 0.35rem;
     animation: not-found-panel-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
   }
 

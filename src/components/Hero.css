@@ -35,7 +35,7 @@
 }
 
 .social-icons {
-  @apply flex space-x-4 mt-2 justify-center;
+  @apply grid grid-cols-4 gap-x-4 gap-y-2 mt-2 justify-items-center;
 }
 
 .icon-link {

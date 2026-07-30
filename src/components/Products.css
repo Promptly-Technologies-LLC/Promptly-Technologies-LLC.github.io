@@ -45,12 +45,9 @@
     @apply opacity-100;
 }
 
-/* Touch / coarse pointers have no persistent hover — keep info visible */
+/* Touch / coarse pointers have no persistent hover — keep info visible.
+   Do not dim the image by default; that remains a hover/focus cue. */
 @media (hover: none) {
-    .product-image {
-        @apply opacity-70;
-    }
-
     .product-info-banner {
         @apply opacity-100;
     }

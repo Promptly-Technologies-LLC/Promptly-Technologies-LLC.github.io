@@ -15,12 +15,11 @@
 }
 
 .product-image {
-    @apply w-full;
+    @apply w-full transition-opacity duration-300;
 }
 
-/* Convert styles to Tailwind with @apply directives */
-.product-hover-banner {
-    @apply absolute bottom-0 left-0 right-0 bg-black p-2 opacity-0;
+.product-info-banner {
+    @apply absolute bottom-0 left-0 right-0 bg-black/60 p-2 opacity-0 transition-opacity duration-300;
 }
 
 .product-title {
@@ -35,10 +34,24 @@
     @apply text-center py-2 font-bold;
 }
 
-.product-item:hover .product-image {
+/* Reveal title + description on pointer hover or keyboard focus */
+.product-item:hover .product-image,
+.product-item:focus-within .product-image {
     @apply opacity-70;
 }
 
-.product-item:hover .product-hover-banner {
-    @apply opacity-100 bg-opacity-60;
+.product-item:hover .product-info-banner,
+.product-item:focus-within .product-info-banner {
+    @apply opacity-100;
+}
+
+/* Touch / coarse pointers have no persistent hover — keep info visible */
+@media (hover: none) {
+    .product-image {
+        @apply opacity-70;
+    }
+
+    .product-info-banner {
+        @apply opacity-100;
+    }
 }

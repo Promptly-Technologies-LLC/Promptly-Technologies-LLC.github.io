@@ -1,3 +1,7 @@
+/* Layout is ours; everything below `.formkit-form .formkit-alert` is ConvertKit's
+   own widget CSS, kept verbatim so their script keeps recognising it. Its colour
+   literals are deliberately exempt from the palette in tailwind.config.js. */
+
 .convertkit-form {
   @apply flex flex-col items-center text-center p-4 relative overflow-visible;
 }

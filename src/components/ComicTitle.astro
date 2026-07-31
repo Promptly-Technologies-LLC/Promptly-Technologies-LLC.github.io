@@ -66,8 +66,8 @@ const desktopTextY =
         height="86"
         patternTransform="scale(.07)"
       >
-        <rect width="100%" height="86" fill="#f0f" />
-        <circle cx="0" cy="44" r="16" id="title-mob-dot" fill="red" />
+        <rect width="100%" height="86" style="fill: var(--color-halftone-magenta)" />
+        <circle cx="0" cy="44" r="16" id="title-mob-dot" style="fill: var(--color-halftone-red)" />
         <use href="#title-mob-dot" transform="translate(48,0)" />
         <use href="#title-mob-dot" transform="translate(25,-44)" />
         <use href="#title-mob-dot" transform="translate(75,-44)" />
@@ -76,7 +76,7 @@ const desktopTextY =
         <use href="#title-mob-dot" transform="translate(25,42)" />
       </pattern>
       <filter id="title-mob-shadow">
-        <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#000000" />
+        <feDropShadow dx="1" dy="1" stdDeviation="0" style="flood-color: var(--color-ink)" />
       </filter>
     </defs>
     {
@@ -89,7 +89,7 @@ const desktopTextY =
           dy={generateJitter(word.length)}
           text-anchor="middle"
           font-size={mobileFontSize}
-          font-family="Bangers, cursive"
+          style="font-family: var(--font-display)"
         >
           {word}
         </text>
@@ -117,8 +117,8 @@ const desktopTextY =
         height="86"
         patternTransform="scale(.07)"
       >
-        <rect width="100%" height="86" fill="#f0f" />
-        <circle cx="0" cy="44" r="16" id="title-desk-dot" fill="red" />
+        <rect width="100%" height="86" style="fill: var(--color-halftone-magenta)" />
+        <circle cx="0" cy="44" r="16" id="title-desk-dot" style="fill: var(--color-halftone-red)" />
         <use href="#title-desk-dot" transform="translate(48,0)" />
         <use href="#title-desk-dot" transform="translate(25,-44)" />
         <use href="#title-desk-dot" transform="translate(75,-44)" />
@@ -127,7 +127,7 @@ const desktopTextY =
         <use href="#title-desk-dot" transform="translate(25,42)" />
       </pattern>
       <filter id="title-desk-shadow">
-        <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#000000" />
+        <feDropShadow dx="1" dy="1" stdDeviation="0" style="flood-color: var(--color-ink)" />
       </filter>
     </defs>
     <text
@@ -138,7 +138,7 @@ const desktopTextY =
       dy={generateJitter(displayText.length)}
       text-anchor="middle"
       font-size={desktopFontSize}
-      font-family="Bangers, cursive"
+      style="font-family: var(--font-display)"
     >
       {displayText}
     </text>

@@ -31,7 +31,8 @@
 }
 
 .hero-script {
-  @apply text-center z-10 text-black font-euphoria text-2xl leading-none;
+  font-family: var(--font-script);
+  @apply text-center z-10 text-ink text-2xl leading-none;
 }
 
 .social-icons {
@@ -39,7 +40,7 @@
 }
 
 .icon-link {
-  @apply text-black;
+  @apply text-ink;
 }
 
 .bottomwrapper {

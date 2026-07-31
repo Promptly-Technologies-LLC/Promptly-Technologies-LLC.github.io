@@ -99,6 +99,10 @@ section {
 /* ---------------------------------------------------------------------------
    The type rule: Bangers letters the display type — headings, narration, nav.
    The sans carries anything you actually sit down and read.
+
+   Section titles that are the lone heading in a `.headercontainer` stay large
+   (`h2:only-child`). A subtitle under an `h1` (e.g. Privacy) is a regular `h2`
+   at the smaller display size — still shouted, just not as loud as the title.
    --------------------------------------------------------------------------- */
 h1,
 h2,
@@ -108,18 +112,16 @@ h3 {
 }
 
 h1,
-h2 {
+.headercontainer > h2:only-child {
   @apply text-4xl;
+}
+
+h2 {
+  @apply text-2xl;
 }
 
 h3 {
   @apply my-4 text-2xl;
-}
-
-/* A subtitle under a page title: sans, because it is read rather than shouted. */
-.deck {
-  font-family: var(--font-body);
-  @apply text-lg text-ink-soft;
 }
 
 p {

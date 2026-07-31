@@ -7,31 +7,20 @@
 /* ---------------------------------------------------------------------------
    Design tokens
 
-   The palette and the panel geometry are defined once, in tailwind.config.js.
-   This block republishes them as custom properties so hand-written CSS and
-   inline SVG can reference the same values instead of re-typing literals.
+   Colour channels live once, in the `channels` object in tailwind.config.js.
+   A small Tailwind plugin republishes them as `--color-*-rgb` (for
+   `rgb(var(--color-ink-rgb) / 0.35)`) and `--color-*` (opaque). Fonts and
+   panel geometry are republished here via `theme()`.
 
-   Use the Tailwind utility (bg-caption, border-ink) where a class will do;
-   use the custom property where it won't.
+   Use the Tailwind utility (bg-caption, border-ink, bg-ink/70) where a class
+   will do; use the custom property where it won't.
    --------------------------------------------------------------------------- */
 :root {
-  --color-ink: theme('colors.ink.DEFAULT');
-  --color-ink-soft: theme('colors.ink.soft');
-  --color-ink-line: theme('colors.ink.line');
-  --color-newsprint: theme('colors.newsprint.DEFAULT');
-  --color-newsprint-shade: theme('colors.newsprint.shade');
-  --color-newsprint-deep: theme('colors.newsprint.deep');
-  --color-halftone-magenta: theme('colors.halftone.magenta');
-  --color-halftone-red: theme('colors.halftone.red');
-  --color-caption: theme('colors.caption.DEFAULT');
-  --color-accent: theme('colors.accent.DEFAULT');
-  --color-accent-dark: theme('colors.accent.dark');
-
   /* Bangers letters the comic; the sans carries the reading copy; Allura is
      reserved for the hero's handwritten tagline. */
-  --font-display: theme('fontFamily.bangers');
+  --font-display: theme('fontFamily.display');
   --font-body: theme('fontFamily.sans');
-  --font-script: theme('fontFamily.euphoria');
+  --font-script: theme('fontFamily.script');
 
   /* Panel geometry — the black rule and hard offset shadow that make a
      rectangle read as a comic panel. Buttons borrow the same vocabulary. */
@@ -62,7 +51,7 @@ body {
 }
 
 a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgb(var(--color-ink-rgb) / 0);
 }
 
 .skip-link {

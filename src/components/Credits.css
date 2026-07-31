@@ -3,7 +3,7 @@
 }
 
 .panelcontainer {
-    @apply w-full text-center font-bangers py-6 col-span-2;
+    @apply w-full text-center font-display py-6 col-span-2;
 }
 
 /* Center the second row: two col-span-2 panels in cols 4–7 of a 10-column grid. */

@@ -4,6 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   Design tokens
+
+   Colour channels live once, in the `channels` object in tailwind.config.js.
+   A small Tailwind plugin republishes them as `--color-*-rgb` (for
+   `rgb(var(--color-ink-rgb) / 0.35)`) and `--color-*` (opaque). Fonts and
+   panel geometry are republished here via `theme()`.
+
+   Use the Tailwind utility (bg-caption, border-ink, bg-ink/70) where a class
+   will do; use the custom property where it won't.
+   --------------------------------------------------------------------------- */
+:root {
+  /* Bangers letters the comic; the sans carries the reading copy; Allura is
+     reserved for the hero's handwritten tagline. */
+  --font-display: theme('fontFamily.display');
+  --font-body: theme('fontFamily.sans');
+  --font-script: theme('fontFamily.script');
+
+  /* Panel geometry — the black rule and hard offset shadow that make a
+     rectangle read as a comic panel. Buttons borrow the same vocabulary. */
+  --panel-border: theme('borderWidth.panel');
+  --panel-shadow: theme('boxShadow.panel');
+  --pop-shadow: theme('boxShadow.pop');
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
@@ -13,11 +38,10 @@ html {
 
 html,
 body {
-  font-family: 'Bangers', cursive, -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
-    'Helvetica', sans-serif;
+  font-family: var(--font-body);
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white antialiased;
+  @apply bg-newsprint text-ink antialiased;
 }
 
 body {
@@ -27,7 +51,7 @@ body {
 }
 
 a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgb(var(--color-ink-rgb) / 0);
 }
 
 .skip-link {
@@ -36,10 +60,10 @@ a {
   top: 0.5rem;
   z-index: 100;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.25rem;
-  background: #fff;
-  color: #000;
-  font-family: system-ui, sans-serif;
+  background: var(--color-newsprint);
+  color: var(--color-ink);
+  border: var(--panel-border) solid var(--color-ink);
+  font-family: var(--font-body);
   font-size: 1rem;
   text-decoration: underline;
   transform: translateY(-150%);
@@ -50,7 +74,7 @@ a {
 }
 
 a:not(.button) {
-  @apply text-black underline hover:text-gray-600;
+  @apply text-ink underline hover:text-accent;
 }
 
 .headercontainer {
@@ -61,32 +85,50 @@ section {
   @apply text-center w-full;
 }
 
-h1 {
-  @apply text-4xl font-bold font-bangers;
+/* ---------------------------------------------------------------------------
+   The type rule: Bangers letters the display type — headings, narration, nav.
+   The sans carries anything you actually sit down and read.
+
+   Section titles that are the lone heading in a `.headercontainer` stay large
+   (`h2:only-child`). A subtitle under an `h1` (e.g. Privacy) is a regular `h2`
+   at the smaller display size — still shouted, just not as loud as the title.
+   --------------------------------------------------------------------------- */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  @apply font-bold tracking-wide;
 }
 
+h1,
 .headercontainer > h2:only-child {
-  @apply text-4xl font-bold font-bangers;
+  @apply text-4xl;
 }
 
 h2 {
-  @apply text-2xl font-bold font-sans;
+  @apply text-2xl;
 }
 
 h3 {
-  @apply my-4 text-xl font-bold font-sans;
+  @apply my-4 text-2xl;
 }
 
 p {
-  @apply py-4 text-lg font-sans;
+  @apply py-4 text-lg;
 }
 
 button:not(.button) {
-  @apply my-4 text-base font-sans;
+  @apply my-4 text-base;
 }
 
-input, textarea {
-  @apply p-2 text-base font-sans w-full border-gray-200 border-2 placeholder:text-gray-500;
+input,
+textarea {
+  @apply p-2 text-base w-full border-ink-line border-2 placeholder:text-ink-soft;
+}
+
+input:focus,
+textarea:focus {
+  @apply border-ink;
 }
 
 ol, ul {
@@ -94,12 +136,46 @@ ol, ul {
   padding-left: 1em;
 }
 
+/* ---------------------------------------------------------------------------
+   Buttons borrow the panel's vocabulary: a heavy ink rule and a hard,
+   un-blurred shadow that the button slides into when you press it.
+   --------------------------------------------------------------------------- */
 .button {
-  @apply inline-block p-2 m-0 border-0 bg-slate-600 hover:bg-slate-800 text-white hover:text-white rounded-md no-underline cursor-pointer text-base font-sans;
+  font-family: var(--font-display);
+  @apply inline-block m-0 px-5 py-2 text-lg tracking-wide no-underline cursor-pointer;
+  @apply bg-accent text-newsprint hover:text-newsprint;
+  border: var(--panel-border) solid var(--color-ink);
+  box-shadow: var(--pop-shadow);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+  @apply bg-accent-dark;
+  transform: translate(-2px, -2px);
+  box-shadow: var(--panel-shadow);
+}
+
+.button:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-ink);
 }
 
 .button:disabled {
   @apply opacity-50 cursor-not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:hover:not(:disabled),
+  .button:active:not(:disabled) {
+    transform: none;
+  }
 }
 
 .animated {

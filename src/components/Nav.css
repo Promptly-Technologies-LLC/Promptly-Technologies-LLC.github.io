@@ -5,7 +5,7 @@
     position: relative;
     margin: 0 0.25rem;
     z-index: 1;
-    @apply text-black font-medium hover:underline;
+    @apply text-ink font-display font-medium hover:underline;
 }
 
 .nav-link:before {
@@ -16,7 +16,7 @@
     right: 0rem;
     bottom: 0.55rem;
     z-index: -1;
-    background-color: white;
+    background-color: var(--color-newsprint);
     clip-path: polygon(
         0% 0%, 7% 10%, 2% 20%, 9% 30%, 3% 40%, 
         8% 50%, 1% 60%, 11% 70%, 3% 80%, 9% 90%, 

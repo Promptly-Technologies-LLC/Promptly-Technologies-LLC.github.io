@@ -37,8 +37,17 @@ import Footer from '../components/Footer.astro';
     width: 100%;
     min-height: 100svh;
     background:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(252, 165, 165, 0.35), transparent 55%),
-      linear-gradient(180deg, #fff7f7 0%, #ffffff 40%, #f8fafc 100%);
+      radial-gradient(
+        ellipse 80% 50% at 50% -10%,
+        rgb(var(--color-caption-rgb) / 0.35),
+        transparent 55%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--color-caption) 12%, var(--color-newsprint)) 0%,
+        var(--color-newsprint) 40%,
+        var(--color-newsprint-shade) 100%
+      );
   }
 
   .not-found-section {
@@ -53,12 +62,12 @@ import Footer from '../components/Footer.astro';
 
   .not-found-heading {
     margin: 0.35rem 0 0;
-    font-family: 'Bangers', cursive;
+    font-family: var(--font-display);
     font-size: clamp(3.5rem, 12vw, 6rem);
     line-height: 0.9;
     letter-spacing: 0.04em;
-    color: #111;
-    text-shadow: 3px 3px 0 #fca5a5;
+    color: var(--color-ink);
+    text-shadow: 3px 3px 0 var(--color-caption);
     animation: not-found-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
@@ -71,7 +80,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .not-found-panel :global(.comic-panel-container) {
-    box-shadow: 6px 6px 0 #111;
+    box-shadow: var(--panel-shadow);
   }
 
   .not-found-panel :global(.comic-panel-image) {
@@ -84,29 +93,11 @@ import Footer from '../components/Footer.astro';
     animation: not-found-fade-up 0.6s ease 0.28s both;
   }
 
+  /* The ink rule, hard shadow and press animation now come from .button in
+     global.css; the only thing special about this one is that it is the sole
+     action on the page, so it gets to be a size larger. */
   .not-found-home {
-    font-family: 'Bangers', cursive;
     font-size: 1.25rem;
-    letter-spacing: 0.03em;
-    padding: 0.65rem 1.25rem;
-    background: #111;
-    border: 3px solid #111;
-    box-shadow: 4px 4px 0 #fca5a5;
-    transition:
-      transform 0.15s ease,
-      box-shadow 0.15s ease,
-      background-color 0.15s ease;
-  }
-
-  .not-found-home:hover {
-    background: #334155;
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 #fca5a5;
-  }
-
-  .not-found-home:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 #fca5a5;
   }
 
   @keyframes not-found-pop {

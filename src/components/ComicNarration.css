@@ -2,8 +2,8 @@
   position: relative;
   width: 100%;
   height: 100%;
-  font-family: 'Bangers', cursive;
-  color: black;
+  font-family: var(--font-display);
+  color: var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +24,6 @@
   width: 98%;
   height: 98%;
   z-index: 1;
-  background-color: #fca5a5;
-  border: 3px solid black;
+  background-color: var(--caption-pink);
+  border: var(--border-ink);
 }

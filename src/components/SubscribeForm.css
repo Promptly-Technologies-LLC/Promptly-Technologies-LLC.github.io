@@ -18,6 +18,11 @@
   @apply w-full lg:w-auto;
 }
 
+/*
+ * Everything below is ConvertKit's own form styling, kept close to what their
+ * embed ships so the widget keeps working when they update it. Its status
+ * colors are deliberately outside the site palette — do not tokenize them.
+ */
 .formkit-form .formkit-alert {
   background: #f9fafb;
   border: 1px solid #e3e3e3;

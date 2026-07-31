@@ -37,8 +37,17 @@ import Footer from '../components/Footer.astro';
     width: 100%;
     min-height: 100svh;
     background:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(252, 165, 165, 0.35), transparent 55%),
-      linear-gradient(180deg, #fff7f7 0%, #ffffff 40%, #f8fafc 100%);
+      radial-gradient(
+        ellipse 80% 50% at 50% -10%,
+        rgb(var(--caption-pink-rgb) / 0.35),
+        transparent 55%
+      ),
+      linear-gradient(
+        180deg,
+        rgb(var(--caption-pink-rgb) / 0.09) 0%,
+        var(--newsprint) 40%,
+        rgb(var(--newsprint-shade-rgb) / 0.25) 100%
+      );
   }
 
   .not-found-section {
@@ -53,12 +62,12 @@ import Footer from '../components/Footer.astro';
 
   .not-found-heading {
     margin: 0.35rem 0 0;
-    font-family: 'Bangers', cursive;
+    font-family: var(--font-display);
     font-size: clamp(3.5rem, 12vw, 6rem);
     line-height: 0.9;
     letter-spacing: 0.04em;
-    color: #111;
-    text-shadow: 3px 3px 0 #fca5a5;
+    color: var(--ink);
+    text-shadow: 3px 3px 0 var(--caption-pink);
     animation: not-found-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
@@ -71,7 +80,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .not-found-panel :global(.comic-panel-container) {
-    box-shadow: 6px 6px 0 #111;
+    box-shadow: 6px 6px 0 var(--ink);
   }
 
   .not-found-panel :global(.comic-panel-image) {
@@ -85,13 +94,13 @@ import Footer from '../components/Footer.astro';
   }
 
   .not-found-home {
-    font-family: 'Bangers', cursive;
+    font-family: var(--font-display);
     font-size: 1.25rem;
     letter-spacing: 0.03em;
     padding: 0.65rem 1.25rem;
-    background: #111;
-    border: 3px solid #111;
-    box-shadow: 4px 4px 0 #fca5a5;
+    background: var(--ink);
+    border: var(--border-ink);
+    box-shadow: 4px 4px 0 var(--caption-pink);
     transition:
       transform 0.15s ease,
       box-shadow 0.15s ease,
@@ -99,14 +108,14 @@ import Footer from '../components/Footer.astro';
   }
 
   .not-found-home:hover {
-    background: #334155;
+    background: var(--accent);
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 #fca5a5;
+    box-shadow: 6px 6px 0 var(--caption-pink);
   }
 
   .not-found-home:active {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 #fca5a5;
+    box-shadow: 2px 2px 0 var(--caption-pink);
   }
 
   @keyframes not-found-pop {

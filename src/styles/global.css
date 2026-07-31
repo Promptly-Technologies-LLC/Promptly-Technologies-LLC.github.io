@@ -4,6 +4,59 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Design tokens — the single source of truth for color and type on this site.
+ *
+ * Each color is declared once as an `-rgb` channel triplet. tailwind.config.js
+ * wraps those triplets in `rgb(... / <alpha-value>)` to build the theme, so the
+ * Tailwind class (`bg-caption-pink`) and the plain-CSS var (`var(--caption-pink)`)
+ * always resolve to the same value. Hand-written CSS and inline SVG use the
+ * paired non-`-rgb` var; anything that needs transparency composes the triplet
+ * directly, e.g. `rgb(var(--caption-pink-rgb) / 0.35)`.
+ */
+:root {
+  /* Line work and body text. */
+  --ink-rgb: 0 0 0;
+  --ink-muted-rgb: 75 85 99;
+  /* Page stock. */
+  --newsprint-rgb: 255 255 255;
+  --newsprint-shade-rgb: 229 231 235;
+  /* Process colors, used by the halftone title fill. */
+  --halftone-magenta-rgb: 255 0 255;
+  --halftone-red-rgb: 255 0 0;
+  /* Narration boxes. */
+  --caption-pink-rgb: 252 165 165;
+  /* The one accent: buttons and in-copy links. */
+  --accent-rgb: 71 85 105;
+  --accent-dark-rgb: 30 41 59;
+  /* Form validation copy. */
+  --alert-rgb: 220 38 38;
+
+  --ink: rgb(var(--ink-rgb));
+  --ink-muted: rgb(var(--ink-muted-rgb));
+  --newsprint: rgb(var(--newsprint-rgb));
+  --newsprint-shade: rgb(var(--newsprint-shade-rgb));
+  --halftone-magenta: rgb(var(--halftone-magenta-rgb));
+  --halftone-red: rgb(var(--halftone-red-rgb));
+  --caption-pink: rgb(var(--caption-pink-rgb));
+  --accent: rgb(var(--accent-rgb));
+  --accent-dark: rgb(var(--accent-dark-rgb));
+  --alert: rgb(var(--alert-rgb));
+
+  /*
+   * Type: Bangers for display (title, headings, narration, nav), Allura for the
+   * one bit of script in the hero, a system sans for everything you actually
+   * read. Body copy inherits `--font-sans`; display type opts in explicitly.
+   */
+  --font-display: 'Bangers', cursive;
+  --font-script: 'Allura', cursive;
+  --font-sans: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica',
+    sans-serif;
+
+  /* Weight of the panel and narration border, so the comic keeps one line width. */
+  --border-ink: 3px solid var(--ink);
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
@@ -13,11 +66,10 @@ html {
 
 html,
 body {
-  font-family: 'Bangers', cursive, -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
-    'Helvetica', sans-serif;
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white antialiased;
+  @apply bg-newsprint antialiased;
 }
 
 body {
@@ -27,7 +79,7 @@ body {
 }
 
 a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgb(var(--ink-rgb) / 0);
 }
 
 .skip-link {
@@ -37,9 +89,9 @@ a {
   z-index: 100;
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
-  background: #fff;
-  color: #000;
-  font-family: system-ui, sans-serif;
+  background: var(--newsprint);
+  color: var(--ink);
+  font-family: var(--font-sans);
   font-size: 1rem;
   text-decoration: underline;
   transform: translateY(-150%);
@@ -50,7 +102,7 @@ a {
 }
 
 a:not(.button) {
-  @apply text-black underline hover:text-gray-600;
+  @apply text-ink underline hover:text-ink-muted;
 }
 
 .headercontainer {
@@ -61,32 +113,34 @@ section {
   @apply text-center w-full;
 }
 
+/* Headings are display type — that is the rule, no exceptions. */
 h1 {
-  @apply text-4xl font-bold font-bangers;
+  @apply text-4xl font-bold font-display;
 }
 
 .headercontainer > h2:only-child {
-  @apply text-4xl font-bold font-bangers;
+  @apply text-4xl font-bold font-display;
 }
 
 h2 {
-  @apply text-2xl font-bold font-sans;
+  @apply text-2xl font-bold font-display;
 }
 
 h3 {
-  @apply my-4 text-xl font-bold font-sans;
+  @apply my-4 text-xl font-bold font-display;
 }
 
+/* Body copy and UI inherit --font-sans from <body>; no per-element opt-in. */
 p {
-  @apply py-4 text-lg font-sans;
+  @apply py-4 text-lg;
 }
 
 button:not(.button) {
-  @apply my-4 text-base font-sans;
+  @apply my-4 text-base;
 }
 
 input, textarea {
-  @apply p-2 text-base font-sans w-full border-gray-200 border-2 placeholder:text-gray-500;
+  @apply p-2 text-base w-full border-newsprint-shade border-2 placeholder:text-ink-muted;
 }
 
 ol, ul {
@@ -95,7 +149,7 @@ ol, ul {
 }
 
 .button {
-  @apply inline-block p-2 m-0 border-0 bg-slate-600 hover:bg-slate-800 text-white hover:text-white rounded-md no-underline cursor-pointer text-base font-sans;
+  @apply inline-block p-2 m-0 border-0 bg-accent hover:bg-accent-dark text-newsprint hover:text-newsprint rounded-md no-underline cursor-pointer text-base;
 }
 
 .button:disabled {

@@ -52,7 +52,7 @@ export default function ContactForm({ formspreeFormId: formId }: Props) {
         {formId ? (
           <ContactFormInner formId={formId} />
         ) : (
-          <p className="text-red-600">
+          <p className="text-alert">
             Error: To use the ContactForm component, supply a formspreeFormId in siteproperties.json.
           </p>
         )}

@@ -7,7 +7,7 @@
 }
 
 .feature-text a:not(.button) {
-  @apply text-blue-600 hover:text-blue-800 font-bold;
+  @apply text-accent hover:text-accent-dark font-bold;
 }
 
 .feature-image {

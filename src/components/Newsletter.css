@@ -6,7 +6,7 @@
   @apply w-full xl:w-3/4 mx-auto grid gap-6 grid-cols-1 md:grid-cols-3;
 }
 
-.newsletter-item {
+a.newsletter-item:not(.button) {
   @apply flex flex-col gap-2 text-ink no-underline hover:text-ink;
 }
 

@@ -1,0 +1,73 @@
+---
+import './Newsletter.css';
+import ComicPanel from './ComicPanel.astro';
+import siteProperties from '../customizations/siteproperties.json';
+import substackFeedJSON from '../customizations/substackfeed.json';
+import type SubstackFeed from '../types/substackfeed';
+import type { SubstackItem } from '../types/substackfeed';
+
+const substackFeed: SubstackFeed = substackFeedJSON;
+const FALLBACK_IMAGE = 'images/AIart.jpg';
+const POSTS_TO_SHOW = 3;
+
+const items: SubstackItem[] = substackFeed?.item
+  ? Array.isArray(substackFeed.item)
+    ? substackFeed.item
+    : [substackFeed.item]
+  : [];
+
+const posts = items.slice(0, POSTS_TO_SHOW);
+const archiveUrl = substackFeed.link || siteProperties.substackUrl;
+
+function formatDate(pubDate: string): string {
+  const date = new Date(pubDate);
+  if (Number.isNaN(date.getTime())) return pubDate;
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+function dateTime(pubDate: string): string | undefined {
+  const date = new Date(pubDate);
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
+}
+---
+
+{
+  posts.length > 0 && (
+    <section class="newsletter" id="newsletter">
+      <div class="headercontainer">
+        <h2>From the Guide</h2>
+      </div>
+      <div class="newsletter-grid">
+        {posts.map((post) => (
+          <a
+            href={post.link}
+            class="newsletter-item"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="newsletter-panel">
+              <ComicPanel
+                backgroundImage={post.image ?? FALLBACK_IMAGE}
+                altText={post.title}
+              />
+            </div>
+            <span class="newsletter-title">{post.title}</span>
+            {post.pubDate && (
+              <time class="newsletter-date" datetime={dateTime(post.pubDate)}>
+                {formatDate(post.pubDate)}
+              </time>
+            )}
+            {post.description && <span class="newsletter-subtitle">{post.description}</span>}
+          </a>
+        ))}
+      </div>
+      <a href={archiveUrl} class="button" target="_blank" rel="noopener noreferrer">
+        Read the newsletter
+      </a>
+    </section>
+  )
+}

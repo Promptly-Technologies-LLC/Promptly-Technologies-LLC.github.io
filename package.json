@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "astro dev",
     "fetchproducts": "bun scripts/fetchproductfeed.mjs",
-    "build": "bun run fetchproducts && astro build",
+    "fetchsubstack": "bun scripts/fetchsubstack.mjs",
+    "build": "bun run fetchproducts && bun run fetchsubstack && astro build",
     "preview": "astro preview",
     "lint": "eslint src --report-unused-disable-directives --max-warnings 0",
     "typecheck": "astro check",

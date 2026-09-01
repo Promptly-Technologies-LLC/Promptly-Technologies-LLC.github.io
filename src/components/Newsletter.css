@@ -1,0 +1,37 @@
+.newsletter {
+  @apply flex flex-col place-items-center px-4 py-20 gap-6;
+}
+
+.newsletter-grid {
+  @apply w-full xl:w-3/4 mx-auto grid gap-6 grid-cols-1 md:grid-cols-3;
+}
+
+.newsletter-item {
+  @apply flex flex-col gap-2 text-ink no-underline hover:text-ink;
+}
+
+.newsletter-panel {
+  @apply w-full;
+  aspect-ratio: 4 / 3;
+}
+
+.newsletter-panel .comic-panel-container {
+  height: 100%;
+}
+
+.newsletter-title {
+  @apply font-display text-xl tracking-wide;
+}
+
+.newsletter-item:hover .newsletter-title,
+.newsletter-item:focus-visible .newsletter-title {
+  @apply underline text-accent;
+}
+
+.newsletter-date {
+  @apply text-ink-soft text-sm;
+}
+
+.newsletter-subtitle {
+  @apply text-base leading-snug;
+}

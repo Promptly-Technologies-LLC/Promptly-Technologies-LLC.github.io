@@ -7,6 +7,7 @@ export interface NavLink {
 export const sectionNavLinks: NavLink[] = [
   { href: '/#contact', label: 'Contact' },
   { href: '/#story', label: 'Story' },
+  { href: '/#newsletter', label: 'Newsletter' },
   { href: '/#events', label: 'Events' },
   { href: '/#credits', label: 'Credits' },
   { href: '/store/', label: 'Store' },

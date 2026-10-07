@@ -46,8 +46,8 @@ export default function ContactForm({ formspreeFormId: formId }: Props) {
       </div>
       <div className="contact-container">
         <p>
-          We&apos;ll build your made-to-order AI agent, app, or software automation in Python and
-          Typescript. Contact us now to get a quote!
+          We build research automations for scaling research technology. Contact us now to get
+          a quote!
         </p>
         {formId ? (
           <ContactFormInner formId={formId} />

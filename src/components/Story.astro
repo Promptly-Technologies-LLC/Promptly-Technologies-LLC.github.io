@@ -2,7 +2,6 @@
 import ThreePanelBlock from './ThreePanelBlock.astro';
 import ThreePanelRow from './ThreePanelRow.astro';
 import Feature from './Feature.astro';
-import Newsletter from './Newsletter.astro';
 import Events from './islands/Events';
 import siteProperties from '../customizations/siteproperties.json';
 import type { ComicPanelProps } from '../types/comicpanel';
@@ -54,22 +53,13 @@ import type { ComicPanelProps } from '../types/comicpanel';
         horizontalPosition: 'left',
       },
       {
-        text: `We also publish a free newsletter on how to use AI tools, <a href='${siteProperties.substackUrl}/'>A Knowledge Worker's Guide to the Singularity</a>.`,
-        backgroundImage: 'images/AIart.jpg',
-        altText: 'An artist uses a futuristic paintbrush stylus on a digital device',
-        horizontalPosition: 'right',
-        verticalPosition: 'top',
-      },
-      {
-        text: 'And we offer corporate trainings and educational seminars on AI workflows online and in person in the Albany, NY Capital Region.',
+        text: 'We offer corporate trainings and educational seminars on AI workflows online and in person in the Albany, NY Capital Region.',
         backgroundImage: 'images/classroom.jpg',
         altText: 'A futuristic classroom with a teacher and students',
         verticalPosition: 'top',
       },
     ] satisfies ComicPanelProps[]}
   />
-
-  <Newsletter />
 
   <Events
     client:visible

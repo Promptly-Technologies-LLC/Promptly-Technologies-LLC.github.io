@@ -36,7 +36,9 @@ import Footer from '../components/Footer.astro';
     align-items: center;
     width: 100%;
     min-height: 100svh;
-    background:
+    background-color: var(--color-newsprint);
+    background-image:
+      var(--paper-texture, var(--paper-texture-fallback)),
       radial-gradient(
         ellipse 80% 50% at 50% -10%,
         rgb(var(--color-caption-rgb) / 0.35),
@@ -48,6 +50,9 @@ import Footer from '../components/Footer.astro';
         var(--color-newsprint) 40%,
         var(--color-newsprint-shade) 100%
       );
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-size: var(--paper-texture-size), auto, auto;
+    background-blend-mode: multiply, normal, normal;
   }
 
   .not-found-section {
@@ -139,6 +144,13 @@ import Footer from '../components/Footer.astro';
     }
     to {
       transform: scale(1);
+    }
+  }
+
+  @media print, (forced-colors: active) {
+    .not-found-page {
+      background-image: none;
+      background-blend-mode: normal;
     }
   }
 

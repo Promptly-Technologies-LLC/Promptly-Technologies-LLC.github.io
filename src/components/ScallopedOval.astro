@@ -3,11 +3,11 @@
  * An embossed gold-foil seal, drawn as a die-cut scalloped oval.
  *
  * Realism comes from lighting rather than painted gradients: the outline and
- * two inset ridges are rasterised into a height map, roughened with a little
- * low-frequency noise (foil never lies perfectly flat), and lit with SVG
- * diffuse + specular lighting. The diffuse pass is hard-light blended over the
- * foil to carve the bevel and ridges; the specular pass is screened on top for
- * the crinkled glints.
+ * one inset ridge are rasterised into a height map, roughened with fine noise
+ * so the foil reads as textured stock, and lit with SVG diffuse + specular
+ * lighting. The diffuse pass is hard-light blended over the foil to carve the
+ * bevel and ridge; the specular pass is screened on, a little under full
+ * strength, for the glints.
  *
  * The viewBox is sized in CSS pixels to match the padded box (see `.scallop-background`),
  * so the scallops stay round instead of being stretched by `preserveAspectRatio="none"`.
@@ -91,7 +91,8 @@ function scallopPath(inset: number, amp: number): string {
 }
 
 const outline = scallopPath(0, AMP);
-const ridges = [scallopPath(7.5, AMP * 0.9), scallopPath(11.5, AMP * 0.85)];
+/** One inset ridge: with the die-cut edge, a double embossed border. */
+const ridge = scallopPath(7.5, AMP * 0.9);
 ---
 
 <div class:list={['scallop-background', className]}>
@@ -122,12 +123,12 @@ const ridges = [scallopPath(7.5, AMP * 0.9), scallopPath(11.5, AMP * 0.85)];
       </linearGradient>
 
       <!--
-        Height map, read from alpha: the sticker body sits at 0.32, the ridges at 1.
+        Height map, read from alpha: the sticker body sits at 0.32, the ridge at 1.
         Blurring rounds every step into a bevel.
       -->
       <g id="seal-height">
         <path d={outline} fill="white" fill-opacity="0.32" />
-        {ridges.map((d) => <path d={d} fill="none" stroke="white" stroke-width="1.5" />)}
+        <path d={ridge} fill="none" stroke="white" stroke-width="1.5" />
       </g>
 
       <filter
@@ -140,8 +141,10 @@ const ridges = [scallopPath(7.5, AMP * 0.9), scallopPath(11.5, AMP * 0.85)];
         color-interpolation-filters="sRGB"
       >
         <feGaussianBlur in="SourceAlpha" stdDeviation="1.1" result="bevel" />
-        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.028" numOctaves="3" seed="11" result="crinkle" />
-        <feComposite in="bevel" in2="crinkle" operator="arithmetic" k2="1" k3="0.16" result="height" />
+        <!-- Lighting reads alpha, so the grain has to be moved out of RGB. -->
+        <feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves="3" seed="11" result="grain" />
+        <feColorMatrix in="grain" type="luminanceToAlpha" result="grainAlpha" />
+        <feComposite in="bevel" in2="grainAlpha" operator="arithmetic" k2="1" k3="0.07" result="height" />
         <!-- Elevation 30° lights a flat surface at exactly 50% grey: neutral under hard-light. -->
         <feDiffuseLighting in="height" surfaceScale="3" diffuseConstant="1" lighting-color="white">
           <feDistantLight azimuth="225" elevation="30" />
@@ -164,13 +167,14 @@ const ridges = [scallopPath(7.5, AMP * 0.9), scallopPath(11.5, AMP * 0.85)];
         color-interpolation-filters="sRGB"
       >
         <feGaussianBlur in="SourceAlpha" stdDeviation="0.9" result="bevel" />
-        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.028" numOctaves="3" seed="11" result="crinkle" />
-        <feComposite in="bevel" in2="crinkle" operator="arithmetic" k2="1" k3="0.16" result="height" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves="3" seed="11" result="grain" />
+        <feColorMatrix in="grain" type="luminanceToAlpha" result="grainAlpha" />
+        <feComposite in="bevel" in2="grainAlpha" operator="arithmetic" k2="1" k3="0.07" result="height" />
         <feSpecularLighting
           in="height"
           surfaceScale="3"
-          specularConstant="1.1"
-          specularExponent="28"
+          specularConstant="0.9"
+          specularExponent="24"
           style="lighting-color: var(--color-gold-highlight)"
         >
           <feDistantLight azimuth="225" elevation="52" />
@@ -193,6 +197,22 @@ const ridges = [scallopPath(7.5, AMP * 0.9), scallopPath(11.5, AMP * 0.85)];
         </feComponentTransfer>
       </filter>
 
+      <!-- Fine grayscale grain, pulled toward mid-grey so it reads as tooth, not grit. -->
+      <filter id="seal-grain" filterUnits="userSpaceOnUse" x="0" y="0" width={W} height={H} color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4" result="noise" />
+        <feColorMatrix
+          in="noise"
+          type="matrix"
+          values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 0 1"
+          result="gray"
+        />
+        <feComponentTransfer in="gray">
+          <feFuncR type="linear" slope="0.5" intercept="0.25" />
+          <feFuncG type="linear" slope="0.5" intercept="0.25" />
+          <feFuncB type="linear" slope="0.5" intercept="0.25" />
+        </feComponentTransfer>
+      </filter>
+
       <filter id="seal-shadow" x="-10%" y="-10%" width="120%" height="125%">
         <feGaussianBlur stdDeviation="1.4" />
       </filter>
@@ -209,7 +229,8 @@ const ridges = [scallopPath(7.5, AMP * 0.9), scallopPath(11.5, AMP * 0.85)];
     <g clip-path="url(#seal-clip)" style="isolation: isolate">
       <path d={outline} fill="url(#seal-foil)" />
       <use href="#seal-height" filter="url(#seal-shade)" style="mix-blend-mode: hard-light; opacity: 0.85" />
-      <use href="#seal-height" filter="url(#seal-glint)" style="mix-blend-mode: screen" />
+      <use href="#seal-height" filter="url(#seal-glint)" style="mix-blend-mode: screen; opacity: 0.82" />
+      <rect width={W} height={H} filter="url(#seal-grain)" style="mix-blend-mode: overlay; opacity: 0.35" />
     </g>
   </svg>
 </div>

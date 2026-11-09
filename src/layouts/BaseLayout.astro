@@ -60,5 +60,10 @@ const ogImage = props.socialCards[0]?.startsWith('http')
   <body>
     <a href="#skip" class="skip-link">Skip to content</a>
     <slot />
+    <script>
+      import { applyPaperTexture } from '../scripts/paperTexture';
+
+      applyPaperTexture();
+    </script>
   </body>
 </html>

@@ -27,6 +27,13 @@
   --panel-border: theme('borderWidth.panel');
   --panel-shadow: theme('boxShadow.panel');
   --pop-shadow: theme('boxShadow.pop');
+
+  /* Comic stock. The SVG is the first paint; `paperTexture.ts` replaces
+     `--paper-texture` with a shader tile of the same size. Multiplied over
+     the flat newsprint tokens so open paper stays the token and the image
+     only cuts fiber, flecks, and warmth into it. */
+  --paper-texture-size: 512px 512px;
+  --paper-texture-fallback: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22512%22%20height%3D%22512%22%3E%3Cfilter%20id%3D%22paper%22%20filterUnits%3D%22userSpaceOnUse%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.007%22%20numOctaves%3D%222%22%20seed%3D%222%22%20stitchTiles%3D%22stitch%22%20result%3D%22cloud%22%2F%3E%3CfeTurbulence%20type%3D%22turbulence%22%20baseFrequency%3D%220.045%200.07%22%20numOctaves%3D%224%22%20seed%3D%228%22%20stitchTiles%3D%22stitch%22%20result%3D%22fiber%22%2F%3E%3CfeBlend%20in%3D%22cloud%22%20in2%3D%22fiber%22%20mode%3D%22multiply%22%20result%3D%22pulp%22%2F%3E%3CfeColorMatrix%20in%3D%22pulp%22%20type%3D%22matrix%22%20values%3D%220.05%200.04%200.02%200%200.92%200.04%200.05%200.02%200%200.89%200.02%200.02%200.04%200%200.82%200%200%200%201%200%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20filter%3D%22url(%23paper)%22%2F%3E%3C%2Fsvg%3E");
 }
 
 html {
@@ -42,6 +49,29 @@ body {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   @apply bg-newsprint text-ink antialiased;
+  background-image: var(--paper-texture, var(--paper-texture-fallback));
+  background-repeat: repeat;
+  background-size: var(--paper-texture-size);
+  background-blend-mode: multiply;
+}
+
+/* The shade band is its own sheet of the same stock, a step darker.
+   `paperTexture.ts` shifts background-position so the fibers continue
+   across the seam instead of restarting at the section box. */
+.bg-newsprint-shade {
+  background-image: var(--paper-texture, var(--paper-texture-fallback));
+  background-repeat: repeat;
+  background-size: var(--paper-texture-size);
+  background-blend-mode: multiply;
+}
+
+@media print, (forced-colors: active) {
+  html,
+  body,
+  .bg-newsprint-shade {
+    background-image: none;
+    background-blend-mode: normal;
+  }
 }
 
 body {

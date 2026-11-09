@@ -8,20 +8,14 @@
 
 /* Matches the artwork, so the seal's right edge is the image's right edge. */
 .hero-frame {
-  --hero-aspect: var(--hero-aspect-narrow);
   @apply relative shrink-0;
   width: min(100cqw, calc(100cqh * var(--hero-aspect)));
   aspect-ratio: var(--hero-aspect);
 }
 
-@media (min-width: 768px) {
-  .hero-frame {
-    --hero-aspect: var(--hero-aspect-wide);
-  }
-}
-
+/* No fill of its own: the art's transparent ground shows the page paper. */
 .hero-picture {
-  @apply block h-full w-full bg-newsprint;
+  @apply block h-full w-full;
 }
 
 .hero-image {

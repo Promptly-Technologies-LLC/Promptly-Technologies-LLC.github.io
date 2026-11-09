@@ -68,15 +68,15 @@ function readWebpSize(buf: Buffer, publicPath: string): { width: number; height:
   reject('no readable canvas size');
 }
 
-const narrowAspect = webpAspect(hero.mobileSrc);
-const wideAspect = webpAspect(hero.src);
+/** One plate at several widths: `${src}-${width}.{avif,webp}` in public/images. */
+const largest = `${hero.src}-${hero.widths[hero.widths.length - 1]}.webp`;
+const aspect = webpAspect(largest);
+const srcset = (ext: string) => hero.widths.map((w) => `${hero.src}-${w}.${ext} ${w}w`).join(', ');
+/** The frame is the largest box of this aspect that fits the viewport. */
+const sizes = `min(100vw, calc(100svh * ${aspect}))`;
 ---
 
-<section
-  id="hero"
-  class="hero-container"
-  style={`--hero-aspect-narrow: ${narrowAspect}; --hero-aspect-wide: ${wideAspect}`}
->
+<section id="hero" class="hero-container" style={`--hero-aspect: ${aspect}`}>
   <div class="top-content-wrapper">
     <div class="comic-title">
       <ComicTitle />
@@ -87,8 +87,9 @@ const wideAspect = webpAspect(hero.src);
   </div>
   <div class="hero-frame">
     <picture class="hero-picture">
-      <source media="(min-width: 768px)" srcset={hero.src} />
-      <img class="hero-image" src={hero.mobileSrc} alt={hero.alt} />
+      <source type="image/avif" srcset={srcset('avif')} sizes={sizes} />
+      <source type="image/webp" srcset={srcset('webp')} sizes={sizes} />
+      <img class="hero-image" src={`${hero.src}-${hero.widths[1]}.webp`} alt={hero.alt} />
     </picture>
     <div class="bottom-container">
       <div class="bottomwrapper">

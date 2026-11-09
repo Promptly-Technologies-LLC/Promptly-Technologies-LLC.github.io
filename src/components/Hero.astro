@@ -1,4 +1,6 @@
 ---
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import './Hero.css';
 import heroJSON from '../customizations/hero.json';
 import propertiesJSON from '../customizations/siteproperties.json';
@@ -9,9 +11,72 @@ import SocialIcon from './SocialIcon.astro';
 
 const hero = heroJSON;
 const properties = propertiesJSON;
+
+/** Width ÷ height of a WebP in `public`, so the hero frame can match the artwork. */
+function webpAspect(publicPath: string): number {
+  const file = fileURLToPath(new URL(`../../public/${publicPath}`, import.meta.url));
+  const { width, height } = readWebpSize(readFileSync(file), publicPath);
+  return width / height;
+}
+
+/**
+ * Canvas size of a VP8, VP8L, or VP8X WebP.
+ * Other containers are rejected so a bad asset fails the build.
+ */
+function readWebpSize(buf: Buffer, publicPath: string): { width: number; height: number } {
+  const reject = (reason: string): never => {
+    throw new Error(`${publicPath}: ${reason}`);
+  };
+
+  if (buf.length < 12 || buf.toString('ascii', 0, 4) !== 'RIFF' || buf.toString('ascii', 8, 12) !== 'WEBP') {
+    reject('not a WebP file');
+  }
+
+  let offset = 12;
+  while (offset + 8 <= buf.length) {
+    const tag = buf.toString('ascii', offset, offset + 4);
+    const size = buf.readUInt32LE(offset + 4);
+    const payload = offset + 8;
+    if (payload + size > buf.length) reject('truncated WebP chunk');
+
+    if (tag === 'VP8X' && size >= 10) {
+      return {
+        width: 1 + buf.readUIntLE(payload + 4, 3),
+        height: 1 + buf.readUIntLE(payload + 7, 3),
+      };
+    }
+
+    if (tag === 'VP8 ' && size >= 10) {
+      if (buf.toString('hex', payload + 3, payload + 6) !== '9d012a') reject('not a VP8 keyframe');
+      return {
+        width: buf.readUInt16LE(payload + 6) & 0x3fff,
+        height: buf.readUInt16LE(payload + 8) & 0x3fff,
+      };
+    }
+
+    if (tag === 'VP8L' && size >= 5 && buf[payload] === 0x2f) {
+      const bits = buf.readUInt32LE(payload + 1);
+      return {
+        width: (bits & 0x3fff) + 1,
+        height: ((bits >>> 14) & 0x3fff) + 1,
+      };
+    }
+
+    offset = payload + size + (size & 1);
+  }
+
+  reject('no readable canvas size');
+}
+
+const narrowAspect = webpAspect(hero.mobileSrc);
+const wideAspect = webpAspect(hero.src);
 ---
 
-<section id="hero" class="hero-container">
+<section
+  id="hero"
+  class="hero-container"
+  style={`--hero-aspect-narrow: ${narrowAspect}; --hero-aspect-wide: ${wideAspect}`}
+>
   <div class="top-content-wrapper">
     <div class="comic-title">
       <ComicTitle />
@@ -20,32 +85,24 @@ const properties = propertiesJSON;
       <Nav />
     </div>
   </div>
-  <img
-    class="hero-image md:hero-image-positioned"
-    src={hero.src}
-    alt={hero.alt}
-    style={`--hero-adjustment: ${hero.adjustment}`}
-  />
-  <div class="bottom-container">
-    <div class="bottomwrapper">
-      <ScallopedOval class="px-10 py-10">
-        <div class="hero-script" set:html={hero.script} />
-        <div class="social-icons">
-          {
-            Object.entries(properties.socialProfiles).map(([key, value]) => (
-              <SocialIcon iconName={key} url={value} class="icon-link" />
-            ))
-          }
-        </div>
-      </ScallopedOval>
+  <div class="hero-frame">
+    <picture class="hero-picture">
+      <source media="(min-width: 768px)" srcset={hero.src} />
+      <img class="hero-image" src={hero.mobileSrc} alt={hero.alt} />
+    </picture>
+    <div class="bottom-container">
+      <div class="bottomwrapper">
+        <ScallopedOval>
+          <div class="social-icons">
+            {
+              Object.entries(properties.socialProfiles).map(([key, value]) => (
+                <SocialIcon iconName={key} url={value} class="icon-link" />
+              ))
+            }
+          </div>
+        </ScallopedOval>
+      </div>
     </div>
   </div>
 </section>
 
-<style>
-  @media (min-width: 768px) {
-    .md\:hero-image-positioned {
-      left: var(--hero-adjustment);
-    }
-  }
-</style>

@@ -65,18 +65,29 @@ function readWebpSize(buf: Buffer, publicPath: string): { width: number; height:
     offset = payload + size + (size & 1);
   }
 
-  reject('no readable canvas size');
+  return reject('no readable canvas size');
 }
 
-/** One plate at several widths: `${src}-${width}.{avif,webp}` in public/images. */
-const largest = `${hero.src}-${hero.widths[hero.widths.length - 1]}.webp`;
-const aspect = webpAspect(largest);
-const srcset = (ext: string) => hero.widths.map((w) => `${hero.src}-${w}.${ext} ${w}w`).join(', ');
+/** A plate at several widths: `${src}-${width}.{avif,webp}` in public/images. */
+interface Plate {
+  src: string;
+  widths: number[];
+}
+const plateSrcset = (plate: Plate, ext: string) =>
+  plate.widths.map((w) => `${plate.src}-${w}.${ext} ${w}w`).join(', ');
+const plateAspect = (plate: Plate) =>
+  webpAspect(`${plate.src}-${plate.widths[plate.widths.length - 1]}.webp`);
+
+/** Wide plate from 768px up; a portrait plate below, so phones get a taller frame. */
+const wide: Plate = hero;
+const narrow: Plate = hero.mobile;
+const wideAspect = plateAspect(wide);
+const narrowAspect = plateAspect(narrow);
 /** The frame is the largest box of this aspect that fits the viewport. */
-const sizes = `min(100vw, calc(100svh * ${aspect}))`;
+const framed = (aspect: number) => `min(100vw, calc(100svh * ${aspect}))`;
 ---
 
-<section id="hero" class="hero-container" style={`--hero-aspect: ${aspect}`}>
+<section id="hero" class="hero-container" style={`--hero-aspect-wide: ${wideAspect}; --hero-aspect-narrow: ${narrowAspect}`}>
   <div class="top-content-wrapper">
     <div class="comic-title">
       <ComicTitle />
@@ -87,9 +98,11 @@ const sizes = `min(100vw, calc(100svh * ${aspect}))`;
   </div>
   <div class="hero-frame">
     <picture class="hero-picture">
-      <source type="image/avif" srcset={srcset('avif')} sizes={sizes} />
-      <source type="image/webp" srcset={srcset('webp')} sizes={sizes} />
-      <img class="hero-image" src={`${hero.src}-${hero.widths[1]}.webp`} alt={hero.alt} />
+      <source type="image/avif" media="(max-width: 767px)" srcset={plateSrcset(narrow, 'avif')} sizes={framed(narrowAspect)} />
+      <source type="image/webp" media="(max-width: 767px)" srcset={plateSrcset(narrow, 'webp')} sizes={framed(narrowAspect)} />
+      <source type="image/avif" srcset={plateSrcset(wide, 'avif')} sizes={framed(wideAspect)} />
+      <source type="image/webp" srcset={plateSrcset(wide, 'webp')} sizes={framed(wideAspect)} />
+      <img class="hero-image" src={`${wide.src}-${wide.widths[1]}.webp`} alt={hero.alt} />
     </picture>
     <div class="bottom-container">
       <div class="bottomwrapper">

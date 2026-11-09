@@ -1,6 +1,7 @@
 {
     "src": "images/cover",
     "widths": [800, 1200, 1600],
+    "mobile": { "src": "images/cover-mobile", "widths": [480, 800, 1200] },
     "alt": "Two workers guide a crane-lifted pipeline from documents to a spreadsheet",
     "script": "Utility-scale<br/>knowledge infrastructure"
 }

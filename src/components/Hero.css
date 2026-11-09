@@ -4,6 +4,13 @@
   @apply relative flex max-w-full items-start justify-center overflow-hidden;
   height: 100svh;
   container-type: size;
+  --hero-aspect: var(--hero-aspect-wide);
+}
+
+@media (max-width: 767px) {
+  .hero-container {
+    --hero-aspect: var(--hero-aspect-narrow);
+  }
 }
 
 /* Matches the artwork, so the seal's right edge is the image's right edge. */

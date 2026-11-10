@@ -6,6 +6,21 @@
   padding-inline: calc(var(--hero-frame-width) * 0.015);
 }
 
+/* When a short or portrait viewport makes the art frame narrower than all six links,
+   let the menu use up to the viewport width so the center pulley stays clear. */
+@media (min-width: 768px) {
+  .cover-nav {
+    width: max(var(--hero-frame-width), min(100%, 48rem));
+  }
+}
+
+@media (min-width: 768px) and (max-aspect-ratio: 7 / 8) {
+  .cover-nav {
+    width: 100%;
+    padding-inline: 0.75rem;
+  }
+}
+
 .cover-nav-group {
   display: flex;
   flex-wrap: wrap;

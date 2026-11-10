@@ -8,7 +8,8 @@
   --hero-frame-width: min(100cqw, calc(100cqh * var(--hero-aspect)));
 }
 
-@media (max-width: 767px) {
+/* Wide and portrait plates cross over in screen coverage near a 7:8 aspect ratio. */
+@media (max-aspect-ratio: 7 / 8) {
   .hero-container {
     --hero-aspect: var(--hero-aspect-narrow);
   }
@@ -35,6 +36,25 @@
   width: var(--hero-frame-width);
   min-width: 0;
   padding-inline: calc(var(--hero-frame-width) * 0.045);
+}
+
+/* Pair the stacked two-line wordmark with the portrait plate and the wide wordmark with the wide plate. */
+.comic-wordmark-stacked {
+  display: none;
+}
+
+.comic-wordmark-wide {
+  display: block;
+}
+
+@media (max-aspect-ratio: 7 / 8) {
+  .comic-wordmark-stacked {
+    display: block;
+  }
+
+  .comic-wordmark-wide {
+    display: none;
+  }
 }
 
 .top-content-wrapper {
@@ -65,7 +85,7 @@
   margin-top: calc(var(--hero-frame-width) * -0.028);
   padding-left: calc(var(--hero-frame-width) * 0.44);
   padding-right: calc(var(--hero-frame-width) * 0.045);
-  font-size: clamp(1.65rem, calc(var(--hero-frame-width) * 0.044), 4.65rem);
+  font-size: clamp(1.4rem, calc(var(--hero-frame-width) * 0.044), 4.65rem);
   line-height: 1.04;
 }
 
@@ -73,36 +93,19 @@
   display: block;
 }
 
-@media (max-width: 767px) {
-  /* Compact phones keep the subtitle in the upper-right pocket beside the chain. */
+/* Portrait plate (< 7:8): place the subtitle in the open upper-right pocket beside the chain. */
+@media (max-aspect-ratio: 7 / 8) {
   .hero-script {
-    margin-top: calc(var(--hero-frame-width) * -0.008);
-    padding-left: calc(var(--hero-frame-width) * 0.54);
-    font-size: clamp(1.05rem, 4.5cqw, 1.45rem);
-    line-height: 1.06;
+    margin-top: calc(var(--hero-frame-width) * 0.015);
+    padding-left: calc(var(--hero-frame-width) * 0.56);
+    font-size: clamp(1rem, calc(var(--hero-frame-width) * 0.045), 2.25rem);
+    line-height: 1.05;
   }
 }
 
-/* Tall portrait screens expose open paper below the artwork:
-   wide plate (>= 768px) ends near 100% of the frame height; portrait plate (< 768px) ends near 90%. */
-@container (min-width: 768px) and (max-aspect-ratio: 100 / 92) {
-  .hero-script {
-    position: absolute;
-    top: calc(
-      (var(--hero-frame-width) / var(--hero-aspect) * 0.96 + (100cqh - 7.5rem)) / 2
-    );
-    left: 50%;
-    transform: translate(-50%, -50%);
-    align-items: center;
-    margin-top: 0;
-    padding-inline: calc(var(--hero-frame-width) * 0.045);
-    text-align: center;
-    font-size: clamp(2.25rem, calc(var(--hero-frame-width) * 0.068), 4.25rem);
-    line-height: 1.04;
-  }
-}
-
-@container (max-width: 767px) and (max-aspect-ratio: 100 / 212) {
+/* Tall phones (taller than ~2.12:1) expose open paper below the portrait plate's workers;
+   center the subtitle in that lower band above the social seal. */
+@container (max-aspect-ratio: 100 / 212) {
   .hero-script {
     position: absolute;
     top: calc(
@@ -114,7 +117,7 @@
     margin-top: 0;
     padding-inline: calc(var(--hero-frame-width) * 0.045);
     text-align: center;
-    font-size: clamp(1.75rem, 8.2cqw, 2.75rem);
+    font-size: clamp(1.75rem, calc(var(--hero-frame-width) * 0.082), 2.75rem);
     line-height: 1.02;
   }
 }

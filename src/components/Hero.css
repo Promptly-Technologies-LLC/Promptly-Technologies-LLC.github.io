@@ -78,34 +78,37 @@
   padding-inline: calc(var(--hero-frame-width) * 0.045);
 }
 
-/* Balanced in the open paper wedge between the slanted wordmark and the cyan wash. */
+/* Tucked into the open paper wedge under the rising right end of the wordmark,
+   high enough to stay clear of the crane chain and cyan watercolor wash below. */
 .hero-script {
   @apply z-10 m-0 flex flex-col items-end py-0 text-right font-script text-ink;
   width: var(--hero-frame-width);
-  margin-top: calc(var(--hero-frame-width) * -0.028);
+  margin-top: calc(var(--hero-frame-width) * -0.055);
   padding-left: calc(var(--hero-frame-width) * 0.44);
   padding-right: calc(var(--hero-frame-width) * 0.045);
-  font-size: clamp(1.4rem, calc(var(--hero-frame-width) * 0.044), 4.65rem);
-  line-height: 1.04;
+  font-size: clamp(1.4rem, calc(var(--hero-frame-width) * 0.041), 4.4rem);
+  line-height: 0.96;
 }
 
 .hero-script-line {
   display: block;
 }
 
-/* Portrait plate (< 7:8): place the subtitle in the open upper-right pocket beside the chain. */
+/* Portrait plate (< 7:8): narrow the column right of the chain so the second phrase
+   wraps onto a third line ("Utility-scale / knowledge / infrastructure"), freeing
+   room for a much larger, more legible script size. */
 @media (max-aspect-ratio: 7 / 8) {
   .hero-script {
-    margin-top: calc(var(--hero-frame-width) * 0.015);
-    padding-left: calc(var(--hero-frame-width) * 0.56);
-    font-size: clamp(1rem, calc(var(--hero-frame-width) * 0.045), 2.25rem);
-    line-height: 1.05;
+    margin-top: calc(var(--hero-frame-width) * -0.012);
+    padding-left: calc(var(--hero-frame-width) * 0.59);
+    font-size: clamp(1.35rem, calc(var(--hero-frame-width) * 0.068), 3.4rem);
+    line-height: 0.98;
   }
 }
 
 /* Tall phones (taller than ~2.12:1) expose open paper below the portrait plate's workers;
    center the subtitle in that lower band above the social seal. */
-@container (max-aspect-ratio: 100 / 212) {
+@container (max-aspect-ratio: 100 / 214) {
   .hero-script {
     position: absolute;
     top: calc(

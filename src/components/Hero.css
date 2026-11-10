@@ -14,7 +14,7 @@
   }
 }
 
-/* Matches the artwork, so the seal's right edge is the image's right edge. */
+/* Largest box of the artwork's aspect that fits the hero. */
 .hero-frame {
   @apply relative shrink-0;
   width: var(--hero-frame-width);
@@ -45,8 +45,17 @@
   @apply z-20;
 }
 
+/* On the first viewport, not the artwork. The right edge tracks the cover wordmark. */
 .bottom-container {
   @apply absolute inset-x-0 bottom-0 z-10;
+}
+
+.bottom-column {
+  display: flex;
+  justify-content: flex-end;
+  width: var(--hero-frame-width);
+  margin-inline: auto;
+  padding-inline: calc(var(--hero-frame-width) * 0.045);
 }
 
 /* Both lines sit right of the crane, pulled up into the wordmark's slant. */
@@ -97,5 +106,5 @@
 }
 
 .bottomwrapper {
-  @apply mx-auto mb-3 flex w-max max-w-full flex-col items-center justify-center md:mx-0 md:ml-auto md:mr-0;
+  @apply mb-3 flex w-max max-w-full flex-col items-center justify-center;
 }

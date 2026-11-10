@@ -88,7 +88,7 @@ const wide: Plate = hero;
 const narrow: Plate = hero.mobile;
 const wideAspect = plateAspect(wide);
 const narrowAspect = plateAspect(narrow);
-/** The break is the gap the crane hook hangs through. */
+/** The break wraps the slogan on the right of the crane. */
 const sloganLines = hero.script.split(/<br\s*\/?>/i).map((line) => line.trim()).filter(Boolean);
 /** The frame is the largest box of this aspect that fits the viewport. */
 const framed = (aspect: number) => `min(100vw, calc(100svh * ${aspect}))`;
@@ -101,11 +101,8 @@ const framed = (aspect: number) => `min(100vw, calc(100svh * ${aspect}))`;
       <ComicTitle uncapped />
     </div>
     <p class="hero-script">
-      {sloganLines.map((line, index) => (
-        <>
-          {index > 0 && <span class="hero-script-gap" aria-hidden="true"></span>}
-          <span class:list={['hero-script-line', index === 0 ? 'is-leading' : 'is-trailing']}>{line}</span>
-        </>
+      {sloganLines.map((line) => (
+        <span class="hero-script-line">{line}</span>
       ))}
     </p>
   </div>

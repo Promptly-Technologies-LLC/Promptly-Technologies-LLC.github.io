@@ -1,14 +1,9 @@
-/* Same lettering as the footer menu: display type, no paper chip behind the words.
-   The center gap is where the cover's crane cable comes down. */
+/* Same lettering as the footer menu. The two groups sit on the cover's edges. */
 .cover-nav {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: center;
-  width: 100%;
+  @apply flex items-center justify-between text-2xl font-display;
+  width: var(--hero-frame-width);
   padding-top: 0.25rem;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  line-height: 1;
+  padding-inline: calc(var(--hero-frame-width) * 0.015);
 }
 
 .cover-nav-group {
@@ -18,17 +13,11 @@
 }
 
 .cover-nav-group.is-leading {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .cover-nav-group.is-trailing {
-  justify-content: flex-start;
-  /* The cover cable hangs right of center. */
-  padding-left: 4cqw;
-}
-
-.cover-nav-gap {
-  width: 2.75rem;
+  justify-content: flex-end;
 }
 
 .cover-nav-link {
@@ -38,16 +27,11 @@
 }
 
 /* In-page section links drop out on small screens so the row stays one line.
-   The leftover link sits off the center cable. */
+   Store stays at the top right. */
 @media (max-width: 767px) {
   .cover-nav {
-    display: flex;
     justify-content: flex-end;
     padding-right: 0.75rem;
-  }
-
-  .cover-nav-gap {
-    display: none;
   }
 
   .cover-nav-group {

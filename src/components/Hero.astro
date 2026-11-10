@@ -109,7 +109,9 @@ const framed = (aspect: number) => `min(100vw, calc(100svh * ${aspect}))`;
       <source type="image/webp" srcset={plateSrcset(wide, 'webp')} sizes={framed(wideAspect)} />
       <img class="hero-image" src={`${wide.src}-${wide.widths[1]}.webp`} alt={hero.alt} />
     </picture>
-    <div class="bottom-container">
+  </div>
+  <div class="bottom-container">
+    <div class="bottom-column">
       <div class="bottomwrapper">
         <ScallopedOval stamps={stamps}>
           <div class="social-icons">

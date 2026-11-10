@@ -13,7 +13,7 @@
   }
 }
 
-/* Matches the artwork, so the seal's right edge is the image's right edge. */
+/* Largest box of the artwork's aspect that fits the hero. */
 .hero-frame {
   @apply relative shrink-0;
   width: min(100cqw, calc(100cqh * var(--hero-aspect)));
@@ -45,8 +45,15 @@
   @apply inline-flex justify-between;
 }
 
+/* On the first viewport, not the artwork. Right edge tracks the wordmark
+   column in ComicTitle: `px-4` beside the stacked lockup, `max-w-5xl` / `px-6`
+   beside the wide one. */
 .bottom-container {
   @apply absolute inset-x-0 bottom-0 z-10;
+}
+
+.bottom-column {
+  @apply mx-auto flex w-full justify-end px-4 md:max-w-5xl md:px-6;
 }
 
 .hero-script {
@@ -78,5 +85,5 @@
 }
 
 .bottomwrapper {
-  @apply mx-auto mb-3 flex w-max max-w-full flex-col items-center justify-center md:mx-0 md:ml-auto md:mr-0;
+  @apply mb-3 flex w-max max-w-full flex-col items-center justify-center;
 }

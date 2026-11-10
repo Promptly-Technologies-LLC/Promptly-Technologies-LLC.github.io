@@ -5,6 +5,7 @@
   height: 100svh;
   container-type: size;
   --hero-aspect: var(--hero-aspect-wide);
+  --hero-frame-width: min(100cqw, calc(100cqh * var(--hero-aspect)));
 }
 
 @media (max-width: 767px) {
@@ -16,7 +17,7 @@
 /* Matches the artwork, so the seal's right edge is the image's right edge. */
 .hero-frame {
   @apply relative shrink-0;
-  width: min(100cqw, calc(100cqh * var(--hero-aspect)));
+  width: var(--hero-frame-width);
   aspect-ratio: var(--hero-aspect);
 }
 
@@ -30,7 +31,9 @@
 }
 
 .comic-title {
-  @apply flex w-full justify-center items-center;
+  @apply flex items-center justify-center;
+  width: var(--hero-frame-width);
+  min-width: 0;
 }
 
 .top-content-wrapper {

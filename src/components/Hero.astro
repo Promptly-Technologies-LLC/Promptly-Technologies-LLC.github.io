@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import './Hero.css';
 import heroJSON from '../customizations/hero.json';
 import propertiesJSON from '../customizations/siteproperties.json';
+import iconsJSON from '../customizations/socialicons.json';
 import ComicTitle from './ComicTitle.astro';
 import Nav from './Nav.astro';
 import ScallopedOval from './ScallopedOval.astro';
@@ -11,6 +12,10 @@ import SocialIcon from './SocialIcon.astro';
 
 const hero = heroJSON;
 const properties = propertiesJSON;
+/** Glyph outlines in icon order, so the seal can keep its grain off them. */
+const stamps = Object.keys(properties.socialProfiles).map(
+  (key) => (iconsJSON as Record<string, string>)[key],
+);
 
 /** Width ÷ height of a WebP in `public`, so the hero frame can match the artwork. */
 function webpAspect(publicPath: string): number {
@@ -106,7 +111,7 @@ const framed = (aspect: number) => `min(100vw, calc(100svh * ${aspect}))`;
     </picture>
     <div class="bottom-container">
       <div class="bottomwrapper">
-        <ScallopedOval>
+        <ScallopedOval stamps={stamps}>
           <div class="social-icons">
             {
               Object.entries(properties.socialProfiles).map(([key, value]) => (

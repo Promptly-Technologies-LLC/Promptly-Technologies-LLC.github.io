@@ -14,9 +14,26 @@
  */
 interface Props {
   class?: string;
+  /**
+   * Glyph outlines (24 × 24 path data) of the icons slotted onto the seal, in
+   * reading order across a 4-column grid. They are cut out of the surface grain
+   * so the stamped icons stay smooth. See `STAMP_*` below.
+   */
+  stamps?: string[];
 }
 
-const { class: className } = Astro.props;
+const { class: className, stamps = [] } = Astro.props;
+
+/** Surface texture and relief. */
+const RELIEF = 1.2; // height of the die-cut edge and the ridge
+const RIDGE_WIDTH = 0.9;
+const BUMP_FREQ = 0.45; // grain carried into the lighting height map
+const BUMP_AMOUNT = 0.2;
+const GRAIN_FREQ = 0.55; // overlay grain
+const GRAIN_OPACITY = 0.75;
+/** Icon emboss: a wider blur and taller relief round the glyph edges. */
+const ICON_BLUR = 0.45;
+const ICON_RELIEF = 0.9;
 
 const W = 248;
 const H = 128;
@@ -93,6 +110,24 @@ function scallopPath(inset: number, amp: number): string {
 const outline = scallopPath(0, AMP);
 /** One inset ridge: with the die-cut edge, a double embossed border. */
 const ridge = scallopPath(7.5, AMP * 0.9);
+
+/**
+ * Where the slotted icons sit, in viewBox units: a 4-column grid of 28px glyphs
+ * with 16/8 gaps, centred. Keep in step with `.social-icons` in Hero.css (which
+ * is the same grid scaled to the padded box).
+ */
+const STAMP_COLS = 4;
+const STAMP_SIZE = 28;
+const STAMP_GAP_X = 16;
+const STAMP_GAP_Y = 8;
+const stampRows = Math.ceil(stamps.length / STAMP_COLS);
+const stampX0 = (W - (STAMP_COLS * STAMP_SIZE + (STAMP_COLS - 1) * STAMP_GAP_X)) / 2;
+const stampY0 = (H - (stampRows * STAMP_SIZE + (stampRows - 1) * STAMP_GAP_Y)) / 2;
+const stampTransform = (i: number) => {
+  const x = stampX0 + (i % STAMP_COLS) * (STAMP_SIZE + STAMP_GAP_X);
+  const y = stampY0 + Math.floor(i / STAMP_COLS) * (STAMP_SIZE + STAMP_GAP_Y);
+  return `translate(${x} ${y}) scale(${STAMP_SIZE / 24})`;
+};
 ---
 
 <div class:list={['scallop-background', className]}>
@@ -112,13 +147,13 @@ const ridge = scallopPath(7.5, AMP * 0.9);
 
       <!-- Foil base: broad, high-contrast bands, the way flat foil mirrors a room. -->
       <linearGradient id="seal-foil" x1="0" y1="0" x2={W} y2={H} gradientUnits="userSpaceOnUse">
-        <stop offset="0" style="stop-color: var(--color-gold-deep)" />
+        <stop offset="0" style="stop-color: color-mix(in srgb, var(--color-gold-deep) 80%, var(--color-gold))" />
         <stop offset="0.18" style="stop-color: var(--color-gold)" />
-        <stop offset="0.34" style="stop-color: color-mix(in srgb, var(--color-gold-highlight) 35%, var(--color-gold))" />
+        <stop offset="0.34" style="stop-color: color-mix(in srgb, var(--color-gold-highlight) 28%, var(--color-gold))" />
         <stop offset="0.47" style="stop-color: var(--color-gold)" />
-        <stop offset="0.62" style="stop-color: var(--color-gold-deep)" />
+        <stop offset="0.62" style="stop-color: color-mix(in srgb, var(--color-gold-deep) 80%, var(--color-gold))" />
         <stop offset="0.78" style="stop-color: var(--color-gold)" />
-        <stop offset="0.9" style="stop-color: color-mix(in srgb, var(--color-gold-highlight) 35%, var(--color-gold))" />
+        <stop offset="0.9" style="stop-color: color-mix(in srgb, var(--color-gold-highlight) 28%, var(--color-gold))" />
         <stop offset="1" style="stop-color: var(--color-gold)" />
       </linearGradient>
 
@@ -128,78 +163,98 @@ const ridge = scallopPath(7.5, AMP * 0.9);
       -->
       <g id="seal-height">
         <path d={outline} fill="white" fill-opacity="0.32" />
-        <path d={ridge} fill="none" stroke="white" stroke-width="1.5" />
+        <path d={ridge} fill="none" stroke="white" stroke-width={RIDGE_WIDTH} />
       </g>
 
-      <filter
-        id="seal-shade"
-        filterUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width={W}
-        height={H}
-        color-interpolation-filters="sRGB"
-      >
-        <feGaussianBlur in="SourceAlpha" stdDeviation="1.1" result="bevel" />
-        <!-- Lighting reads alpha, so the grain has to be moved out of RGB. -->
-        <feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves="3" seed="11" result="grain" />
-        <feColorMatrix in="grain" type="luminanceToAlpha" result="grainAlpha" />
-        <feComposite in="bevel" in2="grainAlpha" operator="arithmetic" k2="1" k3="0.07" result="height" />
-        <!-- Elevation 30° lights a flat surface at exactly 50% grey: neutral under hard-light. -->
-        <feDiffuseLighting in="height" surfaceScale="3" diffuseConstant="1" lighting-color="white">
-          <feDistantLight azimuth="225" elevation="30" />
-        </feDiffuseLighting>
-        <!-- Squeeze the range about 50% so grooves read as deep gold, not black. -->
-        <feComponentTransfer>
-          <feFuncR type="linear" slope="0.7" intercept="0.15" />
-          <feFuncG type="linear" slope="0.7" intercept="0.15" />
-          <feFuncB type="linear" slope="0.7" intercept="0.15" />
-        </feComponentTransfer>
+      <!--
+        Shapes kept smooth: a band round the ridge, and the icon glyphs. The surface
+        grain is masked out of them (see the two masks below), so they read as
+        pressed, polished foil instead of rough stock. Colour is inherited from the
+        <use> that draws them; the glyphs are dilated by its stroke so the icon
+        bevel falls inside the smooth zone.
+      -->
+      <g id="seal-smooth">
+        <path d={ridge} fill="none" stroke-width="6" stroke-linejoin="round" />
+        {stamps.map((d, i) => <path d={d} fill-rule="evenodd" stroke-width="3" stroke-linejoin="round" transform={stampTransform(i)} />)}
+      </g>
+      <filter id="seal-soften" filterUnits="userSpaceOnUse" x="0" y="0" width={W} height={H}>
+        <feGaussianBlur stdDeviation="1.2" />
       </filter>
+      <!-- Grainy surface everywhere except the smooth shapes... -->
+      <mask id="seal-mask-grain" maskUnits="userSpaceOnUse" x="0" y="0" width={W} height={H}>
+        <rect width={W} height={H} fill="white" />
+        <use href="#seal-smooth" fill="black" stroke="black" filter="url(#seal-soften)" />
+      </mask>
+      <!-- ...and the inverse: only the smooth shapes. -->
+      <mask id="seal-mask-smooth" maskUnits="userSpaceOnUse" x="0" y="0" width={W} height={H}>
+        <rect width={W} height={H} fill="black" />
+        <use href="#seal-smooth" fill="white" stroke="white" filter="url(#seal-soften)" />
+      </mask>
 
-      <filter
-        id="seal-glint"
-        filterUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width={W}
-        height={H}
-        color-interpolation-filters="sRGB"
-      >
-        <feGaussianBlur in="SourceAlpha" stdDeviation="0.9" result="bevel" />
-        <feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves="3" seed="11" result="grain" />
-        <feColorMatrix in="grain" type="luminanceToAlpha" result="grainAlpha" />
-        <feComposite in="bevel" in2="grainAlpha" operator="arithmetic" k2="1" k3="0.07" result="height" />
-        <feSpecularLighting
-          in="height"
-          surfaceScale="3"
-          specularConstant="0.9"
-          specularExponent="24"
-          style="lighting-color: var(--color-gold-highlight)"
-        >
-          <feDistantLight azimuth="225" elevation="52" />
-        </feSpecularLighting>
-      </filter>
+      <!-- Each lighting pass comes in two grades: grainy, and smooth (no noise in the height map). -->
+      {[
+        { id: 'seal-shade', bump: BUMP_AMOUNT },
+        { id: 'seal-shade-smooth', bump: 0 },
+      ].map(({ id, bump }) => (
+        <filter id={id} filterUnits="userSpaceOnUse" x="0" y="0" width={W} height={H} color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="1.1" result="bevel" />
+          <!-- Lighting reads alpha, so the grain has to be moved out of RGB. -->
+          <feTurbulence type="fractalNoise" baseFrequency={BUMP_FREQ} numOctaves="3" seed="11" result="grain" />
+          <feColorMatrix in="grain" type="luminanceToAlpha" result="grainAlpha" />
+          <feComposite in="bevel" in2="grainAlpha" operator="arithmetic" k2="1" k3={bump} result="height" />
+          <!-- Elevation 30° lights a flat surface at exactly 50% grey: neutral under hard-light. -->
+          <feDiffuseLighting in="height" surfaceScale={RELIEF} diffuseConstant="1" lighting-color="white">
+            <feDistantLight azimuth="225" elevation="30" />
+          </feDiffuseLighting>
+          <!-- Squeeze the range about 50% so grooves read as deep gold, not black. -->
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="0.7" intercept="0.15" />
+            <feFuncG type="linear" slope="0.7" intercept="0.15" />
+            <feFuncB type="linear" slope="0.7" intercept="0.15" />
+          </feComponentTransfer>
+        </filter>
+      ))}
+
+      {[
+        { id: 'seal-glint', bump: BUMP_AMOUNT },
+        { id: 'seal-glint-smooth', bump: 0 },
+      ].map(({ id, bump }) => (
+        <filter id={id} filterUnits="userSpaceOnUse" x="0" y="0" width={W} height={H} color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="0.9" result="bevel" />
+          <feTurbulence type="fractalNoise" baseFrequency={BUMP_FREQ} numOctaves="3" seed="11" result="grain" />
+          <feColorMatrix in="grain" type="luminanceToAlpha" result="grainAlpha" />
+          <feComposite in="bevel" in2="grainAlpha" operator="arithmetic" k2="1" k3={bump} result="height" />
+          <feSpecularLighting
+            in="height"
+            surfaceScale={RELIEF}
+            specularConstant="0.9"
+            specularExponent="24"
+            style="lighting-color: var(--color-gold-highlight)"
+          >
+            <feDistantLight azimuth="225" elevation="52" />
+          </feSpecularLighting>
+        </filter>
+      ))}
 
       <!--
         Applied from CSS to the icons slotted onto the seal (see Hero.css): turns
         each glyph's silhouette into a raised stamp, neutral grey where flat.
       -->
       <filter id="seal-icon-emboss" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="0.6" />
-        <feDiffuseLighting surfaceScale="1.3" diffuseConstant="1" lighting-color="white">
+        <feGaussianBlur in="SourceAlpha" stdDeviation={ICON_BLUR} />
+        <feDiffuseLighting surfaceScale={ICON_RELIEF} diffuseConstant="1" lighting-color="white">
           <feDistantLight azimuth="225" elevation="30" />
         </feDiffuseLighting>
         <feComponentTransfer>
-          <feFuncR type="linear" slope="0.62" intercept="0.19" />
-          <feFuncG type="linear" slope="0.62" intercept="0.19" />
-          <feFuncB type="linear" slope="0.62" intercept="0.19" />
+          <feFuncR type="linear" slope="0.52" intercept="0.24" />
+          <feFuncG type="linear" slope="0.52" intercept="0.24" />
+          <feFuncB type="linear" slope="0.52" intercept="0.24" />
         </feComponentTransfer>
       </filter>
 
       <!-- Fine grayscale grain, pulled toward mid-grey so it reads as tooth, not grit. -->
       <filter id="seal-grain" filterUnits="userSpaceOnUse" x="0" y="0" width={W} height={H} color-interpolation-filters="sRGB">
-        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4" result="noise" />
+        <feTurbulence type="fractalNoise" baseFrequency={GRAIN_FREQ} numOctaves="2" seed="4" result="noise" />
         <feColorMatrix
           in="noise"
           type="matrix"
@@ -214,26 +269,29 @@ const ridge = scallopPath(7.5, AMP * 0.9);
       </filter>
 
       <filter id="seal-shadow" x="-10%" y="-10%" width="120%" height="125%">
-        <feGaussianBlur stdDeviation="1.4" />
+        <feGaussianBlur stdDeviation="0.7" />
       </filter>
     </defs>
 
-    <!-- A thin sticker casts a tight, soft shadow. -->
+    <!-- A thin sticker casts a tight, soft shadow: close enough that it reads as lying on the page. -->
     <path
       d={outline}
-      transform="translate(0.6 1.6)"
+      transform="translate(0.3 0.8)"
       filter="url(#seal-shadow)"
       style="fill: var(--color-ink); opacity: 0.4"
     />
 
     <g clip-path="url(#seal-clip)" style="isolation: isolate">
       <path d={outline} fill="url(#seal-foil)" />
-      <use href="#seal-height" filter="url(#seal-shade)" style="mix-blend-mode: hard-light; opacity: 0.85" />
-      <use href="#seal-height" filter="url(#seal-glint)" style="mix-blend-mode: screen; opacity: 0.82" />
-      <rect width={W} height={H} filter="url(#seal-grain)" style="mix-blend-mode: overlay; opacity: 0.35" />
+      <use href="#seal-height" filter="url(#seal-shade)" mask="url(#seal-mask-grain)" style="mix-blend-mode: hard-light; opacity: 0.85" />
+      <use href="#seal-height" filter="url(#seal-shade-smooth)" mask="url(#seal-mask-smooth)" style="mix-blend-mode: hard-light; opacity: 0.85" />
+      <use href="#seal-height" filter="url(#seal-glint)" mask="url(#seal-mask-grain)" style="mix-blend-mode: screen; opacity: 0.82" />
+      <use href="#seal-height" filter="url(#seal-glint-smooth)" mask="url(#seal-mask-smooth)" style="mix-blend-mode: screen; opacity: 0.82" />
+      <rect width={W} height={H} filter="url(#seal-grain)" mask="url(#seal-mask-grain)" style={`mix-blend-mode: overlay; opacity: ${GRAIN_OPACITY}`} />
     </g>
   </svg>
 </div>
+
 
 <style>
   .scallop-background {

@@ -54,7 +54,9 @@
 }
 
 .social-icons {
-  @apply grid grid-cols-4 gap-x-4 gap-y-2 justify-items-center;
+  @apply grid grid-cols-4 justify-items-center;
+  column-gap: 0.85rem;
+  row-gap: 0.425rem;
 }
 
 .bottomwrapper .icon-link {

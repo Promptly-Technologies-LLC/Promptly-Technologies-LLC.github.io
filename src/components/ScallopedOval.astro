@@ -114,11 +114,11 @@ const ridge = scallopPath(7.5, AMP * 0.9);
       <linearGradient id="seal-foil" x1="0" y1="0" x2={W} y2={H} gradientUnits="userSpaceOnUse">
         <stop offset="0" style="stop-color: var(--color-gold-deep)" />
         <stop offset="0.18" style="stop-color: var(--color-gold)" />
-        <stop offset="0.34" style="stop-color: var(--color-gold-highlight)" />
+        <stop offset="0.34" style="stop-color: color-mix(in srgb, var(--color-gold-highlight) 35%, var(--color-gold))" />
         <stop offset="0.47" style="stop-color: var(--color-gold)" />
         <stop offset="0.62" style="stop-color: var(--color-gold-deep)" />
         <stop offset="0.78" style="stop-color: var(--color-gold)" />
-        <stop offset="0.9" style="stop-color: var(--color-gold-highlight)" />
+        <stop offset="0.9" style="stop-color: color-mix(in srgb, var(--color-gold-highlight) 35%, var(--color-gold))" />
         <stop offset="1" style="stop-color: var(--color-gold)" />
       </linearGradient>
 
@@ -240,7 +240,7 @@ const ridge = scallopPath(7.5, AMP * 0.9);
     position: relative;
     display: inline-block;
     /* Padding sizes the seal around its contents; keep in step with W × H above. */
-    padding: 2rem 2.75rem;
+    padding: 1.7rem 2.34rem;
     isolation: isolate;
   }
 

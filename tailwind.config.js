@@ -18,7 +18,14 @@ const channels = {
   newsprint: {
     DEFAULT: '255 255 255',
     shade: '239 236 228', // alternating section ground
-    deep: '207 202 187', // the shaded foot of the scalloped oval
+    deep: '207 202 187', // deeper paper, for shaded bands
+  },
+  /** Gold — the hero seal's foil. Highlight is the sheen, shadow is the stamped groove. */
+  gold: {
+    highlight: '255 236 176',
+    DEFAULT: '230 186 72',
+    deep: '184 132 36',
+    shadow: '107 70 16',
   },
   /** Halftone — the two-colour dot screen behind the logotype. */
   halftone: {

@@ -1,12 +1,32 @@
 /* hero.css */
 /* Using TailwindCSS with @apply */
 .hero-container {
-  @apply relative flex max-w-full overflow-hidden;
-  height: 100svh; 
+  @apply relative flex max-w-full items-start justify-center overflow-hidden;
+  height: 100svh;
+  container-type: size;
+  --hero-aspect: var(--hero-aspect-wide);
+}
+
+@media (max-width: 767px) {
+  .hero-container {
+    --hero-aspect: var(--hero-aspect-narrow);
+  }
+}
+
+/* Matches the artwork, so the seal's right edge is the image's right edge. */
+.hero-frame {
+  @apply relative shrink-0;
+  width: min(100cqw, calc(100cqh * var(--hero-aspect)));
+  aspect-ratio: var(--hero-aspect);
+}
+
+/* No fill of its own: the art's transparent ground shows the page paper. */
+.hero-picture {
+  @apply block h-full w-full;
 }
 
 .hero-image {
-  @apply w-full h-full object-cover z-0 flex-shrink-0;
+  @apply z-0 h-full w-full object-contain object-top;
 }
 
 .comic-title {
@@ -26,8 +46,7 @@
 }
 
 .bottom-container {
-  @apply absolute bottom-0 left-0 right-0 grid grid-cols-1 md:grid-cols-3;
-  z-index: 10;
+  @apply absolute inset-x-0 bottom-0 z-10;
 }
 
 .hero-script {
@@ -35,13 +54,29 @@
 }
 
 .social-icons {
-  @apply grid grid-cols-4 gap-x-4 gap-y-2 mt-2 justify-items-center;
+  @apply grid grid-cols-4 justify-items-center;
+  column-gap: 0.85rem;
+  row-gap: 0.425rem;
 }
 
-.icon-link {
-  @apply text-ink;
+.bottomwrapper .icon-link {
+  color: var(--color-ink);
+}
+
+/* Stamp each glyph into the foil: the seal's relief filter turns the glyph's
+   silhouette into light and shade, hard-light blended so the foil shows through. */
+.bottomwrapper .icon-link svg {
+  filter: url(#seal-icon-emboss);
+  mix-blend-mode: hard-light;
+  opacity: 0.9;
+}
+
+.bottomwrapper .icon-link:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .bottomwrapper {
-  @apply flex flex-col mx-auto mb-2 justify-center items-center col-start-1 md:col-start-3 max-w-custom;
+  @apply mx-auto mb-3 flex w-max max-w-full flex-col items-center justify-center md:mx-0 md:ml-auto md:mr-0;
 }

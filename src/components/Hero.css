@@ -41,16 +41,57 @@
   @apply z-20;
 }
 
-.nav-wrapper {
-  @apply inline-flex justify-between;
-}
-
 .bottom-container {
   @apply absolute inset-x-0 bottom-0 z-10;
 }
 
 .hero-script {
-  @apply text-center z-10 text-ink font-script text-2xl leading-none;
+  @apply z-10 m-0 flex w-full items-baseline justify-center px-4 py-0 text-center font-script leading-snug text-ink;
+  font-size: clamp(1.15rem, 2.8vw, 2.5rem);
+}
+
+/* Two halves, with the hook in a centered gap between them. */
+.hero-script:has(.hero-script-gap) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+}
+
+.hero-script-line.is-leading {
+  justify-self: end;
+  padding-right: 0.4rem;
+}
+
+.hero-script-line.is-trailing {
+  justify-self: start;
+  /* The crane hook hangs right of center, and Allura's swash reaches back. */
+  padding-left: calc(0.5rem + 4cqw);
+}
+
+.hero-script-gap {
+  width: 12cqw;
+}
+
+@media (max-width: 767px) {
+  .hero-script {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .hero-script-line {
+    white-space: nowrap;
+  }
+
+  .hero-script-line.is-leading {
+    padding-right: 0.9rem;
+  }
+
+  .hero-script-line.is-trailing {
+    padding-left: 1.15rem;
+  }
+
+  .hero-script-gap {
+    width: 1.65rem;
+  }
 }
 
 .social-icons {

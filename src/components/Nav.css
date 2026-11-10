@@ -1,31 +1,60 @@
-.nav-link {
-    font-size: 1.5rem;
-    text-decoration: none;
-    padding: 0.25rem 1rem;
-    position: relative;
-    margin: 0 0.25rem;
-    z-index: 1;
-    @apply text-ink font-display font-medium hover:underline;
+/* Same lettering as the footer menu: display type, no paper chip behind the words.
+   The center gap is where the cover's crane cable comes down. */
+.cover-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+  padding-top: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
-.nav-link:before {
-    content: '';
-    position: absolute;
-    top: 0.45rem;
-    left: 0rem;
-    right: 0rem;
-    bottom: 0.55rem;
-    z-index: -1;
-    background-color: var(--color-newsprint);
-    clip-path: polygon(
-        0% 0%, 7% 10%, 2% 20%, 9% 30%, 3% 40%, 
-        8% 50%, 1% 60%, 11% 70%, 3% 80%, 9% 90%, 
-        0% 100%, 100% 100%, 93% 90%, 97% 80%, 
-        90% 70%, 97% 60%, 92% 50%, 98% 40%, 
-        94% 30%, 100% 20%, 95% 10%, 100% 0%
-    );
+.cover-nav-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.nav-link:hover {
-    text-decoration: underline;
+.cover-nav-group.is-leading {
+  justify-content: flex-end;
+}
+
+.cover-nav-group.is-trailing {
+  justify-content: flex-start;
+  /* The cover cable hangs right of center. */
+  padding-left: 4cqw;
+}
+
+.cover-nav-gap {
+  width: 2.75rem;
+}
+
+.cover-nav-link {
+  padding: 0.25rem 1rem;
+  font-family: var(--font-display);
+  color: var(--color-ink);
+}
+
+/* In-page section links drop out on small screens so the row stays one line.
+   The leftover link sits off the center cable. */
+@media (max-width: 767px) {
+  .cover-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0.75rem;
+  }
+
+  .cover-nav-gap {
+    display: none;
+  }
+
+  .cover-nav-group {
+    display: contents;
+  }
+
+  .cover-nav-section {
+    display: none;
+  }
 }

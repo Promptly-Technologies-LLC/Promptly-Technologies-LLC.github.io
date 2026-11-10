@@ -1,10 +1,17 @@
 ---
 import './Nav.css';
 import { sectionNavLinks } from '../data/navLinks';
+
+const midpoint = Math.ceil(sectionNavLinks.length / 2);
+const linkGroups = [sectionNavLinks.slice(0, midpoint), sectionNavLinks.slice(midpoint)];
 ---
 
-<div class="space-x-6 inline-flex flex-wrap justify-center font-display">
-  {sectionNavLinks.map(({ href, label }) => (
-    <a href={href} class="nav-link">{label}</a>
+<nav class="cover-nav" aria-label="Cover">
+  {linkGroups.map((group, index) => (
+    <div class:list={['cover-nav-group', index === 0 ? 'is-leading' : 'is-trailing']}>
+      {group.map(({ href, label }) => (
+        <a href={href} class:list={['cover-nav-link', { 'cover-nav-section': href.includes('#') }]}>{label}</a>
+      ))}
+    </div>
   ))}
-</div>
+</nav>

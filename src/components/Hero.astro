@@ -83,28 +83,34 @@ const plateSrcset = (plate: Plate, ext: string) =>
 const plateAspect = (plate: Plate) =>
   webpAspect(`${plate.src}-${plate.widths[plate.widths.length - 1]}.webp`);
 
-/** Wide plate from 768px up; a portrait plate below, so phones get a taller frame. */
+/** Wide and portrait plates cross over in screen coverage near a 7:8 aspect ratio. */
+const portraitQuery = '(max-aspect-ratio: 7 / 8)';
 const wide: Plate = hero;
 const narrow: Plate = hero.mobile;
 const wideAspect = plateAspect(wide);
 const narrowAspect = plateAspect(narrow);
+/** The break wraps the slogan on the right of the crane. */
+const sloganLines = hero.script.split(/<br\s*\/?>/i).map((line) => line.trim()).filter(Boolean);
 /** The frame is the largest box of this aspect that fits the viewport. */
 const framed = (aspect: number) => `min(100vw, calc(100svh * ${aspect}))`;
 ---
 
 <section id="hero" class="hero-container" style={`--hero-aspect-wide: ${wideAspect}; --hero-aspect-narrow: ${narrowAspect}`}>
   <div class="top-content-wrapper">
+    <Nav />
     <div class="comic-title">
-      <ComicTitle />
+      <ComicTitle uncapped />
     </div>
-    <div class="inline-flex nav-wrapper">
-      <Nav />
-    </div>
+    <p class="hero-script">
+      {sloganLines.map((line) => (
+        <span class="hero-script-line">{line}</span>
+      ))}
+    </p>
   </div>
   <div class="hero-frame">
     <picture class="hero-picture">
-      <source type="image/avif" media="(max-width: 767px)" srcset={plateSrcset(narrow, 'avif')} sizes={framed(narrowAspect)} />
-      <source type="image/webp" media="(max-width: 767px)" srcset={plateSrcset(narrow, 'webp')} sizes={framed(narrowAspect)} />
+      <source type="image/avif" media={portraitQuery} srcset={plateSrcset(narrow, 'avif')} sizes={framed(narrowAspect)} />
+      <source type="image/webp" media={portraitQuery} srcset={plateSrcset(narrow, 'webp')} sizes={framed(narrowAspect)} />
       <source type="image/avif" srcset={plateSrcset(wide, 'avif')} sizes={framed(wideAspect)} />
       <source type="image/webp" srcset={plateSrcset(wide, 'webp')} sizes={framed(wideAspect)} />
       <img class="hero-image" src={`${wide.src}-${wide.widths[1]}.webp`} alt={hero.alt} />

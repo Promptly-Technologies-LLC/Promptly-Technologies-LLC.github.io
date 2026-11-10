@@ -1,31 +1,59 @@
-.nav-link {
-    font-size: 1.5rem;
-    text-decoration: none;
-    padding: 0.25rem 1rem;
-    position: relative;
-    margin: 0 0.25rem;
-    z-index: 1;
-    @apply text-ink font-display font-medium hover:underline;
+/* Same lettering as the footer menu. The two groups sit on the cover's edges. */
+.cover-nav {
+  @apply flex items-center justify-between text-2xl font-display;
+  width: var(--hero-frame-width);
+  padding-top: 0.25rem;
+  padding-inline: calc(var(--hero-frame-width) * 0.015);
 }
 
-.nav-link:before {
-    content: '';
-    position: absolute;
-    top: 0.45rem;
-    left: 0rem;
-    right: 0rem;
-    bottom: 0.55rem;
-    z-index: -1;
-    background-color: var(--color-newsprint);
-    clip-path: polygon(
-        0% 0%, 7% 10%, 2% 20%, 9% 30%, 3% 40%, 
-        8% 50%, 1% 60%, 11% 70%, 3% 80%, 9% 90%, 
-        0% 100%, 100% 100%, 93% 90%, 97% 80%, 
-        90% 70%, 97% 60%, 92% 50%, 98% 40%, 
-        94% 30%, 100% 20%, 95% 10%, 100% 0%
-    );
+/* When a short or portrait viewport makes the art frame narrower than all six links,
+   let the menu use up to the viewport width so the center pulley stays clear. */
+@media (min-width: 768px) {
+  .cover-nav {
+    width: max(var(--hero-frame-width), min(100%, 48rem));
+  }
 }
 
-.nav-link:hover {
-    text-decoration: underline;
+@media (min-width: 768px) and (max-aspect-ratio: 7 / 8) {
+  .cover-nav {
+    width: 100%;
+    padding-inline: 0.75rem;
+  }
+}
+
+.cover-nav-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cover-nav-group.is-leading {
+  justify-content: flex-start;
+}
+
+.cover-nav-group.is-trailing {
+  justify-content: flex-end;
+}
+
+.cover-nav-link {
+  padding: 0.25rem 1rem;
+  font-family: var(--font-display);
+  color: var(--color-ink);
+}
+
+/* In-page section links drop out on small screens so the row stays one line.
+   Store stays at the top right. */
+@media (max-width: 767px) {
+  .cover-nav {
+    justify-content: flex-end;
+    padding-right: 0.75rem;
+  }
+
+  .cover-nav-group {
+    display: contents;
+  }
+
+  .cover-nav-section {
+    display: none;
+  }
 }

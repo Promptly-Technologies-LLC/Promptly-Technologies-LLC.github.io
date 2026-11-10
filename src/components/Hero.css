@@ -5,9 +5,11 @@
   height: 100svh;
   container-type: size;
   --hero-aspect: var(--hero-aspect-wide);
+  --hero-frame-width: min(100cqw, calc(100cqh * var(--hero-aspect)));
 }
 
-@media (max-width: 767px) {
+/* Wide and portrait plates cross over in screen coverage near a 7:8 aspect ratio. */
+@media (max-aspect-ratio: 7 / 8) {
   .hero-container {
     --hero-aspect: var(--hero-aspect-narrow);
   }
@@ -16,7 +18,7 @@
 /* Largest box of the artwork's aspect that fits the hero. */
 .hero-frame {
   @apply relative shrink-0;
-  width: min(100cqw, calc(100cqh * var(--hero-aspect)));
+  width: var(--hero-frame-width);
   aspect-ratio: var(--hero-aspect);
 }
 
@@ -30,7 +32,29 @@
 }
 
 .comic-title {
-  @apply flex w-full justify-center items-center;
+  @apply flex items-center justify-center;
+  width: var(--hero-frame-width);
+  min-width: 0;
+  padding-inline: calc(var(--hero-frame-width) * 0.045);
+}
+
+/* Pair the stacked two-line wordmark with the portrait plate and the wide wordmark with the wide plate. */
+.comic-wordmark-stacked {
+  display: none;
+}
+
+.comic-wordmark-wide {
+  display: block;
+}
+
+@media (max-aspect-ratio: 7 / 8) {
+  .comic-wordmark-stacked {
+    display: block;
+  }
+
+  .comic-wordmark-wide {
+    display: none;
+  }
 }
 
 .top-content-wrapper {
@@ -41,23 +65,61 @@
   @apply z-20;
 }
 
-.nav-wrapper {
-  @apply inline-flex justify-between;
-}
-
-/* On the first viewport, not the artwork. Right edge tracks the wordmark
-   column in ComicTitle: `px-4` beside the stacked lockup, `max-w-5xl` / `px-6`
-   beside the wide one. */
+/* On the first viewport, not the artwork. The right edge tracks the cover wordmark. */
 .bottom-container {
   @apply absolute inset-x-0 bottom-0 z-10;
 }
 
 .bottom-column {
-  @apply mx-auto flex w-full justify-end px-4 md:max-w-5xl md:px-6;
+  display: flex;
+  justify-content: flex-end;
+  width: var(--hero-frame-width);
+  margin-inline: auto;
+  padding-inline: calc(var(--hero-frame-width) * 0.045);
 }
 
+/* Balanced in the open paper wedge between the slanted wordmark and the cyan wash. */
 .hero-script {
-  @apply text-center z-10 text-ink font-script text-2xl leading-none;
+  @apply z-10 m-0 flex flex-col items-end py-0 text-right font-script text-ink;
+  width: var(--hero-frame-width);
+  margin-top: calc(var(--hero-frame-width) * -0.028);
+  padding-left: calc(var(--hero-frame-width) * 0.44);
+  padding-right: calc(var(--hero-frame-width) * 0.045);
+  font-size: clamp(1.4rem, calc(var(--hero-frame-width) * 0.044), 4.65rem);
+  line-height: 1.04;
+}
+
+.hero-script-line {
+  display: block;
+}
+
+/* Portrait plate (< 7:8): place the subtitle in the open upper-right pocket beside the chain. */
+@media (max-aspect-ratio: 7 / 8) {
+  .hero-script {
+    margin-top: calc(var(--hero-frame-width) * 0.015);
+    padding-left: calc(var(--hero-frame-width) * 0.56);
+    font-size: clamp(1rem, calc(var(--hero-frame-width) * 0.045), 2.25rem);
+    line-height: 1.05;
+  }
+}
+
+/* Tall phones (taller than ~2.12:1) expose open paper below the portrait plate's workers;
+   center the subtitle in that lower band above the social seal. */
+@container (max-aspect-ratio: 100 / 212) {
+  .hero-script {
+    position: absolute;
+    top: calc(
+      (var(--hero-frame-width) / var(--hero-aspect) * 0.895 + (100cqh - 7.5rem)) / 2
+    );
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    margin-top: 0;
+    padding-inline: calc(var(--hero-frame-width) * 0.045);
+    text-align: center;
+    font-size: clamp(1.75rem, calc(var(--hero-frame-width) * 0.082), 2.75rem);
+    line-height: 1.02;
+  }
 }
 
 .social-icons {

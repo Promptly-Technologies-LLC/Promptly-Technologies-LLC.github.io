@@ -6,10 +6,13 @@ interface Props {
   accessibleText?: string;
   /** Use h1 on the home page; use p on subpages that already have their own h1. */
   asPageHeading?: boolean;
+  /** Fill the parent and switch lockups by cover aspect rather than pixel width. */
+  uncapped?: boolean;
 }
 
 const spokenName = Astro.props.accessibleText ?? 'Promptly Technologies';
 const asPageHeading = Astro.props.asPageHeading ?? true;
+const uncapped = Astro.props.uncapped ?? false;
 
 /**
  * Inline a wordmark file. Ids are prefixed because the stacked and wide
@@ -36,6 +39,18 @@ const wideWordmark = inlineWordmark('logo-wide.svg', 'logo-wide');
 
 <div class="w-full">
   {asPageHeading ? <h1 class="sr-only">{spokenName}</h1> : <p class="sr-only">{spokenName}</p>}
-  <div class="mx-auto block w-full max-w-3xl px-4 md:hidden" set:html={stackedWordmark} />
-  <div class="mx-auto hidden w-full max-w-5xl px-6 md:block" set:html={wideWordmark} />
+  <div
+    class:list={[
+      'mx-auto w-full',
+      uncapped ? 'comic-wordmark-stacked' : 'block max-w-3xl px-4 md:hidden',
+    ]}
+    set:html={stackedWordmark}
+  />
+  <div
+    class:list={[
+      'mx-auto w-full',
+      uncapped ? 'comic-wordmark-wide' : 'hidden max-w-5xl px-6 md:block',
+    ]}
+    set:html={wideWordmark}
+  />
 </div>

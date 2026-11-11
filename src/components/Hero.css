@@ -27,8 +27,17 @@
   @apply block h-full w-full;
 }
 
+/* Ink on the page. Painted pixels are opaque, so the paper tooth would stop
+   at the transparent ground. Multiply prints the watercolor and the figures
+   into the stock; clear pixels stay the page. */
 .hero-image {
-  @apply z-0 h-full w-full object-contain object-top;
+  @apply z-0 h-full w-full object-contain object-top mix-blend-multiply;
+}
+
+@media print, (forced-colors: active) {
+  .hero-image {
+    mix-blend-mode: normal;
+  }
 }
 
 .comic-title {

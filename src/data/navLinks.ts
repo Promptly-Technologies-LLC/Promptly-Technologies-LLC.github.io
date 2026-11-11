@@ -5,10 +5,10 @@ export interface NavLink {
 
 /** Mid-page section links shared by hero and simple nav. */
 export const sectionNavLinks: NavLink[] = [
-  { href: '/#contact', label: 'Contact' },
   { href: '/#story', label: 'Story' },
   { href: '/#newsletter', label: 'Newsletter' },
   { href: '/#events', label: 'Events' },
+  { href: '/#contact', label: 'Contact' },
   { href: '/#credits', label: 'Credits' },
   { href: '/store/', label: 'Store' },
 ];

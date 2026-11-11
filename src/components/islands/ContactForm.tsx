@@ -40,6 +40,22 @@ function CutStrip() {
   );
 }
 
+const CONTACT_REASONS = [
+  {
+    id: 'reason-data',
+    label:
+      'I need help extracting, collecting, transforming, loading, storing, governing, securing, or learning from data.',
+  },
+  {
+    id: 'reason-collaborate',
+    label: 'I want to fund, partner with, or work for Promptly Technologies.',
+  },
+  {
+    id: 'reason-talk',
+    label: 'I just want to talk!',
+  },
+] as const;
+
 function ContactFormInner({ formId }: { formId: string }) {
   const [state, handleSubmit] = useForm(formId);
 
@@ -49,6 +65,15 @@ function ContactFormInner({ formId }: { formId: string }) {
 
   return (
     <form className="contact-form" onSubmit={(event) => void handleSubmit(event)}>
+      <fieldset className="contact-reasons">
+        <legend>Check all that apply:</legend>
+        {CONTACT_REASONS.map((reason) => (
+          <label key={reason.id} className="contact-reason" htmlFor={reason.id}>
+            <input id={reason.id} type="checkbox" name="reason" value={reason.label} />
+            <span>{reason.label}</span>
+          </label>
+        ))}
+      </fieldset>
       <div className="contact-field">
         <label htmlFor="email">Where to send the telegram (your email address):</label>
         <input id="email" type="email" name="email" required autoComplete="email" />
@@ -82,12 +107,6 @@ export default function ContactForm({ formspreeFormId: formId }: Props) {
           Calling all researchers, founders, and ball-knowers! Mail this dispatch to Promptly
           Technologies today!
         </h3>
-        <p className="contact-pitch">
-          We work with domain experts to build custom tools that save time and expand capacity. If
-          you&apos;re living with software that doesn&apos;t fit, we can link it into your workflow
-          or start replacing it — open source where your IP allows. Send a dispatch and we&apos;ll
-          talk.
-        </p>
         {formId ? (
           <ContactFormInner formId={formId} />
         ) : (

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +22,7 @@
   --font-display: theme('fontFamily.display');
   --font-body: theme('fontFamily.sans');
   --font-script: theme('fontFamily.script');
+  --font-hand: theme('fontFamily.hand');
 
   /* Panel geometry — the black rule and hard offset shadow that make a
      rectangle read as a comic panel. Buttons borrow the same vocabulary. */

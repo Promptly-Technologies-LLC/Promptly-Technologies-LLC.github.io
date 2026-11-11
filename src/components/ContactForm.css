@@ -3,17 +3,9 @@
 }
 
 .contact-dispatch {
-  @apply w-full max-w-2xl bg-newsprint-shade text-left;
-  border: var(--panel-border) solid var(--color-ink);
-  box-shadow: var(--panel-shadow);
-  padding: 1.25rem 1.5rem 1.75rem;
+  @apply w-full max-w-4xl text-left;
+  padding: 0.5rem 0 1rem;
   animation: contact-sheet-settle 0.55s ease-out both;
-}
-
-@media (min-width: 640px) {
-  .contact-dispatch {
-    padding: 1.5rem 2rem 2rem;
-  }
 }
 
 @keyframes contact-sheet-settle {
@@ -60,12 +52,98 @@
   @apply my-0 text-2xl leading-snug text-center;
 }
 
-.contact-pitch {
-  @apply py-4 text-base text-ink-soft text-center;
-}
-
 .contact-form {
   @apply flex flex-col gap-5 text-left;
+  /* Patrick Hand: the whole form reads as hand-lettered on a printed sheet. */
+  font-family: var(--font-hand);
+}
+
+/* Desktop: reasons on the left, email + message on the right, button centred
+   underneath. Mobile stays a single column. */
+@media (min-width: 768px) {
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5rem;
+    row-gap: 1.25rem;
+    align-items: start;
+  }
+
+  .contact-reasons {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .contact-form .contact-field {
+    grid-column: 2;
+  }
+
+  .contact-form .contact-submit {
+    grid-column: 1 / -1;
+  }
+}
+
+.contact-reasons {
+  @apply flex flex-col gap-3 m-0 border-0 p-0;
+}
+
+.contact-reasons legend {
+  @apply px-0 pb-1 text-lg text-ink;
+}
+
+.contact-reason {
+  @apply flex cursor-pointer items-start gap-3 text-xl text-ink;
+}
+
+/* Hand-inked checkbox: a slightly wobbly black outline, transparent fill, and
+   a loose pen-stroke tick that overshoots the box when checked. The tick is an
+   SVG used only as a mask, so its colour comes from the ink token. */
+.contact-form input[type='checkbox'] {
+  @apply relative mt-0.5 h-6 w-6 shrink-0 cursor-pointer p-0 bg-transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: none;
+  border: 2px solid var(--color-ink);
+  border-radius: 3px 6px 4px 7px / 6px 3px 7px 4px;
+  box-shadow: none;
+  transform: rotate(-1.5deg);
+}
+
+.contact-form input[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -8px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-ink);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M3.5 13.5c2 .8 4.2 3 5.6 6.2 2.6-6.6 7.6-12.6 13-16.2' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M3.5 13.5c2 .8 4.2 3 5.6 6.2 2.6-6.6 7.6-12.6 13-16.2' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  transform: scale(0);
+  transform-origin: 30% 80%;
+  transition: transform 0.15s ease-out;
+}
+
+.contact-form input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+.contact-form input[type='checkbox']:focus-visible {
+  border-bottom-width: 2px;
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.contact-form input[type='checkbox']:focus:not(:focus-visible) {
+  border-bottom-width: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form input[type='checkbox']::before {
+    transition: none;
+  }
 }
 
 .contact-field {
@@ -73,42 +151,46 @@
 }
 
 .contact-field label {
-  @apply text-sm text-ink;
+  @apply text-lg text-ink;
 }
 
 .contact-form input,
 .contact-form textarea {
-  @apply w-full p-0 m-0 bg-transparent border-0 border-b-2 border-ink rounded-none;
-  @apply text-base text-ink placeholder:text-ink-soft;
+  @apply w-full p-0 m-0 bg-transparent border-0 rounded-none;
+  @apply text-xl text-ink placeholder:text-ink-soft;
+  /* Patrick Hand: the visitor's entries read as hand-filled on a printed form. */
+  font-family: var(--font-hand);
   box-shadow: none;
   outline: none;
-}
 
-.contact-form input {
-  @apply py-1;
-}
-
-.contact-form textarea {
-  /* Lined paper: 1.5rem line-height matching the rule spacing */
+  /* Ruled lines instead of a border: one 2px rule at the foot of every
+     1.5rem line, so the email field and the textarea sit on identical rules
+     and text-to-line distance is the same in both. */
+  --rule: rgb(var(--color-ink-rgb) / 0.55);
   line-height: 1.5rem;
-  min-height: 7.5rem;
-  resize: vertical;
-  padding: 0 0 0.25rem;
   background-image: repeating-linear-gradient(
     to bottom,
     transparent,
-    transparent calc(1.5rem - 1px),
-    rgb(var(--color-ink-line-rgb)) calc(1.5rem - 1px),
-    rgb(var(--color-ink-line-rgb)) 1.5rem
+    transparent calc(1.5rem - 2px),
+    var(--rule) calc(1.5rem - 2px),
+    var(--rule) 1.5rem
   );
   background-attachment: local;
-  border-bottom-color: var(--color-ink);
 }
 
-.contact-form input:focus,
+.contact-form input:not([type='checkbox']) {
+  height: 1.5rem;
+}
+
+.contact-form textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+}
+
+/* Focus: the rules darken to full ink. */
+.contact-form input:not([type='checkbox']):focus,
 .contact-form textarea:focus {
-  @apply border-ink;
-  border-bottom-width: 3px;
+  --rule: var(--color-ink);
 }
 
 .contact-form .contact-field > p {

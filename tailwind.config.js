@@ -77,10 +77,12 @@ export default {
       colors: toColors(channels),
       fontFamily: {
         // `display` is Bangers (title, headings, narration, nav, buttons);
-        // `script` is Allura (the hero tagline). Stacks are republished as
-        // `--font-display` / `--font-script` in global.css.
+        // `script` is Allura (the hero tagline); `hand` is Patrick Hand (what
+        // a visitor "writes" into form fields). Stacks are republished as
+        // `--font-display` / `--font-script` / `--font-hand` in global.css.
         display: ['Bangers', 'cursive'],
         script: ['Allura', 'cursive'],
+        hand: ['"Patrick Hand"', 'cursive'],
       },
       borderWidth: {
         panel: '3px',

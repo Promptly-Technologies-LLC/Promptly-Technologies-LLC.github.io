@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  font-family: var(--font-display);
+  font-family: var(--font-hand);
   color: var(--color-ink);
   display: flex;
   align-items: center;

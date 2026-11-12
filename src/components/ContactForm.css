@@ -54,8 +54,9 @@
 
 .contact-form {
   @apply flex flex-col gap-5 text-left;
-  /* Patrick Hand: the whole form reads as hand-lettered on a printed sheet. */
-  font-family: var(--font-hand);
+  /* Printed form chrome is the reading sans. Checkbox labels and field
+     entries are hand-lettered. */
+  font-family: var(--font-body);
 }
 
 /* Desktop: reasons on the left, email + message on the right, button centred
@@ -92,7 +93,7 @@
 }
 
 .contact-reason {
-  @apply flex cursor-pointer items-start gap-3 text-xl text-ink;
+  @apply flex cursor-pointer items-start gap-3 text-lg text-ink;
 }
 
 /* Hand-inked checkbox: a slightly wobbly black outline, transparent fill, and
@@ -203,7 +204,7 @@
 
 .contact-success {
   @apply py-6 text-lg text-center text-ink;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
 }
 
 @media (prefers-reduced-motion: reduce) {

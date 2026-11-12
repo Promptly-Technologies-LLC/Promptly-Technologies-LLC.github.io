@@ -74,6 +74,27 @@
   @apply z-20;
 }
 
+/* Landscape: the wordmark goes behind the crane. The plate is multiplied into
+   the paper, so dropping the title's z-index lets the letters show through the
+   hook. Knock the wordmark out where the plate is opaque instead; the crane,
+   already printed on the paper, shows through the hole. One line of nav is
+   2.75rem; the inline script corrects it if the links wrap. */
+@media (orientation: landscape) {
+  .comic-title {
+    --cover-nav-offset: 2.75rem;
+    -webkit-mask-image: var(--hero-plate), linear-gradient(black, black);
+    mask-image: var(--hero-plate), linear-gradient(black, black);
+    -webkit-mask-size: var(--hero-frame-width) calc(var(--hero-frame-width) / var(--hero-aspect)), 100% 100%;
+    mask-size: var(--hero-frame-width) calc(var(--hero-frame-width) / var(--hero-aspect)), 100% 100%;
+    -webkit-mask-position: center calc(-1 * var(--cover-nav-offset)), center;
+    mask-position: center calc(-1 * var(--cover-nav-offset)), center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: xor;
+  }
+}
+
 /* On the first viewport, not the artwork. The right edge tracks the cover wordmark. */
 .bottom-container {
   @apply absolute inset-x-0 bottom-0 z-10;

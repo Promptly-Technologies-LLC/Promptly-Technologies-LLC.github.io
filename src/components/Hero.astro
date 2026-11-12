@@ -95,7 +95,7 @@ const sloganLines = hero.script.split(/<br\s*\/?>/i).map((line) => line.trim()).
 const framed = (aspect: number) => `min(100vw, calc(100svh * ${aspect}))`;
 ---
 
-<section id="hero" class="hero-container" style={`--hero-aspect-wide: ${wideAspect}; --hero-aspect-narrow: ${narrowAspect}`}>
+<section id="hero" class="hero-container" style={`--hero-aspect-wide: ${wideAspect}; --hero-aspect-narrow: ${narrowAspect}; --hero-plate: url("/${wide.src}-${wide.widths[wide.widths.length - 1]}.webp")`}>
   <div class="top-content-wrapper">
     <Nav />
     <div class="comic-title">
@@ -132,4 +132,18 @@ const framed = (aspect: number) => `min(100vw, calc(100svh * ${aspect}))`;
     </div>
   </div>
 </section>
+
+<script>
+  const nav = document.querySelector('#hero .cover-nav');
+  const title = document.querySelector('#hero .comic-title');
+  if (nav instanceof HTMLElement && title instanceof HTMLElement) {
+    const alignCoverTitle = () => {
+      title.style.setProperty('--cover-nav-offset', `${nav.offsetHeight}px`);
+    };
+    alignCoverTitle();
+    if (typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(alignCoverTitle).observe(nav);
+    }
+  }
+</script>
 

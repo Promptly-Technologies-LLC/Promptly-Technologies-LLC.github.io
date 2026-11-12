@@ -17,8 +17,9 @@
    will do; use the custom property where it won't.
    --------------------------------------------------------------------------- */
 :root {
-  /* Bangers letters the comic; the sans carries the reading copy; Allura is
-     reserved for the hero's handwritten tagline. */
+  /* Bangers letters display type; Patrick Hand letters comic narration and
+     handwritten field entries; the sans carries the reading copy; Allura is
+     reserved for the hero tagline. */
   --font-display: theme('fontFamily.display');
   --font-body: theme('fontFamily.sans');
   --font-script: theme('fontFamily.script');
@@ -118,8 +119,9 @@ section {
 }
 
 /* ---------------------------------------------------------------------------
-   The type rule: Bangers letters the display type — headings, narration, nav.
-   The sans carries anything you actually sit down and read.
+   The type rule: Bangers letters the display type — headings, nav, buttons.
+   Patrick Hand letters comic narration. The sans carries anything you
+   actually sit down and read, including contact-form chrome.
 
    Section titles that are the lone heading in a `.headercontainer` stay large
    (`h2:only-child`). A subtitle under an `h1` (e.g. Privacy) is a regular `h2`

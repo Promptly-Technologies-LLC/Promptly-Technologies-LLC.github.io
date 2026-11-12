@@ -9,8 +9,8 @@ const linkGroups = [sectionNavLinks.slice(0, midpoint), sectionNavLinks.slice(mi
 <nav class="cover-nav" aria-label="Cover">
   {linkGroups.map((group, index) => (
     <div class:list={['cover-nav-group', index === 0 ? 'is-leading' : 'is-trailing']}>
-      {group.map(({ href, label }) => (
-        <a href={href} class:list={['cover-nav-link', { 'cover-nav-section': href.includes('#') }]}>{label}</a>
+      {group.map(({ href, label, coverPersistent }) => (
+        <a href={href} class:list={['cover-nav-link', { 'cover-nav-section': href.includes('#') && !coverPersistent }]}>{label}</a>
       ))}
     </div>
   ))}

@@ -8,8 +8,8 @@ The business website of Promptly Technologies, LLC is designed in the style of a
 
 The site is built with [Astro](https://astro.build/) and uses file-based routing:
 
-- `/` — Home (hero, contact, story, events, credits)
-- `/store` — Zazzle product feed
+- `/` — Home (hero, story, contact, credits)
+- `/community` — Events, newsletter, and store
 - `/legal` — Privacy policy
 
 Static comic-book components are `.astro` files. Interactive widgets (FullCalendar events, FormSpree contact form, ConvertKit subscribe form) are React islands hydrated on the client.

@@ -2,8 +2,6 @@
 import ThreePanelBlock from './ThreePanelBlock.astro';
 import ThreePanelRow from './ThreePanelRow.astro';
 import Feature from './Feature.astro';
-import Newsletter from './Newsletter.astro';
-import Events from './islands/Events';
 import siteProperties from '../customizations/siteproperties.json';
 import type { ComicPanelProps } from '../types/comicpanel';
 ---
@@ -67,14 +65,6 @@ import type { ComicPanelProps } from '../types/comicpanel';
         verticalPosition: 'top',
       },
     ] satisfies ComicPanelProps[]}
-  />
-
-  <Newsletter />
-
-  <Events
-    client:visible
-    convertKitFormId={siteProperties.convertKitFormId}
-    convertKitDataUid={siteProperties.convertKitDataUid}
   />
 
   <ThreePanelBlock

@@ -8,10 +8,10 @@ export interface NavLink {
 /** Mid-page section links shared by hero and simple nav. */
 export const sectionNavLinks: NavLink[] = [
   { href: '/#story', label: 'Story' },
-  { href: '/community/#newsletter', label: 'Newsletter' },
-  { href: '/community/#events', label: 'Events' },
   { href: '/#contact', label: 'Contact' },
   { href: '/#credits', label: 'Credits' },
+  { href: '/community/#events', label: 'Events' },
+  { href: '/community/#newsletter', label: 'Newsletter' },
   { href: '/community/#store', label: 'Store', coverPersistent: true },
 ];
 

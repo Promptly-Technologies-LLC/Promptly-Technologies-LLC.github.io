@@ -10,7 +10,7 @@ This repo is a single static website (Astro + React islands + Tailwind), built a
 
 ### Dev server
 - `bun dev` serves on `http://localhost:4321/`.
-- `astro.config.mjs` sets `trailingSlash: 'always'`, so sub-pages must be requested with a trailing slash (e.g. `/store/`, not `/store`). Requesting without the slash returns a 404 with a redirect suggestion — this is expected, not a bug.
+- `astro.config.mjs` sets `trailingSlash: 'always'`, so sub-pages must be requested with a trailing slash (e.g. `/community/`, not `/community`). Requesting without the slash returns a 404 with a redirect suggestion — this is expected, not a bug.
 
 ### Lint / type check
 - `bun run lint` runs ESLint over `src` (TypeScript/TSX and Astro) with `--max-warnings 0`.

@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComicTitle from '../components/ComicTitle.astro';
+import SimpleNav from '../components/SimpleNav.astro';
+import Products from '../components/Products.astro';
+import Newsletter from '../components/Newsletter.astro';
+import Events from '../components/islands/Events';
+import Footer from '../components/Footer.astro';
+import siteProperties from '../customizations/siteproperties.json';
+---
+
+<BaseLayout
+  title="Community | Promptly Technologies, LLC"
+  description="Events, the newsletter, and merchandise from Promptly Technologies."
+  path="/community/"
+>
+  <main id="skip">
+    <ComicTitle />
+    <SimpleNav />
+    <div class="flex w-full flex-col items-center">
+      <Events
+        client:visible
+        convertKitFormId={siteProperties.convertKitFormId}
+        convertKitDataUid={siteProperties.convertKitDataUid}
+      />
+      <Newsletter />
+    </div>
+    <Products />
+    <Footer />
+  </main>
+</BaseLayout>
